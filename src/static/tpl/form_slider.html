@@ -1,0 +1,26 @@
+﻿<div class="bg-light lter b-b wrapper-md">
+  <h1 class="m-n font-thin h3">滑块 <kbd class="pull-right">Slider</kbd></h1>
+</div>
+<div class="wrapper-md">
+  <p>单值: ( __cost__ )</p>
+  <slider
+      ng-model="cost"
+      floor="1"
+      ceiling="100">
+  </slider>
+  <p>区间: ( 从:__range.min__ - 到:__range.max__ )</p>
+  <slider
+      ng-model="range.min"
+      ng-model-range="range.max"
+      floor="1"
+      ceiling="100">
+  </slider>
+
+  <p>格式化:</p>
+  <slider
+      ng-model="cost"
+      translate-fn="currencyFormatting"
+      floor="1"
+      ceiling="100">
+  </slider>
+</div>

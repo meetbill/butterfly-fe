@@ -1,0 +1,81 @@
+﻿<div class="bg-light lter b-b wrapper-md">
+    <h1 class="m-n font-thin h3">天气 <kbd class="pull-right">Weather</kbd></h1>
+</div>
+<div class="panel panel-default">
+    <div class="panel-body">
+        这个界面没法翻译，他调用的是 Yahoo 天气的 API，数据下载过来就是英文的。
+    </div>
+</div>
+<div class="hbox hbox-auto-xs hbox-auto-sm" ng-controller="WeatherCtrl">
+  <div class="col w-lg bg-light dk b-r bg-auto">
+    <div class="wrapper-md dker b-b">
+      <div class="input-group">
+         <input type="text" class="form-control" ng-model="userSearchText" placeholder="Town State Country...">
+         <div class="input-group-btn">
+            <button type="button" class="btn btn-default" ng-click="getLocations()">搜索</button>
+         </div>
+      </div>
+    </div>
+    <!-- show search results for user input -->
+    <div class="wrapper-md">
+      <ul class="list-group list-group-sp" ng-show="search.query.count > 1">
+        <li class="list-group-item" ng-repeat="loc in search.query.results.place">
+          <a class="clear text-ellipsis" ng-click="getWeather(loc.woeid, loc.name, loc.country.content)">__loc.name__, __loc.admin1.content__, __loc.country.content__</a>
+        </li>
+      </ul>
+      <ul class="list-group list-group-sp">
+        <li class="list-group-item">
+          <a href ng-click="getWeather(2459115,'New York','United States')">纽约</a>
+        </li>
+        <li class="list-group-item">
+          <a href ng-click="getWeather(615702,'Paris','France')">巴黎</a>
+        </li>
+        <li class="list-group-item">
+          <a href ng-click="getWeather(44418,'London','United Kingdom')">伦敦</a>
+        </li>
+        <li class="list-group-item">
+          <a href ng-click="getWeather(1105779,'Sydney','Australia')">悉尼</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="col">
+    <div class="wrapper-lg clearfix bg-info dker" ng-show="data.query.results">
+      <h4 class="m-t-none m-b-lg"><span class="text-xs text-muted m-l pull-right">__ data.query.results.channel.item.condition.date __</span>__place.city__, __place.country__</h4>
+      <div class="hbox">
+        <div class="col v-middle w-sm">
+          <skycon icon="data.query.results.channel.item.condition.icon" color="#fff" size="128" id=""></skycon>
+        </div>
+        <div class="col v-middle">
+          <div class="h1">
+            <span class="text-2x text-white">__ data.query.results.channel.item.condition.temp __&deg;</span>            
+          </div>
+          <span class="text-muted">__ data.query.results.channel.item.condition.text __ - Feels like __ data.query.results.channel.item.condition.temp __&deg;</span>
+        </div>
+      </div>
+    </div>
+    
+    <!-- display weather forecast -->
+    <div class="list-group no-border no-radius">
+      <div class="list-group-item" ng-show="data.query.results.channel.item.forecast.length" ng-repeat="forecast in data.query.results.channel.item.forecast">
+        <div class="hbox">
+          <div class="col v-middle w-xxs">
+            <span class="h4">__forecast.day__</span>           
+          </div>
+          <div class="col v-middle w-xxs">
+            <skycon icon="forecast.icon" color="app.color.dark" size="32"></skycon>
+          </div>
+          <div class="col v-middle">
+            __forecast.text__ <span class="text-white">__forecast.code__</span>
+          </div>
+          <div class="col v-middle">
+            __forecast.high__&deg; -  __forecast.low__&deg;
+          </div>
+          <div class="col v-middle text-right hidden-xs">                
+            <small class="text-muted">__forecast.date__</small>
+          </div>           
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

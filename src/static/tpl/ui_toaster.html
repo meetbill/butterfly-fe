@@ -1,0 +1,62 @@
+﻿<div class="bg-light lter b-b wrapper-md">
+  <h1 class="m-n font-thin h3">消息框 <kbd class="pull-right">Toaster</kbd></h1>
+</div>
+<div class="wrapper-md" ng-controller="ToasterDemoCtrl">
+  <!-- toaster directive -->
+  <toaster-container toaster-options="{'position-class': 'toast-top-right', 'close-button':true}"></toaster-container>
+  <!-- / toaster directive -->
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="form-group">
+        <label>标题</label>
+        <input type="text" class="form-control" placeholder="请输入标题..." ng-model="toaster.title">
+      </div>
+
+      <div class="form-group">
+        <label>消息</label>
+        <textarea class="form-control" placeholder="请输入消息..." rows="5" ng-model="toaster.text"></textarea>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <label>消息类型</label>
+      <div class="radio">
+        <label class="i-checks">
+          <input type="radio" name="toasts" ng-model="toaster.type" value="success">
+          <i></i>
+          成功 Success
+        </label>
+      </div>
+      <div class="radio">
+        <label class="i-checks">
+          <input type="radio" name="toasts" ng-model="toaster.type" value="info">
+          <i></i>
+          信息 Info
+        </label>
+      </div>
+      <div class="radio">
+        <label class="i-checks">
+          <input type="radio" name="toasts" ng-model="toaster.type" value="wait">
+          <i></i>
+          等待 Wait
+        </label>
+      </div>
+      <div class="radio">
+        <label class="i-checks">
+          <input type="radio" name="toasts" ng-model="toaster.type" value="warning">
+          <i></i>
+          警告 Warning
+        </label>
+      </div>
+      <div class="radio">
+        <label class="i-checks">
+          <input type="radio" name="toasts" ng-model="toaster.type" value="error">
+          <i></i>
+          错误 Error
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <button class="btn btn-info" ng-click="pop()">弹出消息框</button>
+
+</div>

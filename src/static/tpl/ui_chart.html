@@ -1,0 +1,317 @@
+﻿<div class="bg-light lter b-b wrapper-md">
+  <h1 class="m-n font-thin h3">图表 <kbd class="pull-right">Chart</kbd></h1>
+</div>
+<div class="wrapper-md">
+  <div ng-controller="FlotChartDemoCtrl">
+    <div class="row">
+      <div class="col-md-12">
+         <div class="panel panel-default">
+             <div class="panel-body">
+                 <p>
+                     译者注：这个图表叫
+                     <a href="http://www.jqplot.com/" target="_blank"><code>jqPlot</code></a>
+                     ，我个人不是很喜欢，推荐 ： 
+                     <a href="http://www.ichartjs.com/" target="_blank"><code>ichartjs</code></a>
+                     或 
+                     <a href="http://www.chartjs.org/" target="_blank"><code>chart.js</code></a>
+                 </p>
+             </div>
+         </div>
+      </div>
+      <div class="col-md-6">
+        <div class="panel panel-default">
+          <div class="panel-heading font-bold">曲线图/折线图 <kbd class="pull-right">Spline</kbd></div>
+          <div class="panel-body">
+            <div ui-jq="plot" ui-options="
+              [
+                { data: __d__, points: { show: true, radius: 6}, splines: { show: true, tension: 0.45, lineWidth: 5, fill: 0 } }
+              ], 
+              {
+                colors: ['__app.color.info__'],
+                series: { shadowSize: 3 },
+                xaxis:{ 
+                  font: { color: '#ccc' },
+                  position: 'bottom',
+                  ticks: [
+                    [ 1, '一月' ], [ 2, '二月' ], [ 3, '三月' ], [ 4, '四月' ], [ 5, '五月' ], [ 6, '六月' ], [ 7, '七月' ], [ 8, '八月' ], [ 9, '九月' ], [ 10, '十月' ], [ 11, '冬月' ], [ 12, '腊月' ]
+                  ]
+                },
+                yaxis:{ font: { color: '#ccc' } },
+                grid: { hoverable: true, clickable: true, borderWidth: 0, color: '#ccc' },
+                tooltip: true,
+                tooltipOpts: { content: '%x 是 %y.1',  defaultTheme: false, shifts: { x: 0, y: 20 } }
+              }
+            " style="height:240px" >
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="panel panel-default">
+          <div class="panel-heading font-bold">多重图表 <kbd class="pull-right">Multiple</kbd></div>
+          <div class="panel-body">
+            <div ui-jq="plot" ui-options="
+              [
+                { data: __d0_1__, label: '产生流量', points: { show: true } }, 
+                { data: __d0_2__, label: '页面浏览数', bars: { show: true, barWidth: 0.6, fillColor: { colors: [{ opacity: 0.2 }, { opacity: 0.4}] } } }
+              ],
+              {                
+                colors: [ '__app.color.info__','__app.color.success__' ],
+                series: { shadowSize: 2 },
+                xaxis:{ font: { color: '#ccc' } },
+                yaxis:{ font: { color: '#ccc' } },
+                grid: { hoverable: true, clickable: true, borderWidth: 0, color: '#ccc' },
+                tooltip: true,
+                tooltipOpts: { content: '%s在 %x 是 %y.1',  defaultTheme: false, shifts: { x: 0, y: 20 } }
+              }
+            " style="height:240px"></div>
+          </div>                  
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="panel panel-default">
+          <div class="panel-heading font-bold">堆叠柱形图 <kbd class="pull-right">Order bar</kbd></div>
+          <div class="panel-body">
+            <div ui-jq="plot" ui-options="
+              [ 
+                { label: '注册', data: __d1_1__ },
+                { label: '充值', data: __d1_2__ },
+                { label: '消费', data: __d1_3__ }
+              ],
+              {
+                bars: { show: true, fill: true, lineWidth: 1, order: 1, fillColor: { colors: [{ opacity: 0.5 }, { opacity: 0.9}] } },
+                colors: ['__app.color.info__', '__app.color.success__', '__app.color.primary__'],
+                series: { shadowSize: 1 },
+                xaxis:{ font: { color: '#ccc' } },
+                yaxis:{ font: { color: '#ccc' } },
+                grid: { hoverable: true, clickable: true, borderWidth: 0, color: '#ccc' },                
+                tooltip: true
+              }
+            " style="height:240px"></div>
+          </div>                  
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="panel panel-default">
+          <div class="panel-heading font-bold">柱形图 <kbd class="pull-right">Bar</kbd></div>
+          <div class="panel-body">
+            <div ui-jq="plot" ui-options="
+              [
+                { data: __d2__, label: '压力', color: '__app.color.info__' }
+              ],
+              {
+                bars: { show: true, barWidth: 0.6, fillColor: { colors: [{ opacity: 0.5 }, { opacity: 0.9}] }  },
+                xaxis: { font: { color: '#ccc' } },
+                yaxis: { font: { color: '#ccc' }, min: -2, max: 2 },
+                grid: { hoverable: true, clickable: true, borderWidth: 0, color: '#ccc' },
+                series: { shadowSize: 1 },
+                tooltip: true
+              }
+            " style="height:240px"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="panel panel-default">
+          <div class="panel-heading font-bold">组合图表 <kbd class="pull-right">Compose</kbd></div>
+          <div class="panel-body">
+            <div ui-jq="plot" ui-options="
+              [
+                { data: __d0_1__, label: '收入', points: { show: true }, lines: { show: true, fill: true, fillColor: { colors: [{ opacity: 0.1 }, { opacity: 0.1}] } } }, 
+                { data: __d0_2__, label: '支出', points: { show: true, radius: 4 } }
+              ],
+              {
+                colors: [ '__app.color.info__','__app.color.warning__' ],
+                series: { shadowSize: 2 },
+                xaxis:{ font: { color: '#ccc' } },
+                yaxis:{ font: { color: '#ccc' } },
+                grid: { hoverable: true, clickable: true, borderWidth: 0, color: '#ccc' },
+                tooltip: true,
+                tooltipOpts: { content: '第 %x 天的%s是 %y.2 元',  defaultTheme: false, shifts: { x: 0, y: 20 } }
+              }
+            " style="height:240px"></div>
+          </div>                  
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="panel panel-default">
+          <div class="panel-heading font-bold">环形图 <kbd class="pull-right">Donut Pie</kbd></div>
+          <div class="panel-body">
+            <div ui-jq="plot" ui-options="
+              __d3__,
+              {
+                series: { pie: { show: true, innerRadius: 0.5, stroke: { width: 0 }, label: { show: true, threshold: 0.05 } } },
+                colors: ['__app.color.primary__','__app.color.info__','__app.color.success__','__app.color.warning__','__app.color.danger__'],
+                grid: { hoverable: true, clickable: true, borderWidth: 0, color: '#ccc' },   
+                tooltip: true,
+                tooltipOpts: { content: '%s: %p.0%' }
+              }
+            " style="height:240px"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-4">
+      <div class="panel panel-default">
+        <div class="panel-heading font-bold">饼图 <kbd class="pull-right">Pie</kbd></div>
+        <div class="panel-body text-center">              
+          <div ui-jq="sparkline" ui-options="[60,40], {type:'pie', height:154, sliceColors:['__app.color.info__','#eaeeea']}" class="sparkline inline"></div>
+          <div class="line pull-in"></div>
+          <div class="text-xs">
+            <i class="fa fa-circle text-info"></i> 60%
+            <i class="fa fa-circle text-muted m-l"></i> 40%
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="panel panel-default">
+        <div class="panel-heading font-bold">数据图 <kbd class="pull-right">Data graph</kbd></div>
+        <div class="bg-light dker wrapper m-t-n-xxs">
+          <span class="pull-right">星期五</span>
+          <span class="h4">￥540</span>
+          <div class="text-center m-b-n m-t-sm">
+              <div ui-jq="sparkline" ui-options="[50.32,45.23,47.56,36.25,53.85,40.15,41.25,50.15,57.14,36.15,97.26,50.15,45.32,47.19,37.75,25.15,56.34,50.35,47.25,53.15], {type:'line', height:65, width: '100%', lineWidth:2, valueSpots:{'0:':'#fff'}, lineColor:'#fff', spotColor:'#fff', fillColor:'', highlightLineColor:'#fff', spotRadius:3}"></div>
+
+              <div ui-jq="sparkline" ui-options="[ 10,9,11,10,11,10,12,10,9,10,11,9,8 ], {type:'bar', height:45, barWidth:6, barSpacing:6, barColor:'__app.color.primary__'}" class="sparkline inline">loading...</div>
+          </div>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-xs-4">
+              <small class="text-muted block">交易</small>
+              <span>￥1500.00</span>
+            </div>
+            <div class="col-xs-4">
+              <small class="text-muted block">行情</small>
+              <span>￥600.00</span>
+            </div>
+            <div class="col-xs-4">
+              <small class="text-muted block">子公司</small>
+              <span>￥400.00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="panel panel-default">
+        <div class="panel-heading font-bold">堆叠图 <kbd class="pull-right">Stacked</kbd></div>
+        <div class="panel-body">
+          <div class="m-b-md">
+            <p class="h3 font-thin">投资</p>
+            去年的平均投资
+          </div>
+          <div class="row m-b">
+            <div class="col-xs-6">
+              <div ui-jq="sparkline" ui-options="[ [2, 8], [4, 6], [6, 4], [8, 2], [10, 0], [8, 2], [6, 4], [4, 6], [2,8] ], {type:'bar', height:112, barWidth:6, barSpacing:10, stackedBarColor:['__app.color.success__', '#d7e5e8']}" class="sparkline inline"></div>
+            </div>
+            <div class="col-xs-6">
+              收益
+              <div class="h3 text-black m-b">4500,00</div>
+              成本
+              <div class="h3 text-success">3450,00</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-4">
+      <div class="panel panel-default">
+        <div class="panel-heading font-bold">
+            简易饼图
+            <kbd class="pull-right">Easypiechart</kbd>
+        </div>
+        <div class="panel-body text-center">
+          <h4>62.5<small> 小时</small></h4>
+          <small class="text-muted block">2分钟前更新</small>
+          <div class="inline">
+            <div ui-jq="easyPieChart" ui-options="{
+                      percent: 75,
+                      lineWidth: 10,
+                      trackColor: '__app.color.light__',
+                      barColor: '__app.color.warning__',
+                      scaleColor: '__app.color.light__',
+                      size: 188,
+                      lineCap: 'butt'
+                    }">
+              <div>
+                <span class="h2 m-l-sm step">75</span>%
+                <div class="text text-sm">新数据</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="panel-footer"><small>% 指 平均速率转换</small></div>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="panel panel-default">
+        <div class="panel-heading font-bold">
+            简易饼图 -- 动画
+            <kbd class="pull-right">Animate</kbd>
+        </div>
+        <div class="panel-body text-center">
+          <h4><small>最后的 </small>12<small> 小时</small></h4>
+          <small class="text-muted block">昨天: 20%</small>
+          <div class="inline">
+            <div ui-jq="easyPieChart"  ui-options="{
+                      percent: 25,
+                      lineWidth: 10,
+                      trackColor: '__app.color.light__',
+                      barColor: '__app.color.success__',
+                      scaleColor: '__app.color.light__',
+                      size: 188,
+                      lineCap: 'butt',
+                      animate: 1000
+                    }">
+              <div>
+                <span class="h2 m-l-sm step">25</span>%
+                <div class="text text-sm">今天</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="panel-footer"><small>% 指转化率</small></div>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="panel panel-default">
+        <div class="panel-heading font-bold">
+            简易饼图 -- 旋转
+            <kbd class="pull-right">Rotate</kbd>
+        </div>
+        <div class="panel-body text-center">
+          <h4>3,450</h4>
+          <small class="text-muted block">国际会议</small>
+          <div class="inline m-t m-b">
+            <div ui-jq="easyPieChart" ui-options="{
+                      percent: 50,
+                      lineWidth: 10,
+                      trackColor: '__app.color.light__',
+                      barColor: '__app.color.info__',
+                      scaleColor: false,
+                      size: 158,
+                      rotate: 90,
+                      lineCap: 'butt'
+                    }">
+              <div>
+                <span class="h2 m-l-sm step">50</span>%
+                <div class="text text-sm">新的访问</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="panel-footer"><small>% 指对访问的平均率 </small></div>
+      </div>
+    </div>
+  </div>
+</div>

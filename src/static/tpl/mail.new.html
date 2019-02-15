@@ -1,0 +1,77 @@
+﻿<div ng-controller="MailNewCtrl">
+  <!-- header -->
+  <div class="wrapper bg-light lter b-b">
+    <div class="btn-group m-r-sm">
+      <a href class="btn btn-sm btn-default w-xxs w-auto-xs" tooltip="保存"><i class="fa fa-file"></i></a>
+      <a ui-sref="app.mail.list" class="btn btn-sm btn-default w-xxs w-auto-xs" tooltip="丢弃"><i class="fa fa-trash-o"></i></a>
+    </div>
+  </div>
+  <!-- / header -->
+  <div class="wrapper">
+    <form name="newMail" class="form-horizontal m-t-lg">
+      <div class="form-group">
+        <label class="col-lg-2 control-label">收件人:</label>
+        <div class="col-lg-8">
+          <select ui-jq="chosen" data-placeholder="请选择邮箱联系人" class="form-control" multiple ng-model="mail.to">
+            <option ng-repeat="list in tolist" value="__list.email__">__list.name__ <__list.email__></option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-lg-2 control-label">主题:</label>
+        <div class="col-lg-8">
+          <input type="text" class="form-control" ng-model="mail.subject">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 control-label">正文:</label>
+        <div class="col-sm-10">
+          <div class="btn-toolbar m-b-sm btn-editor" data-role="editor-toolbar" data-target="#editor">
+            <div class="btn-group dropdown">
+              <a class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown" tooltip="字体"><i class="fa text-base fa-font"></i><b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href dropdown-toggle data-edit="fontName Serif" style="font-family:'Serif'">Serif</a></li> 
+                <li><a href dropdown-toggle data-edit="fontName Sans" style="font-family:'Sans'">Sans</a></li>
+                <li><a href dropdown-toggle data-edit="fontName Arial" style="font-family:'Arial'">Arial</a></li></ul>
+            </div>
+            <div class="btn-group dropdown">
+              <a class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown" tooltip="字号"><i class="fa text-base fa-text-height"></i>&nbsp;<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href dropdown-toggle data-edit="fontSize 5" style="font-size:24px">大号</a></li>
+                <li><a href dropdown-toggle data-edit="fontSize 3" style="font-size:18px">中号</a></li>
+                <li><a href dropdown-toggle data-edit="fontSize 1" style="font-size:14px">小号</a></li>
+              </ul>
+            </div>
+            <div class="btn-group">
+              <a class="btn btn-sm btn-default" data-edit="bold" tooltip="加粗 (Ctrl+B)"><i class="fa text-base fa-bold"></i></a>
+              <a class="btn btn-sm btn-default" data-edit="italic" tooltip="斜体 (Ctrl+I)"><i class="fa text-base fa-italic"></i></a>
+              <a class="btn btn-sm btn-default" data-edit="strikethrough" tooltip="删除线"><i class="fa text-base fa-strikethrough"></i></a>
+              <a class="btn btn-sm btn-default" data-edit="underline" tooltip="下划线 (Ctrl+U)"><i class="fa text-base fa-underline"></i></a>
+            </div>
+            <div class="btn-group">
+              <a class="btn btn-sm btn-default" data-edit="insertunorderedlist" tooltip="无序列表"><i class="fa text-base fa-list-ul"></i></a>
+              <a class="btn btn-sm btn-default" data-edit="insertorderedlist" tooltip="有序列表"><i class="fa text-base fa-list-ol"></i></a>
+              <a class="btn btn-sm btn-default" data-edit="outdent" tooltip="减少行缩进 (Shift+Tab)"><i class="fa text-base fa-dedent"></i></a>
+              <a class="btn btn-sm btn-default" data-edit="indent" tooltip="增加行缩进 (Tab)"><i class="fa text-base fa-indent"></i></a>
+            </div>
+            <div class="btn-group">
+              <a class="btn btn-sm btn-default" data-edit="justifyleft" tooltip="左对齐 (Ctrl+L)"><i class="fa text-base fa-align-left"></i></a>
+              <a class="btn btn-sm btn-default" data-edit="justifycenter" tooltip="居中对齐 (Ctrl+E)"><i class="fa text-base fa-align-center"></i></a>
+              <a class="btn btn-sm btn-default" data-edit="justifyright" tooltip="右对齐 (Ctrl+R)"><i class="fa text-base fa-align-right"></i></a>
+              <a class="btn btn-sm btn-default" data-edit="justifyfull" tooltip="分散对齐 (Ctrl+J)"><i class="fa text-base fa-align-justify"></i></a>
+            </div>
+          </div>
+          <div ui-jq="wysiwyg" class="form-control h-auto" style="min-height:200px;">
+            嫂嫂，见信如晤&hellip;
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-lg-8 col-lg-offset-2">
+          <button class="btn btn-info w-xs">立即发送</button>
+          <button class="btn btn-warning w-xs">存为草稿</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

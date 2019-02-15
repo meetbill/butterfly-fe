@@ -1,0 +1,15 @@
+﻿<div class="modal-header">
+    <h3 class="modal-title">模式对话框!</h3>
+</div>
+<div class="modal-body">
+    <ul>
+        <li ng-repeat="item in items">
+            <a ng-click="selected.item = item">__ item __</a>
+        </li>
+    </ul>
+    选择的是: <b>__ selected.item __</b>
+</div>
+<div class="modal-footer">                  
+    <button class="btn btn-default" ng-click="cancel()">取消</button>
+    <button class="btn btn-primary" ng-click="ok()">确定</button>
+</div>

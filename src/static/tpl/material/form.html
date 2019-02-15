@@ -1,0 +1,231 @@
+﻿<div class="card" ng-controller="MDInputCtrl" >
+  <div class="card-heading">
+    <h2>表单的基础使用</h2>
+  </div>
+  <div class="card-body bg-dark">
+    <div class="row row-sm">
+      <div class="col-sm-6">
+        <div class="md-form-group">
+          <input class="md-input md-input-white" ng-model="user.title">
+          <label>标题</label>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="md-form-group">
+          <input class="md-input md-input-white" ng-model="user.email">
+          <label>邮箱</label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="row row-sm">
+      <div class="col-sm-12">
+        <div class="md-form-group">
+          <input class="md-input" disabled ng-model="user.company">
+          <label>公司(禁用)</label>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="md-form-group float-label">
+          <input class="md-input" ng-model="user.firstName" required>
+          <label>姓氏</label>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="md-form-group float-label">
+          <input class="md-input" ng-model="user.lastName" required>
+          <label>名字</label>
+        </div>
+      </div>
+      <div class="col-sm-12">
+        <div class="md-form-group">
+          <input class="md-input" ng-model="user.address">
+          <label>地址</label>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="md-form-group">
+          <input class="md-input" ng-model="user.city">
+          <label>城市</label>
+          <span class="md-input-msg right">30/30</span>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="md-form-group">
+          <input class="md-input" ng-model="user.state">
+          <label>国家</label>
+        </div>
+      </div>
+
+      <div class="col-sm-4">
+        <div class="md-form-group">
+          <input class="md-input" ng-model="user.postalCode">
+          <label>邮编</label>
+        </div>
+      </div>
+
+      <div class="col-sm-12">
+        <div class="md-form-group">
+          <textarea class="md-input" ng-model="user.biography" rows="4"></textarea>
+          <label>个人简介</label>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4">
+        <p>
+          <label class="md-check">
+            <input type="checkbox">
+            <i class="indigo"></i>
+            复选框
+          </label>
+        </p>
+        <p>
+          <label class="md-check">
+            <input type="checkbox" checked>
+            <i class="blue"></i>
+            选中的复选框
+          </label>
+        </p>
+        <p>
+          <label class="md-check">
+            <input type="checkbox" disabled>
+            <i class="indigo"></i>
+            禁用的复选框
+          </label>
+        </p>
+        <p>
+          <label class="md-check">
+            <input type="checkbox" checked disabled>
+            <i class="indigo"></i>
+            禁用但被选中的复选框
+          </label>
+        </p>
+        <p>
+          <label class="md-check">
+            <input type="checkbox">
+            <i class="pink"></i>
+            复选框颜色：粉色
+          </label>
+        </p>
+        <p>
+          <label class="md-check">
+            <input type="checkbox" checked>
+            <i class="green"></i>
+              复选框颜色：绿色
+          </label>
+        </p>
+        <p>
+          <label class="md-check">
+            <input type="checkbox" checked>
+            <i class="teal no-icon"></i>
+            没有图标的复选框
+          </label>
+        </p>
+      </div>
+      <div class="col-sm-4">
+        <p>
+          <label class="md-check">
+            <input type="radio" name="radio">
+            <i class="indigo"></i>
+            单选框
+          </label>
+        </p>
+        <p>
+          <label class="md-check">
+            <input type="radio" name="radio" checked>
+            <i class="blue"></i>
+            选中的单选框
+          </label>
+        </p>
+        <p>
+          <label class="md-check">
+            <input type="radio" name="a" disabled>
+            <i class="indigo"></i>
+            禁用的单选框
+          </label>
+        </p>
+        <p>
+          <label class="md-check">
+            <input type="radio" name="a" checked disabled>
+            <i class="indigo"></i>
+            禁用但被选中的单选框
+          </label>
+        </p>
+        <p>
+          <label class="md-check">
+            <input type="radio" name="radio">
+            <i class="pink"></i>
+            单选框颜色：粉色
+          </label>
+        </p>
+        <p>
+          <label class="md-check">
+            <input type="radio" checked name="b">
+            <i class="green"></i>
+            单选框颜色：绿色
+          </label>
+        </p>
+        <p>
+          <label class="md-check">
+            <input type="radio" name="b">
+            <i class="teal no-icon"></i>
+            没有图标的单选框
+          </label>
+        </p>
+      </div>
+      <div class="col-sm-4">
+        <p>
+          <label class="md-switch">
+            <input type="checkbox">
+            <i class="indigo"></i>
+            开关
+          </label>
+        </p>
+        <p>
+          <label class="md-switch">
+            <input type="checkbox" checked>
+            <i class="blue"></i>
+            打开的开关
+          </label>
+        </p>
+        <p>
+          <label class="md-switch">
+            <input type="checkbox" disabled>
+            <i class="blue"></i>
+            禁用的开关
+          </label>
+        </p>
+        <p>
+          <label class="md-switch">
+            <input type="checkbox" checked disabled>
+            <i class="blue"></i>
+            禁用但是打开的开关
+          </label>
+        </p>
+        <p>
+          <label class="md-switch">
+            <input type="checkbox">
+            <i class="pink"></i>
+            开关颜色：粉色
+          </label>
+        </p>
+        <p>
+          <label class="md-switch">
+            <input type="radio" name='switch' checked>
+            <i class="green"></i>
+            Switch: radio 1
+          </label>
+        </p>
+        <p>
+          <label class="md-switch">
+            <input type="radio" name='switch'>
+            <i class="orange"></i>
+            Switch: radio 2
+          </label>
+        <p>
+      </div>
+    </div>
+  </div>
+</div>

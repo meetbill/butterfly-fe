@@ -1,0 +1,145 @@
+﻿<!-- hbox layout -->
+<div class="hbox hbox-auto-xs bg-light " ng-controller="JVectorMapDemoCtrl" ng-init="
+  app.settings.asideFolded = true;
+  app.settings.asideDock = false;
+  app.settings.container = false;
+  app.hideAside = true" 
+  >
+  <!-- column -->
+  <div class="col item">
+    <div ui-jq="vectorMap" class="h-full" style="min-height:240px;" ui-options="{
+      map: 'us_aea_en',
+      markers: __usa_markers__,
+      normalizeFunction: 'polynomial',
+      backgroundColor: 'transparent',
+      zoomMin: 0.5,            
+      regionsSelectable: true,
+      markersSelectable: true,
+      regionsSelectableOne: true,
+      markersSelectableOne: true,
+      focusOn: {
+        x:0,
+        y:0,
+        scale: 0.6
+      },
+      series: {
+        markers: [{
+          attribute: 'r',
+          scale: [5, 15],
+          values: [
+            100.70,
+            255.16,
+            310.69,
+            605.17,
+            248.31,
+            107.35,
+            217.22
+          ]
+        }]
+      },
+      regionStyle: {
+        initial: {
+          fill: '#dde6e9',
+          stroke: '#edf1f2',
+          'stroke-width': 2,
+          'stroke-opacity': 1
+        },
+        hover: {
+          fill: '#fff'
+        },
+        selected: {
+          fill: '__app.color.info__'
+        },
+      },
+      markerStyle: {
+        initial: {
+          fill: '__app.color.info__',
+          stroke: '#fff',
+          r: 10
+        },
+        hover: {
+          stroke: '#fff'
+        },
+        selected: {
+          fill: '__app.color.warning__'
+        }
+      }
+    }">
+    </div>
+    <div class="top" style="top:20px;left:60px">
+      <div class="panel no-border w-md">
+        <div class="panel-heading ">
+          <a href class="pull-right" ng-click="isCollapsed = !isCollapsed" ui-toggle-class>
+            <i class="fa fa-angle-up text"></i>
+            <i class="fa fa-angle-down text-active"></i>
+          </a>
+          <span class="font-bold">标注详情</span>
+        </div>
+        <div collapse="isCollapsed">
+          <div class="panel-body bg-light lter">
+            <div class="scrollable" style="max-height:110px" ui-jq="slimScroll" ui-options="{height:'110px', size:'6px'}">
+              <p>
+                  人的生活方式有两种，
+                  第一种方式是像草一样活着，
+                  你尽管活着，每年还在成长，
+                  但是你毕竟是一棵草，
+                  你吸收雨露阳光，
+                  但是长不大。
+                  人们可以踩过你，
+                  但是人们不会因为你的痛苦，而他产生痛苦；
+                  人们不会因为你被踩了，而来怜悯你，
+                  因为人们本身就没有看到你。
+                  所以我们每一个人，
+                  都应该像树一样的成长，
+                  即使我们现在什么都不是，
+                  但是只要你有树的种子，
+                  即使你被踩到泥土中间，
+                  你依然能够吸收泥土的养分，
+                  自己成长起来。
+                  当你长成参天大树以后，
+                  遥远的地方，人们就能看到你；
+                  走近你，你能给人一片绿色。
+                  活着是美丽的风景，
+                  死了依然是栋梁之才，
+                  活着死了都有用。
+                  这就是我们每一个同学做人的标准和成长的标准。 
+              </p>
+            </div>
+          </div>
+          <div class="panel-footer">
+            <i class="fa fa-fw m-r-xs text-info fa-bookmark"></i><span class="font-bold">37</span>
+            <i class="fa fa-fw m-r-xs text-info fa-star m-l"></i><span class="font-bold">120</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bottom text-right w-full">
+      <small class="text-muted wrapper-sm block">Data @ naturalearthdata.com.</small>
+    </div>
+  </div>
+  <!-- /column -->
+
+  <!-- column -->
+  <div class="col w-md lter b-l">
+    <div class="vbox">
+      <div class="wrapper b-b b-light">地图</div>
+      <div class="row-row">
+        <div class="cell">
+          <div class="cell-inner">
+            <div class="wrapper-md">
+              这是一个滚动容器
+              <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>
+              你已经滚到底了
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="wrapper b-t b-light text-center">
+        <p>底部，按内容适应高度</p>
+        <a href class="btn btn-info">创建标注</a>
+      </div>
+    </div>
+  </div>
+  <!-- /column -->
+</div>
+<!-- /hbox layout -->

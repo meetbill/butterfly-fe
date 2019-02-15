@@ -1,0 +1,177 @@
+﻿<div class="bg-light lter b-b wrapper-md">
+  <h1 class="m-n font-thin h3">下拉框 <kbd class="pull-right">UI Selects</kbd></h1>
+</div>
+<div class="wrapper-md">
+  <form class="form-horizontal">
+    <fieldset>
+      <div class="form-group">
+        <label class="col-sm-3 control-label text-left">从谷歌API中选择地址</label>
+        <div class="col-sm-6">
+          <ui-select ng-model="address.selected"
+                     theme="bootstrap"
+                     ng-disabled="disabled"
+                     reset-search-input="false"
+                     style="width: 300px;">
+            <ui-select-match placeholder="请输入地址... (这尼玛需要连接谷歌...)">__$select.selected.formatted_address__</ui-select-match>
+            <ui-select-choices repeat="address in addresses track by $index"
+                     refresh="refreshAddresses($select.search)"
+                     refresh-delay="0">
+              <div ng-bind-html="address.formatted_address | highlight: $select.search"></div>
+            </ui-select-choices>
+          </ui-select>
+          <span class="help-block">__address.selected.formatted_address__</span>
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <label class="col-sm-3 control-label text-left">基础下拉框</label>
+        <div class="col-sm-6">
+
+          <ui-select ng-model="person.selected" theme="bootstrap">
+            <ui-select-match placeholder="选择或者搜索一个联系人...">__$select.selected.zh_name__</ui-select-match>
+            <ui-select-choices repeat="item in people | filter: $select.search">
+              <div ng-bind-html="item.zh_name | highlight: $select.search"></div>
+              <small ng-bind-html="item.email | highlight: $select.search"></small>
+            </ui-select-choices>
+          </ui-select>
+
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-sm-3 control-label text-left">下拉框带分组，按国家</label>
+        <div class="col-sm-6">
+
+          <ui-select ng-model="person.selected" theme="bootstrap">
+            <ui-select-match placeholder="选择或者搜索一个联系人...">__$select.selected.zh_name__</ui-select-match>
+            <ui-select-choices group-by="'country'" repeat="item in people | filter: $select.search">
+              <span ng-bind-html="item.zh_name | highlight: $select.search"></span>
+              <small ng-bind-html="item.email | highlight: $select.search"></small>
+            </ui-select-choices>
+          </ui-select>
+
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-sm-3 control-label text-left">下拉框带分组，按年龄</label>
+        <div class="col-sm-6">
+
+          <ui-select ng-model="person.selected" theme="bootstrap" ng-disabled="disabled" style="min-width: 300px;">
+            <ui-select-match placeholder="选择或者搜索一个联系人...">__$select.selected.zh_name__</ui-select-match>
+            <ui-select-choices group-by="'age'" repeat="person in people | propsFilter: {name: $select.search, age: $select.search}">
+              <div ng-bind-html="person.zh_name | highlight: $select.search"></div>
+              <small>
+                邮箱: __person.email__
+                年龄: <span ng-bind-html="''+person.age | highlight: $select.search"></span>
+              </small>
+            </ui-select-choices>
+          </ui-select>
+
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-sm-3 control-label text-left">下拉框带分组，按函数</label>
+        <div class="col-sm-6">
+
+          <ui-select ng-model="person.selected" theme="bootstrap" ng-disabled="disabled" style="min-width: 300px;">
+            <ui-select-match placeholder="选择或者搜索一个联系人...">__$select.selected.zh_name__</ui-select-match>
+            <ui-select-choices group-by="someGroupFn" repeat="person in people | propsFilter: {name: $select.search, age: $select.search}">
+              <div>
+                <span ng-bind-html="person.zh_name | highlight: $select.search"></span>
+                <span ng-bind-html="person.name | highlight: $select.search"></span>
+              </div>
+              <small>
+                email: __person.email__
+                age: <span ng-bind-html="''+person.age | highlight: $select.search"></span>
+              </small>
+            </ui-select-choices>
+          </ui-select>
+
+        </div>
+      </div>        
+
+      <div class="form-group">
+        <label class="col-sm-3 control-label text-left">附带一个清除按钮</label>
+        <div class="col-sm-6">
+          <div class="input-group">
+
+            <ui-select ng-model="person.selected" theme="bootstrap">
+              <ui-select-match placeholder="选择或者搜索一个联系人...">__$select.selected.zh_name__</ui-select-match>
+              <ui-select-choices repeat="item in people | filter: $select.search">
+                <span ng-bind-html="item.zh_name | highlight: $select.search"></span>
+                <small ng-bind-html="item.email | highlight: $select.search"></small>
+              </ui-select-choices>
+            </ui-select>
+
+            <span class="input-group-btn">
+              <button ng-click="person.selected = undefined" class="btn btn-default">
+                <span class="glyphicon glyphicon-trash"></span>
+              </button>
+            </span>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-sm-3 control-label text-left">多选下拉框</label>
+        <div class="col-sm-6">
+
+          <ui-select multiple ng-model="multipleDemo.selectedPeopleWithGroupBy" theme="bootstrap" ng-disabled="disabled">
+            <ui-select-match placeholder="请选择联系人...">__$item.zh_name__ &lt;__$item.email__&gt;</ui-select-match>
+            <ui-select-choices group-by="someGroupFn" repeat="person in people | propsFilter: {name: $select.search, age: $select.search}">
+              <div ng-bind-html="person.zh_name | highlight: $select.search"></div>
+              <small>
+                邮箱: __person.email__
+                年龄: <span ng-bind-html="''+person.age | highlight: $select.search"></span>
+              </small>
+            </ui-select-choices>
+          </ui-select>
+
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-sm-3 control-label text-left">禁用下拉框</label>
+        <div class="col-sm-6">
+
+          <ui-select ng-model="person.selected" theme="bootstrap" ng-disabled="true">
+            <ui-select-match placeholder="选择或者搜索一个联系人...">__$select.selected.zh_name__</ui-select-match>
+            <ui-select-choices repeat="item in people | filter: $select.search">
+              <div ng-bind-html="item.zh_name | highlight: $select.search"></div>
+              <small ng-bind-html="item.email | highlight: $select.search"></small>
+            </ui-select-choices>
+          </ui-select>
+
+        </div>
+      </div>
+
+        <!-- ajax下拉框 -->
+        <div class="form-group">
+            <label class="col-sm-3 control-label text-left">Ajax下拉框</label>
+            <div class="col-sm-6">
+                <div class="input-group">
+                    <ui-select ng-model="student.selected" theme="bootstrap">
+                        <ui-select-match placeholder="官方的ajax示例居然要连谷歌，那我还是另写一个示例吧">__$select.selected.name__</ui-select-match>
+                        <ui-select-choices repeat="stu in students track by $index"
+                                           refresh="refreshStudents($select.search)"
+                                           refresh-delay="0">
+                            <div ng-bind-html="stu.name | highlight: $select.search"></div>
+                        </ui-select-choices>
+                    </ui-select>
+                    <span class="input-group-btn">
+                        <button ng-click="student.selected = undefined" class="btn btn-default">
+                            <span class="glyphicon glyphicon-trash"></span>
+                        </button>
+                    </span>
+                </div>
+                <span class="help-block">你选择的是：__student.selected | json__</span>
+            </div>
+        </div>
+
+    </fieldset>
+  </form>
+</div>

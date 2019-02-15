@@ -1,0 +1,143 @@
+﻿{
+  "mails":[
+    {
+      "id": 10,
+      "subject": "ATM机让我读：“取中”",
+      "from": "james@gmail.com",
+      "avatar": "static/img/a10.jpg",
+      "to":[
+        {"name":"Mogen", "email":"mogen.abc@hotmail.com"}
+      ],
+      "content":"第一次去ATM取钱，操作完成之后，显示“读取中”，我害羞的看着四周，很不好意思的念出：“取中”，很好奇，取个钱，为什么要读“取中”，如果我不读“取中”，ATM还会给钱给我吗？一直很好奇。",
+      "attach":[
+        {"name":"c1.jpg", "url":"static/img/c1.jpg"},
+        {"name":"c3.jpg", "url":"static/img/c3.jpg"}
+      ],
+      "date":"12:20 7/23/2014",
+      "label":"angular",
+      "fold":"important"
+    },
+    {
+      "id": 9,
+      "subject": "韩国人有着吃泡菜的传统",
+      "from": "james@gmail.com",
+      "avatar": "static/img/a9.jpg",
+      "to":[
+        {"name":"Mogen", "email":"mogen.abc@hotmail.com"}
+      ],
+      "content":"作为一个吃货，在这里我要普及一个知识，不是玩笑，真是只是。说实在的，我实在无法理解，为什么韩国人那么喜欢吃泡菜，虽然我承认我也喜欢吃，对吧，口感清脆，又酸又甜又辣，最重要的是便宜，就是这样一个东西，他们就是顿顿离不了，他们不管吃什么都有泡菜，所以我劝所有童鞋，如果能不吃泡菜就不吃泡菜，因为腌制的食品都是致癌的，这就是为什么我们在看韩剧的时候，往往两个人刚在一起，过不了多久一个人就会得上绝症，好多人不理解，说这是狗血，其实不是，这是泡菜。",
+      "date":"12:20 7/23/2014",
+      "label":"bootstrap",
+      "fold":"important"
+    },
+    {
+      "id": 8,
+      "subject": "跟别人家的沙发撞衫了",
+      "from": "jessica@gmail.com",
+      "avatar": "static/img/a1.jpg",
+      "to":[
+        {"name":"Mogen", "email":"mogen.abc@hotmail.com"}
+      ],
+      "content":"老婆，今儿这是怎么了，闷闷不乐的！老婆：撞衫了。我：你平常不是不太在乎这事嘛？老婆：你是不知道，跟人撞衫也就算了！我跟别人家的沙发撞衫了！我今天穿这衣服跟别人家那沙发颜色一模一样！我：人你都不在乎，沙发你在乎什么？老婆：你是不知道，我跟别人家的沙发这么一撞衫，一个小伙子，光！一屁股就坐我身上！",
+      "attach":[
+        {"name":"c0.jpg", "url":"static/img/c0.jpg"}
+      ],
+      "date":"16:20 7/22/2014",
+      "label":"angular",
+      "fold":"important"
+    },
+    {
+      "id": 7,
+      "subject": "现在小学三年级的数学题真难",
+      "from": "lucy@hotmail.com",
+      "avatar": "static/img/a2.jpg",
+      "to":[
+        {"name":"Mogen", "email":"mogen.abc@hotmail.com"}
+      ],
+      "content":"现在小学三年级的数学题可真难啊，昨天看到侄子的暑假作业有一道逻辑推理题，想了半天都没有想出答 案，求各位解救： 986F、875E、764D、 653C、____、431A，请问 横线处该填什么呢？真心求解答...",
+      "date":"10:20 7/22/2014",
+      "label":"angular",
+      "fold":"sent",
+      "state":"unread"
+    },
+    {
+      "id": 6,
+      "subject": "白色瓷杯",
+      "from": "Jobs@jobhunter.com",
+      "avatar": "static/img/a3.jpg",
+      "to":[
+        {"name":"Mogen", "email":"mogen.abc@hotmail.com"}
+      ],
+      "content":"小沙弥问正在打坐的老僧:“师父，何处有慈悲?” 老僧抬起右手，指了指门外，闭目不发一言。 小沙弥顿悟了：原来世间众生万物，无论是达官贵人，贩夫走卒，还是花鸟虫鱼，一草一木，处处皆有慈悲啊。 老僧看小沙弥站那里不动，便说：“门外桌子上，白色的那个就是瓷杯！”",
+      "date":"3:20 7/22/2014",
+      "label":"client",
+      "fold":"starred",
+      "state":"unread"
+    },
+    {
+      "id": 5,
+      "subject": "天气好冷，冻的我的手好冷!",
+      "from": "Peter@microsoft.com",
+      "avatar": "static/img/a4.jpg",
+      "to":[
+        {"name":"Mogen", "email":"mogen.abc@hotmail.com"}
+      ],
+      "content":"今天早上天气很冷，我朋友去提款机取钱。正好遇见运钞车来加钞，无奈之下我俩只好站在一旁苦苦等候，这时朋友问我：＂冻手不？＂我冷冷的回一句：＂冻手。＂结果我俩差点悲剧，四杆枪瞬间指向我们。。。  ",
+      "date":"2:20 7/22/2014",
+      "label":"",
+      "fold":"sent"
+    },
+    {
+      "id": 4,
+      "subject": "家庭卫生，人人有责",
+      "from": "newsletter@yahoo.com",
+      "avatar": "static/img/a5.jpg",
+      "to":[
+        {"name":"Mogen", "email":"mogen.abc@hotmail.com"}
+      ],
+      "content":"妇女搞家庭卫生搞得有点烦了！于是，在家庭小黑板上写下“家庭卫生，人人有责”.八个字。中午，儿子放学后，妇女发现黑板上变成了“家庭卫生，大人有责”。晚上，丈夫下班后，妇女发现黑板上变成了“家庭卫生，夫人有责”。。。",
+      "date":"1:20 7/22/2014",
+      "label":"work",
+      "fold":"starred"
+    },
+    {
+      "id": 3,
+      "subject": "在很久很久以前...",
+      "from": "ad@advent.com",
+      "avatar": "static/img/a6.jpg",
+      "to":[
+        {"name":"Mogen", "email":"mogen.abc@hotmail.com"}
+      ],
+        "content": "从前,有个王子被施了魔法,一年只能说一个字,但是如果得到公主的爱就可以解除魔法,王子5年没说话,终于攒够了5个字,他来到公主面前,鼓起勇气对她说:公主我爱你.公主只说了一个字,王子立即晕到,大家猜是什么字？ ...... 公主说：啥？",
+      "date":"4:20 7/21/2014",
+      "label":"",
+      "fold":"starred"
+    },
+    {
+      "id": 2,
+      "subject": "狗狗很有眼力劲嘛!",
+      "from": "help@helpdesk.com",
+      "avatar": "static/img/a7.jpg",
+      "to":[
+        {"name":"Mogen", "email":"mogen.abc@hotmail.com"}
+      ],
+      "content":"在路边遇见一只狗狗，我蹲下问它：“我明年的桃花运会不会很旺呢？”它考虑了一下说“旺！”",
+      "date":"6:20 7/15/2014",
+      "label":"",
+      "fold":"trash"
+    },
+    {
+      "id": 1,
+      "subject": "致富的秘密",
+      "from": "developer@apple.com",
+      "avatar": "static/img/a8.jpg",
+      "to":[
+        {"name":"Mogen", "email":"mogen.abc@hotmail.com"}
+      ],
+      "content":"一个孩子问一个富人。孩子：你怎么那么有钱？富人：在我像你那么小的时候我爸爸给了我一个苹果。孩子：然后呢？富人：我把一个苹果卖了。又买了2个苹果，之后又卖了2个苹果。买来了4个苹果。孩子：我好像有点懂了。富人：你懂个P啊。之后我爸爸死了，我继承了他所有的遗产",
+      "date":"18:00 6/15/2014",
+      "label":"work",
+      "fold":"starred"
+    }
+  ]
+}

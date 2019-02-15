@@ -1,0 +1,183 @@
+﻿<div class="hbox hbox-auto-xs hbox-auto-sm">
+  <!-- .col -->
+  <div class="col w-lg bg-light dk b-r bg-auto" id="aside">
+    <div class="wrapper bg b-b">
+      <h3 class="m-n font-thin">时间轴 <kbd class="pull-right">Timeline</kbd></h3>
+    </div>
+      <div class="wrapper">
+          <button class="btn btn-sm btn-success pull-right" ui-toggle-class="timeline-center" target=".timeline">居中</button>
+      </div>
+    <div class="wrapper">
+      <form>
+        <div class="form-group">
+          <label>事件名称</label>
+          <input type="text" placeholder="请输入事件名称" class="input-sm form-control">
+        </div>
+        <div class="form-group">
+          <label>发生日期</label>
+          <input type="text" placeholder="请输入发生日期" class="input-sm form-control">
+        </div>
+        <div class="form-group">
+          <label>发生时间</label>
+          <input type="text" placeholder="例如 21:00" class="input-sm form-control">
+        </div>
+        <div class="form-group">
+          <label>事件类型</label>
+          <div>
+            <div class="btn-group dropdown" dropdown>
+              <button class="btn btn-sm btn-default dropdown-toggle" dropdown-toggle>
+                <span class="dropdown-label">选择事件类型</span> 
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu">
+                <li><a href>旅行</a></li>
+                <li><a href>打电话</a></li>
+                <li><a href>会议</a></li>
+                <li><a href>约会</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="m-t-md m-b-md"><button class="btn btn-sm btn-primary">添加一个事件</button></div>
+          <div class="panel panel-default">
+              <div class="panel-body">
+                注意：这仅仅是一个界面演示，并没有功能实现，所以当你点击“添加一个事件”时，没有任何反应是正常的，这不是BUG。
+              </div>
+          </div>
+      </form>
+    </div>
+  </div>
+  <!-- /.col -->
+  <!-- .col -->
+  <div class="col">
+    <div class="wrapper">
+      <ul class="timeline">
+        <li class="tl-header">
+          <div class="btn btn-info">现在</div>
+        </li>
+        <li class="tl-item">
+          <div class="tl-wrap b-info">
+            <span class="tl-date">5 秒前</span>
+            <div class="tl-content">
+              仅仅是个标题
+            </div>
+          </div>
+        </li>
+        <li class="tl-item">
+          <div class="tl-wrap">
+            <span class="tl-date">2 小时前</span>
+            <div class="tl-content panel padder b-a">
+              <span class="arrow left pull-up"></span>
+              <div>内容出现在面板中</div>
+            </div>
+          </div>
+        </li>
+        <li class="tl-item tl-left">
+          <div class="tl-wrap b-success">
+            <span class="tl-date">7:30 上午</span>
+            <div class="tl-content panel bg-success padder">
+              <span class="arrow arrow-success left pull-up hidden-left"></span>
+              <span class="arrow arrow-success right pull-up visible-left"></span>
+              <div class="text-lt">哦! 有颜色</div>
+            </div>
+          </div>
+        </li>
+        <li class="tl-item">
+          <div class="tl-wrap b-primary">
+            <span class="tl-date">2017/04</span>
+            <div class="tl-content panel padder b-a w-md w-auto-xs">
+              <span class="arrow left pull-up"></span>
+              <div class="text-lt m-b-sm">这里写标题</div>
+              <div class="panel-body pull-in b-t b-light">
+                <a href="" class="thumb pull-right m-l m-t-xs avatar">
+                  <img src="static/img/a4.jpg" alt="...">
+                  <i class="on md b-white bottom"></i>
+                </a>
+                <div class="clear">
+                  <a href="" class="text-primary block m-b-xs">@尼古拉斯·赵四 <i class="icon-twitter"></i></a>
+                  <a href="" class="btn btn-addon btn-sm btn-primary m-t-xs"><i class="fa fa-eye"></i> 关注</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="tl-item tl-left">
+          <div class="tl-wrap b-primary">
+            <span class="tl-date">2017/04</span>
+            <div class="tl-content panel padder b-a block">
+              <span class="arrow left pull-up hidden-left"></span>
+              <span class="arrow right pull-up visible-left"></span>
+              <div class="text-lt m-b-sm">一个大面板，可以放置一大块内容</div>
+              <div class="panel-body pull-in b-t b-light">
+                <p>我正在开发一个非常神奇的应用，它将很快上线。额...这只是一个小玩笑，不用当真。 </p>
+                <div class="m-b m-t">                  
+                  <a href class="avatar thumb-xs m-r-xs">
+                    <img src="static/img/a7.jpg" alt="...">
+                    <i class="on b-white left"></i>
+                  </a>
+                  <a href class="avatar thumb-xs m-r-xs">
+                    <img src="static/img/a8.jpg" alt="...">
+                    <i class="busy b-white left"></i>
+                  </a>
+                  <a href class="avatar thumb-xs m-r-xs">
+                    <img src="static/img/a9.jpg" alt="...">
+                    <i class="away b-white left"></i>
+                  </a>
+                  <a href class="avatar thumb-xs m-r-xs">
+                    <img src="static/img/a10.jpg" alt="...">
+                    <i class="on b-white left"></i>
+                  </a>
+                  <a href class="btn btn-success btn-rounded font-bold"> +152 </a>
+                  <span class="h5 m-l-sm">已关注</span>              
+                </div>
+                <div class="panel panel-default m-t-md m-b-n-sm pos-rlt">
+                  <span class="arrow top pull-left"></span>
+                  <form>
+                    <textarea class="form-control no-border" rows="3" placeholder="你的评论..."></textarea>
+                  </form>
+                  <div class="panel-footer bg-light lter">
+                    <button class="btn btn-info pull-right btn-sm">评论</button>
+                    <ul class="nav nav-pills nav-sm">
+                      <li><a href><i class="fa fa-camera text-muted"></i></a></li>
+                      <li><a href><i class="fa fa-video-camera text-muted"></i></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>             
+            </div>
+          </div>
+        </li>
+        <li class="tl-header">
+          <div class="btn btn-sm btn-default btn-rounded">2017年</div>
+        </li>
+        <li class="tl-item">
+          <div class="tl-wrap">
+            <span class="tl-date">2016/10/08</span>
+            <div class="tl-content panel padder b-a">
+              <span class="arrow left pull-up hidden-left"></span>
+              <span class="arrow right pull-up visible-left"></span>
+              <div class="text-lt">一个好听的故事</div>
+            </div>
+          </div>
+        </li>
+        <li class="tl-header">
+          <div class="btn btn-icon btn-rounded btn-default"><i class="fa fa-wechat"></i></div>
+        </li>
+        <li class="tl-item tl-left">
+          <div class="tl-wrap b-white">
+            <span class="tl-date">2016/05/07</span>
+            <div class="tl-content panel padder b-a">
+              <span class="arrow left pull-up hidden-left"></span>
+              <span class="arrow right pull-up visible-left"></span>
+              <div class="text-lt">昨天已成为历史</div>
+            </div>
+          </div>
+        </li>
+        <li class="tl-header">
+          <div class="btn btn-sm btn-default btn-rounded">更多</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- /.col -->            
+</div>

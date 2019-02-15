@@ -1,0 +1,33 @@
+﻿<md-dialog aria-label="Mango (Fruit)">
+  <md-subheader class="md-sticky-no-effect">阅读文章填空 (10分)</md-subheader>
+  <md-content class="wrapper-md">
+    
+    <p>
+        一个人骑着骆驼走在沙漠的公路上，她觉得非常热，很想在有空调的车里面凉快一下，不就，她终于拦到一辆车：<br />
+        “我非常热，想凉快一下，你能否载我一程？”<br />
+        "没有问题，不过你的骆驼怎么办？<br />
+        "它不会有什么问题，它会跟在后面跑的。"<br />
+        车主将信将疑，他把车开到60公里时，看见骆驼很轻松得泡着；<br />
+        他加大油门到80公里时，骆驼还是很悠闲得跟着；<br />
+        车主想看看骆驼到底有多大的本事，于是提速到120公里时，这时候，他看见骆驼把舌头伸了出来。<br />
+        “你的骆驼是不是累得不行了？它把舌头伸出来了.”<br />
+        “真的么？它的舌头伸向哪边？”<br />
+        “<span class="text-u-l text-danger" tooltip="请填空!">&nbsp;　&nbsp;　&nbsp;　&nbsp;</span>”<br />
+        “你吧车往右边开以点，我的骆驼要超车了。”
+    </p>
+  </md-content>
+
+  <div class="md-actions" layout="row">
+    <md-button href hide show-md>
+      浏览更多趣味题
+    </md-button>
+    <span flex></span>
+    <md-button ng-click="answer('左边')">
+        左边
+    </md-button>
+    <md-button ng-click="answer('右边')" class="md-primary">
+        右边
+    </md-button>
+  </div>
+
+</md-dialog>

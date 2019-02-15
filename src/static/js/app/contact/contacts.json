@@ -1,0 +1,158 @@
+﻿{
+  "items":[
+    {
+      "group" : "亲人",
+      "first": "貂蝉",
+      "last": "",
+      "company": "",
+      "mobile": "121 364 135",
+      "home": "(021) 1234 8755",
+      "work": "(021) 9000 9877",
+      "note": "",
+      "avatar": "static/img/a3.jpg"
+    },
+    {
+      "group" : "朋友",
+      "first": "张辽",
+      "last": "(文远)",
+      "company": "",
+      "mobile": "102 394 821",
+      "home": "(021) 9876 9485",
+      "work": "(021) 2130 3049",
+      "note": "",
+      "avatar": "static/img/a0.jpg"
+    },
+    {
+       "group" : "亲人",
+      "first": "王允",
+      "last": "(子师)",
+      "company": "汉室集团",
+      "mobile": "100 364 135",
+      "home": "(021) 1234 8755",
+      "work": "(021) 9000 9877",
+      "note": "",
+      "avatar": "static/img/a1.jpg"
+    },
+    {
+      "group" : "对手",
+      "first": "刘备",
+      "last": "(玄德)",
+      "company": "汉室集团",
+      "mobile": "324 123 123",
+      "home": "(021) 1234 8755",
+      "work": "(021) 9000 9877",
+      "note": "",
+      "avatar": "static/img/a2.jpg"
+    },
+    {
+      "group" : "对手",
+      "first": "关羽",
+      "last": "(云长)",
+      "company": "",
+      "mobile": "765 434 565",
+      "home": "(021) 1234 8755",
+      "work": "(021) 9000 9877",
+      "note": "",
+      "avatar": "static/img/a4.jpg"
+    },
+    {
+      "group" : "同事",
+      "first": "高顺",
+      "last": "",
+      "company": "",
+      "mobile": "432 364 455",
+      "home": "(021) 1234 8755",
+      "work": "(021) 9000 9877",
+      "note": "",
+      "avatar": "static/img/a5.jpg"
+    },
+    {
+      "group" : "对手",
+      "first": "张飞",
+      "last": "(翼德)",
+      "company": "",
+      "mobile": "433 364 234",
+      "home": "(021) 1234 8755",
+      "work": "(021) 9000 9877",
+      "note": "",
+      "avatar": "static/img/a6.jpg"
+    },
+    {
+      "group" : "同事",
+      "first": "侯成",
+      "last": "",
+      "company": "",
+      "mobile": "332 431 223",
+      "home": "(021) 1234 8755",
+      "work": "(021) 9000 9877",
+      "note": "",
+      "avatar": "static/img/a7.jpg"
+    },
+    {
+      "group" : "同事",
+      "first": "宋宪",
+      "last": "",
+      "company": "",
+      "mobile": "543 453 890",
+      "home": "(021) 1234 8755",
+      "work": "(021) 9000 9877",
+      "note": "",
+      "avatar": "static/img/a8.jpg"
+    },
+    {
+      "group" : "对手",
+      "first": "曹操",
+      "last": "(孟德)",
+      "company": "",
+      "mobile": "656 565 789",
+      "home": "(021) 1234 8755",
+      "work": "(021) 9000 9877",
+      "note": "",
+      "avatar": "static/img/a9.jpg"
+    },
+    {
+      "group" : "老板",
+      "first": "丁原",
+      "last": "(建阳)",
+      "company": "",
+      "mobile": "434 987 898",
+      "home": "(021) 1234 8755",
+      "work": "(021) 9000 9877",
+      "note": "",
+      "avatar": "static/img/a8.jpg"
+    },
+    {
+      "group" : "老板",
+      "first": "董卓",
+      "last": "(仲颖)",
+      "company": "",
+      "mobile": "098 888 897",
+      "home": "(021) 1234 8755",
+      "work": "(021) 9000 9877",
+      "note": "",
+      "avatar": "static/img/a8.jpg"
+    },
+    {
+      "group" : "朋友",
+      "first": "赤兔马",
+      "last": "",
+      "company": "",
+      "mobile": "854 656 879",
+      "home": "(021) 1234 8755",
+      "work": "(021) 9000 9877",
+      "note": "我的战马，犹如我的朋友",
+      "avatar": "static/img/a8.jpg"
+    },
+    {
+      "group" : "朋友",
+      "first": "方天画戟",
+      "last": "",
+      "company": "",
+      "mobile": "854 656 879",
+      "home": "(021) 1234 8755",
+      "work": "(021) 9000 9877",
+      "note": "我的兵刃，中原第一，赐予我一夫当关之勇",
+      "avatar": "static/img/a8.jpg"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+﻿<div class="bg-light lter b-b wrapper-md">
+  <h1 class="m-n font-thin h3">uiGrid 网格组件 <kbd class="pull-right">uiGrid</kbd></h1>
+</div>
+<div class="wrapper-md" ng-controller="UiGridDemoCtrl">
+
+    <div class="panel panel-default">
+        <div class="panel-body">
+            
+        </div>
+        <div class="panel-body">
+            <p>
+                <code>uiGrid</code> 是 AngularJS 为基础的一种网格控件，他的名气较大，大到像 jquery、bootstrap、angularjs 一样，已经大到不适合翻译为中文名称了。 <br />
+            </p>
+            <p>
+                这个页面并没有什么代码可以学习，要学习该控件如何使用，请查看关键脚本文件 <span class="text-danger-dk">src\controllers\uigrid.js</span> <br />
+                或者查看官方文档：<a class="text-danger-dk" href="http://ui-grid.info/" target="_blank">http://ui-grid.info/</a>
+            </p>
+        </div>
+    </div>
+
+  <h4>基础示例</h4>
+    <div class="table-responsive m-b-lg">
+      <div ui-grid="gridOptionsSimple"></div>
+    </div>
+
+  <h4>复杂示例</h4>
+	<div class="table-responsive">
+	  <div ui-grid="gridOptionsComplex" ui-grid-edit ui-grid-resize-columns ></div>
+	</div>
+</div>

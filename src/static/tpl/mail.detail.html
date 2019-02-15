@@ -1,0 +1,74 @@
+﻿<div ng-controller="MailDetailCtrl">
+  <!-- header -->
+  <div class="wrapper bg-light lter b-b">
+    <a ui-sref="app.mail.list" class="btn btn-sm btn-default w-xxs m-r-sm" tooltip="返回"><i class="fa fa-long-arrow-left"></i></a>
+    <div class="btn-group pos-stc m-r-sm">
+      <button class="btn btn-sm btn-default w-xxs w-auto-xs" tooltip="存档"><i class="fa fa-archive"></i></button>
+      <button class="btn btn-sm btn-default w-xxs w-auto-xs" tooltip="举报"><i class="fa fa-exclamation-circle"></i></button>
+      <button class="btn btn-sm btn-default w-xxs w-auto-xs" tooltip="删除"><i class="fa fa-trash-o"></i></button>
+    </div>
+    <div class="btn-group pos-stc">
+      <div class="btn-group dropdown" dropdown>
+        <button class="btn btn-sm btn-default w-xxs w-auto-xs dropdown-toggle" 
+                dropdown-toggle tooltip="移动到">
+          <i class="fa fa-fw fa-folder"></i> <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+          <li><a href>废件信箱</a></li>
+          <li><a href>广告邮件</a></li>
+        </ul>
+      </div>
+      <div class="btn-group dropdown" dropdown>
+        <button class="btn btn-sm btn-default w-xxs w-auto-xs dropdown-toggle" 
+                dropdown-toggle tooltip="标记为">
+          <i class="fa fa-fw fa-tag"></i> <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+          <li ng-repeat="label in labels">
+            <a href>
+              <i class="fa fa-fw fa-circle text-muted text-xs" color="__label.color__" label-color ></i>
+              __label.name__
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- / header -->
+  <div class="wrapper b-b">
+    <h2 class="font-thin m-n">__mail.subject__</h2>
+  </div>
+  <div class="wrapper b-b">
+    <img ng-src="__mail.avatar__" class="img-circle thumb-xs m-r-sm">
+    来自于: <a href>__mail.from__</a>  &nbsp;&nbsp;&nbsp;&nbsp;  
+      时间: __mail.date | date__
+  </div>
+  <div class="wrapper">
+    __mail.content__
+  </div>
+  <div class="wrapper">
+    <div ng-repeat="attach in mail.attach" class="panel b-a inline m-r-sm m-b-sm bg-light">
+      <div class="wrapper-xs b-b"><i class="fa fa-paperclip"></i> __attach.name__</div>
+      <div class="wrapper-xs w-sm lt">
+        <a ng-href="__attach.url__"><img ng-src="__attach.url__" class="img-full"></a>
+      </div>
+    </div>
+  </div>
+  <div class="wrapper">
+    <div class="panel b-a">
+      <div class="panel-heading ng-show" ng-hide="reply">
+        <div class="m-b-lg">
+        点击这里 <a href class="text-u-l" ng-click="reply=!reply">回复</a> or <a href class="text-u-l" ng-click="reply=!reply">转发</a>
+        </div>
+      </div>
+      <div class="ng-hide" ng-show="reply">
+        <div class="panel-heading b-b b-light">
+          __mail.from__
+        </div>
+        <div class="wrapper" contenteditable="true" style="min-height:100px"></div>
+        <div class="panel-footer bg-light lt">
+          <button class="btn btn-link pull-right" ng-click="reply=!reply"><i class="fa fa-trash-o"></i></button>
+          <button class="btn btn-info w-xs font-bold">发送</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

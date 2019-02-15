@@ -1,0 +1,27 @@
+﻿<div class="bg-light lter b-b wrapper-md">
+  <h1 class="m-n font-thin h3">ngGrid 网格组件 <kbd class="pull-right">ngGrid</kbd></h1>
+</div>
+<div class="wrapper-md" ng-controller="GridDemoCtrl">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+        ngGrid 网格组件
+    </div>
+    <div class="panel-body">
+        <p>
+            <code>ngGrid</code> 是 <span tooltip="你看以 ng 开头就知道是以 AngularJS 为基础了">AngularJS</span> 为基础的一种网格控件，他的名气较大，大到像 jquery、bootstrap、angularjs 一样，已经大到不适合翻译为中文名称了。 <br />
+        </p>
+        <p>
+            本示例演示了其循环加载的功能。<br />
+            什么是循环加载： 别看该网格显示了几百几千行数据，但其实只有几十个 <code>&lt;tr&gt;</code> 哦，他会循环的利用这几十个 <code>&lt;tr&gt;</code> 使页面不会过于臃肿、笨拙，这就是循环加载技术 。 <br />
+            那到底有几个 <code>&lt;tr&gt;</code> 呢：他内部有自己的算法，我们就不要去操心这个问题啦！
+        </p>
+        <p>
+            这个页面并没有什么代码可以学习，要学习该控件如何使用，请查看关键脚本文件 <span class="text-danger-dk">src\controllers\grid.js</span> <br />
+            或者查看官方文档：<a class="text-danger-dk" href="http://angular-ui.github.io/ui-grid/" target="_blank">http://angular-ui.github.io/ui-grid/</a>
+        </p>
+    </div>
+    <div class="table-responsive">
+      <div ng-grid="gridOptions" style="min-height:420px"></div>
+    </div>
+  </div>
+</div>

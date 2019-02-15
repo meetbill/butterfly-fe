@@ -1,0 +1,50 @@
+﻿<div ng-controller="FullcalendarCtrl">
+  <div class="wrapper-md bg-light b-b">
+    <button type="button" class="btn btn-default btn-addon pull-right m-t-n-xs" ui-toggle-class="show" target="#aside">
+      <i class="fa fa-bars"></i> 清单
+    </button>
+    <span class="pull-right">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    <h1 class="m-n font-thin h3">日历 <kbd class="pull-right">Fullcalendar</kbd></h1>
+  </div>
+  <div class="hbox hbox-auto-xs hbox-auto-sm">
+    <div class="col wrapper-md">
+      <div class="clearfix m-b">
+        <button type="button" tooltip="你也可以通过双击日历来进行添加" class="btn btn-sm btn-primary btn-addon" ng-click="addEvent()">
+          <i class="fa fa-plus"></i>添加
+        </button>
+        <div class="pull-right">
+          <button type="button" class="btn btn-sm btn-default" ng-click="today()">今天</button>
+          <div class="btn-group m-l-xs">
+            <button class="btn btn-sm btn-default" ng-click="changeView('agendaDay')">日</button>
+            <button class="btn btn-sm btn-default" ng-click="changeView('agendaWeek')">周</button>
+            <button class="btn btn-sm btn-default" ng-click="changeView('month')">月</button>
+          </div>
+        </div>
+      </div>
+      <div class="pos-rlt">
+        <div class="fc-overlay">
+          <div class="panel bg-white b-a pos-rlt">
+            <span class="arrow"></span>
+            <div class="h4 font-thin m-b-sm">__event.title__</div>
+            <div class="line b-b b-light"></div>
+            <div><i class="icon-calendar text-muted m-r-xs"></i> __event.start | date:'medium'__</div>
+            <div class="ng-hide" ng-show='event.end'><i class="icon-clock text-muted m-r-xs"></i> __event.end | date:'medium'__</div>
+            <div class="ng-hide" ng-show='event.location'><i class="icon-pointer text-muted m-r-xs"></i> __event.location__</div>
+            <div class="m-t-sm">__event.info__</div>
+            <div class="m-t-sm">__event.url__</div>
+          </div>
+        </div>
+        <div class="calendar" ng-model="eventSources" config="uiConfig.calendar" ui-calendar="uiConfig.calendar"></div>
+      </div>
+    </div>
+    <div class="col w-md w-auto-xs bg-light dk bg-auto b-l hide" id="aside">
+      <div class="wrapper">
+        <div ng-repeat="e in events" class="bg-white-only r r-2x m-b-xs wrapper-sm __e.className[0]__">          
+          <input ng-model="e.title" class="form-control m-t-n-xs no-border no-padder no-bg">
+          <a class="pull-right text-xs text-muted" ng-click="remove($index)"><i class="fa fa-trash-o"></i></a>
+          <div class="text-xs text-muted">__e.start | date:"MMM dd"__ - __e.end | date:"MMM dd"__</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

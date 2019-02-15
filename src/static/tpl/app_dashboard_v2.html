@@ -1,0 +1,291 @@
+﻿<div class="hbox hbox-auto-xs hbox-auto-sm" ng-init="
+    app.settings.asideFolded = true; 
+    app.settings.asideDock = true;
+  ">
+  <!-- main -->
+  <div class="col">
+    <div class="bg-black dker wrapper-lg" ng-controller="FlotChartDemoCtrl">
+        <ul class="nav nav-pills nav-xxs nav-rounded m-b-lg">
+          <li class="active"><a href>日</a></li>
+          <li><a href ng-click="refreshData()">周</a></li>
+          <li><a href ng-click="refreshData()">月</a></li>
+        </ul>
+        <div ui-jq="plot" ui-refresh="d0_1" ui-options="
+        [
+          { data: __d0_1__, points: { show: true, radius: 2}, splines: { show: true, tension: 0.4, lineWidth: 1 } }
+        ],
+        {
+          colors: ['__app.color.info__', '__app.color.primary__'],
+          series: { shadowSize: 3 },
+          xaxis:{ font: { color: '#507b9b' } },
+          yaxis:{ font: { color: '#507b9b' }, max:16 },
+          grid: { hoverable: true, clickable: true, borderWidth: 0, color: '#1c2b36' },
+          tooltip: true,
+          tooltipOpts: { content: '访问量在第 %x.0 天是 %y.1',  defaultTheme: false, shifts: { x: 10, y: -25 } }
+        }
+      " style="min-height:360px" >
+      </div>
+    </div>
+    <div class="wrapper-md bg-white-only b-b">
+      <div class="row text-center">
+        <div class="col-sm-3 col-xs-6">
+          <div>用户 <i class="fa fa-fw fa-caret-up text-success text-sm"></i></div>
+          <div class="h2 m-b-sm">219k</div>
+        </div>
+        <div class="col-sm-3 col-xs-6">
+          <div>资金 <i class="fa fa-fw fa-caret-down text-warning text-sm"></i></div>
+          <div class="h2 m-b-sm">1230</div>
+        </div>
+        <div class="col-sm-3 col-xs-6">
+          <div>订单 <i class="fa fa-fw fa-caret-up text-success text-sm"></i></div>
+          <div class="h2 m-b-sm">2839</div>
+        </div>
+        <div class="col-sm-3 col-xs-6">
+          <div>访问量 <i class="fa fa-fw fa-caret-down text-danger text-sm"></i></div>
+          <div class="h2 m-b-sm">2,300</div>
+        </div>
+      </div>
+    </div>
+    <div class="wrapper-md">
+      <div class="row text-center">
+        <div class="col-sm-3 col-xs-6">
+          <div>今日活动</div>
+          <div ui-jq="easyPieChart" ui-options="{
+              percent: 75,
+              lineWidth: 4,
+              trackColor: '__app.color.light__',
+              barColor: '__app.color.primary__',
+              scaleColor: false,
+              size: 115,
+              rotate: 90,
+              lineCap: 'butt'
+            }" class="inline m-t">
+            <div>
+              <span class="text-primary h3">75%</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3 col-xs-6">
+          <div>活跃玩家</div>
+          <div ui-jq="easyPieChart" ui-options="{
+              percent: 35,
+              lineWidth: 4,
+              trackColor: '__app.color.light__',
+              barColor: '__app.color.info__',
+              scaleColor: false,
+              size: 115,
+              rotate: 0,
+              lineCap: 'butt'
+            }" class="inline m-t">
+            <div>
+              <span class="text-info h3">35%</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3 col-xs-6">
+          <div>本周趋势</div>
+          <div ui-jq="easyPieChart" ui-options="{
+              percent: 50,
+              lineWidth: 4,
+              trackColor: '__app.color.light__',
+              barColor: '__app.color.warning__',
+              scaleColor: false,
+              size: 115,
+              rotate: 180,
+              lineCap: 'butt'
+            }" class="inline m-t">
+            <div>
+              <span class="text-warning h3">50%</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3 col-xs-6">
+          <div>本月趋势</div>
+          <div ui-jq="easyPieChart" ui-options="{
+              percent: 60,
+              lineWidth: 4,
+              trackColor: '__app.color.light__',
+              barColor: '__app.color.success__',
+              scaleColor: false,
+              size: 115,
+              rotate: 90,
+              lineCap: 'butt'
+            }" class="inline m-t">
+            <div>
+              <span class="text-success h3">60%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="wrapper-md">
+      <!-- users -->
+      <div class="row">
+        <div class="col-md-6">
+          <div class="panel no-border">
+            <div class="panel-heading wrapper b-b b-light">
+              <span class="text-xs text-muted pull-right">
+                <i class="fa fa-circle text-primary m-r-xs"></i> 12
+                <i class="fa fa-circle text-info m-r-xs m-l-sm"></i> 30
+                <i class="fa fa-circle text-warning m-r-xs m-l-sm"></i> 98
+              </span>
+              <h5 class="font-thin m-t-none m-b-none text-muted">团队成功</h5>              
+            </div>
+            <ul class="list-group list-group-lg m-b-none">
+              <li class="list-group-item">
+                <a href class="thumb-sm m-r">
+                  <img src="static/img/a1.jpg" class="r r-2x">
+                </a>
+                <span class="pull-right label bg-primary inline m-t-sm">管理员</span>
+                <a href>达蒙帕克</a>
+              </li>
+              <li class="list-group-item">
+                <a href class="thumb-sm m-r">
+                  <img src="static/img/a2.jpg" class="r r-2x">
+                </a>
+                <span class="pull-right label bg-info inline m-t-sm">成员</span>
+                <a href>乔华生</a>
+              </li>
+              <li class="list-group-item">
+                <a href class="thumb-sm m-r">
+                  <img src="static/img/a3.jpg" class="r r-2x">
+                </a>
+                <span class="pull-right label bg-warning inline m-t-sm">编辑</span>
+                <a href>珍妮</a>
+              </li>
+              <li class="list-group-item">
+                <a href class="thumb-sm m-r">
+                  <img src="static/img/a4.jpg" class="r r-2x">
+                </a>
+                <span class="pull-right label bg-warning inline m-t-sm">编辑</span>
+                <a href>艾玛威尔逊</a>
+              </li>
+            </ul>
+            <div class="panel-footer">
+              <span class="pull-right badge badge-bg m-t-xs">32</span>
+              <button class="btn btn-primary btn-addon btn-sm"><i class="fa fa-plus"></i>添加成新员</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">            
+          <div class="list-group list-group-lg list-group-sp">
+            <a herf class="list-group-item clearfix">
+              <span class="pull-left thumb-sm avatar m-r">
+                <img src="static/img/a4.jpg" alt="...">
+                <i class="on b-white right"></i>
+              </span>
+              <span class="clear">
+                <span>克里斯·福克斯</span>
+                <small class="text-muted clear text-ellipsis">怎么了，伙计？ </small>
+              </span>
+            </a>
+            <a herf class="list-group-item clearfix">
+              <span class="pull-left thumb-sm avatar m-r">
+                <img src="static/img/a5.jpg" alt="...">
+                <i class="on b-white right"></i>
+              </span>
+              <span class="clear">
+                <span>阿曼达·柯南</span>
+                <small class="text-muted clear text-ellipsis">我们需要在线上讨论一下关于上次计划好的约谈</small>
+              </span>
+            </a>
+            <a herf class="list-group-item clearfix">
+              <span class="pull-left thumb-sm avatar m-r">
+                <img src="static/img/a6.jpg" alt="...">
+                <i class="busy b-white right"></i>
+              </span>
+              <span class="clear">
+                <span>丹·多尔科</span>
+                <small class="text-muted clear text-ellipsis">嘿，好消息</small>
+              </span>
+            </a>
+            <a herf class="list-group-item clearfix">
+              <span class="pull-left thumb-sm avatar m-r">
+                <img src="static/img/a7.jpg" alt="...">
+                <i class="busy b-white right"></i>
+              </span>
+              <span class="clear">
+                <span>劳伦·泰勒</span>
+                <small class="text-muted clear text-ellipsis">很高兴和你谈话。 </small>
+              </span>
+            </a>
+            <a herf class="list-group-item clearfix">
+              <span class="pull-left thumb-sm avatar m-r">
+                <img src="static/img/a8.jpg" alt="...">
+                <i class="away b-white right"></i>
+              </span>
+              <span class="clear">
+                <span>迈克·杰克逊</span>
+                <small class="text-muted clear text-ellipsis">这个真不错。 </small>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- / users -->
+    </div>
+  </div>
+  <!-- / main -->
+  <!-- right col -->
+  <div class="col w-md bg-black dk bg-auto">
+    <div class="wrapper">
+      <div class="m-b-sm text-md">关注了谁</div>
+      <ul class="list-group no-bg no-borders pull-in">
+        <li class="list-group-item">
+          <a herf class="pull-left thumb-sm avatar m-r">
+            <img src="static/img/a4.jpg" alt="..." class="img-circle">
+            <i class="on b-white bottom"></i>
+          </a>
+          <div class="clear">
+            <div><a href>克里斯·福克斯</a></div>
+            <small class="text-muted">设计师, 自媒体</small>
+          </div>
+        </li>
+        <li class="list-group-item active">
+          <a herf class="pull-left thumb-sm avatar m-r">
+            <img src="static/img/a5.jpg" alt="..." class="img-circle">
+            <i class="on b-white bottom"></i>
+          </a>
+          <div class="clear">
+            <div><a href>莫根·波什</a></div>
+            <small class="text-muted">作家, 杂志编辑</small>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <a herf class="pull-left thumb-sm avatar m-r">
+            <img src="static/img/a6.jpg" alt="..." class="img-circle">
+            <i class="busy b-white bottom"></i>
+          </a>
+          <div class="clear">
+            <div><a href>乔治·拉克</a></div>
+            <small class="text-muted">艺术指导, 电影后期</small>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <a herf class="pull-left thumb-sm avatar m-r">
+            <img src="static/img/a7.jpg" alt="..." class="img-circle">
+            <i class="away b-white bottom"></i>
+          </a>
+          <div class="clear">
+            <div><a href>尼古拉斯·赵四</a></div>
+            <small class="text-muted">歌手, 演员</small>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <a herf class="pull-left thumb-sm avatar m-r">
+            <img src="static/img/a8.jpg" alt="..." class="img-circle">
+            <i class="away b-white bottom"></i>
+          </a>
+          <div class="clear">
+            <div><a href>艾尔伦·冈萨雷斯</a></div>
+            <small class="text-muted">设计师</small>
+          </div>
+        </li>
+      </ul>
+      <div class="text-center">
+        <a href class="btn btn-sm btn-primary padder-md m-b">更多联系人</a>
+      </div>
+    </div>
+  </div>
+  <!-- / right col -->
+</div>

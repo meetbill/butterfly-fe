@@ -1,0 +1,37 @@
+﻿<div class="bg-light lter b-b wrapper-md">
+  <h1 class="m-n font-thin h3">图片裁剪 <kbd class="pull-right">Image Crop</kbd></h1>
+</div>
+<div class="wrapper-md" ng-controller="ImgCropCtrl">
+  <div class="m-b">
+    请选择一个图片文件
+    <div style="width:300px;">
+        <input type="file" id="fileInput" ui-jq="filestyle" class="filestyle" 
+               data-buttonText="选择图片" />
+    </div>
+  </div>
+  <div class="hbox hbox-auto-xs">
+    <div class="col">
+      <div class="wrapper-sm b-a bg-white m-r-xs m-b-xs">
+        <div class="bg-light" style="height:320px">
+          <img-crop 
+            image="myImage" 
+            result-image="myCroppedImage"
+            result-image-size="160"
+            area-type="__cropType__"
+          ></img-crop>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="inline bg-white wrapper-sm b-a">
+        <div class="bg-light">
+          <img ng-src="__myCroppedImage__" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="btn-group m-t">
+      <label class="btn btn-default" ng-model="cropType" btn-radio="'circle'">圆形</label>
+      <label class="btn btn-default" ng-model="cropType" btn-radio="'square'">方块</label>
+  </div>
+<div>

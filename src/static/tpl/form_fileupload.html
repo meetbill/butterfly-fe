@@ -1,0 +1,107 @@
+﻿<div class="hbox hbox-auto-xs hbox-auto-sm" ng-controller="FileUploadCtrl"  nv-file-drop="" uploader="uploader" filters="queueLimit, customFilter">
+  <div class="col w-lg bg-light b-r bg-auto">
+    <div class="wrapper-md dker b-b">
+      <h3 class="m-n font-thin">选择文件</h3>
+    </div>
+    <div class="wrapper-md">      
+      <div ng-show="uploader.isHTML5" class="m-b-md">
+          <!-- 3. nv-file-over uploader="link" over-class="className" -->
+          <div class="b-a b-2x b-dashed wrapper-lg bg-white text-center m-b" nv-file-over="" over-class="b-info" uploader="uploader">
+              请将文件拖入此处
+          </div>
+
+          <!-- Example: nv-file-drop="" uploader="{Object}" options="{Object}" filters="{String}" -->
+          <div nv-file-drop="" uploader="uploader" options="{ url: '/music' }">
+              <div nv-file-over="" uploader="uploader" over-class="b-danger" class="b-a b-2x b-dashed wrapper-lg lter text-center">
+                  拖入此处的文件将被上传到服务器的 music 文件夹中
+              </div>
+          </div>
+      </div>
+
+      <!-- Example: nv-file-select="" uploader="{Object}" options="{Object}" filters="{String}" -->
+        <p>多选</p>
+        <input type="file" nv-file-select="" uploader="uploader" multiple
+               ui-jq="filestyle" class="filestyle"
+               data-icon="true" data-input="false" data-badge="false"
+               data-buttontext="选择多个文件上传">
+
+        <p class="m-t-md">单选</p>
+        <input type="file" nv-file-select="" uploader="uploader"
+               ui-jq="filestyle" class="filestyle"
+               data-icon="true" data-input="false" data-badge="false"
+               data-buttontext="选择一个文件上传">
+    </div>
+  </div>
+  <div class="col">
+    <div class="wrapper-md bg-light dk b-b">
+      <span class="pull-right m-t-xs">对列长度: <b class="badge bg-info">__ uploader.queue.length __</b></span>
+      <h3 class="m-n font-thin">上传对列</h3>      
+    </div>
+    <div class="wrapper-md">
+      <table class="table bg-white-only b-a">
+          <thead>
+              <tr>
+                  <th width="50%">文件名</th>
+                  <th ng-show="uploader.isHTML5">大小</th>
+                  <th ng-show="uploader.isHTML5">进度</th>
+                  <th>状态</th>
+                  <th>操作</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr ng-repeat="item in uploader.queue">
+                  <td><strong>__ item.file.name __</strong></td>
+                  <td ng-show="uploader.isHTML5" nowrap>__ item.file.size/1024/1024|number:2 __ MB</td>
+                  <td ng-show="uploader.isHTML5">
+                      <div class="progress progress-sm m-b-none m-t-xs">
+                          <div class="progress-bar bg-info" role="progressbar" ng-style="{ 'width': item.progress + '%' }"></div>
+                      </div>
+                  </td>
+                  <td class="text-center">
+                      <span ng-show="item.isSuccess" class="text-success"><i class="glyphicon glyphicon-ok"></i></span>
+                      <span ng-show="item.isCancel" class="text-warning"><i class="glyphicon glyphicon-ban-circle"></i></span>
+                      <span ng-show="item.isError" class="text-danger"><i class="glyphicon glyphicon-remove"></i></span>
+                  </td>
+                  <td nowrap>
+                      <button type="button" class="btn btn-default btn-xs" ng-click="item.upload()" ng-disabled="item.isReady || item.isUploading || item.isSuccess">
+                          上传
+                      </button>
+                      <button type="button" class="btn btn-default btn-xs" ng-click="item.cancel()" ng-disabled="!item.isUploading">
+                          取消
+                      </button>
+                      <button type="button" class="btn btn-default btn-xs" ng-click="item.remove()">
+                          移除
+                      </button>
+                  </td>
+              </tr>
+          </tbody>
+      </table>
+      <div>
+        <div>
+          <p>队列上传进度:</p>
+          <div class="progress bg-light dker" style="">
+              <div class="progress-bar progress-bar-striped bg-info" role="progressbar" ng-style="{ 'width': uploader.progress + '%' }"></div>
+          </div>
+        </div>
+        <button type="button" class="btn btn-addon btn-success" ng-click="uploader.uploadAll()" ng-disabled="!uploader.getNotUploadedItems().length">
+          <i class="fa fa-arrow-circle-o-up"></i> 全部上传
+        </button>
+        <button type="button" class="btn btn-addon btn-warning" ng-click="uploader.cancelAll()" ng-disabled="!uploader.isUploading">
+          <i class="fa fa-ban"></i> 全部取消
+        </button>
+        <button type="button" class="btn btn-addon btn-danger" ng-click="uploader.clearQueue()" ng-disabled="!uploader.queue.length">
+            <i class="fa fa-trash-o"></i> 全部移除
+        </button>
+          <p class="text-muted m-t-xl">
+              说明:
+              <ul>
+                  <li>请在<code>Web容器</code>下运行此示例，比如在<code>IIS</code>、<code tooltip="用 Visual Studio 以网站形式打开此项目，按F5运行网站即可">IIS Express</code>、<code>Tomcat</code>下运行</li>
+                  <li>官方原版写了一个 <code tooltip="src/js/controllers/upload.php">upload.php</code>，我编写了一个.net版本的 <code tooltip="src/js/controllers/upload.aspx">upload.aspx</code></li>
+                  <li>我已改用.net版了，如果想换回php版，请修改 <code>"src/js/controllers/file-upload.js"</code></li>
+                  <li>文件最终会上传到此文件夹 <code>"src/js/controllers/uploads"</code></li>
+              </ul>
+          </p>
+      </div>
+    </div>
+  </div>
+</div>

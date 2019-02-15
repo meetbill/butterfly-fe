@@ -1,0 +1,152 @@
+﻿<div class="bg-light lter b-b wrapper-md">
+    <h1 class="m-n font-thin h3">矢量地图 <kbd class="pull-right">Vector Map</kbd></h1>
+</div>
+<div class="wrapper-md" ng-controller="JVectorMapDemoCtrl">
+  <div class="panel b-a">
+    <div class="panel-heading b-b b-light">世界地图</div>
+    <div class="panel-body">
+      <div class="h3 m-b font-thin">世界地图信息</div>
+      <p class="m-b-lg text-muted">这个世界地图一开始中国没包含台湾省，好气哦!  后来我折腾了半天，也只能把台湾改个名字叫中国台湾省，哪位大神帮忙合并一下，\libs\jquery\bower-jvectormap\jquery-jvectormap-world-mill-en.js，就是这个文件，搞好发给我啊，我的 <i class="fa fa-qq"></i> 191458000，谢谢 </p>
+      <div class="row">
+        <div class="col-sm-8">
+          <div style="height:240px;" ui-jq="vectorMap" ui-options="{            
+            map: 'world_mill_en',
+            markers: __world_markers__,
+            normalizeFunction: 'polynomial',
+            backgroundColor: '#fff',
+            regionStyle: {
+              initial: {
+                fill: '__app.color.light__'
+              },
+             hover: {
+                fill: '__app.color.primary__'
+              },
+            },
+            markerStyle: {
+              initial: {
+                fill: '__app.color.info__',
+                stroke: '#fff'
+              }
+            }
+          }" >
+          </div>
+          <div class="m-t-xl m-b clearfix">
+            <i class="i i-local i-2x text-info pull-left m-r m-l m-t-xs"></i>
+            <div class="clear text-sm">
+              地个地图比起百度地图、高德地图的好处在于，该地图组件是离线的。
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="h4 m-b font-thin">统计</div>
+          <p class="m-b-xs">人口增长</p>
+          <div class="progress progress-xs">
+            <div class="progress-bar progress-bar-info" data-toggle="tooltip" data-original-title="80%" style="width: 80%"></div>
+          </div>
+          <p class="m-b-xs">沙漠化</p>
+          <div class="progress progress-xs">
+            <div class="progress-bar progress-bar-success" data-toggle="tooltip" data-original-title="60%" style="width: 60%"></div>
+          </div>
+          <p class="m-b-xs">天灾</p>
+          <div class="progress progress-xs">
+            <div class="progress-bar progress-bar-warning" data-toggle="tooltip" data-original-title="70%" style="width: 70%"></div>
+          </div>
+          <p class="m-b-xs">绿化</p>
+          <div class="progress progress-xs">
+            <div class="progress-bar progress-bar-primary lter" data-toggle="tooltip" data-original-title="50%" style="width: 50%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="panel b-a">
+    <div class="panel-heading b-b b-light">中国地图</div>
+    <div class="panel-body">
+      <div class="h3 m-b font-thin">演示地图区域选择</div>
+      <p class="m-b-lg text-muted">点击一个省份或特别行政区，可以选中。  &nbsp;&nbsp;  这个示例最初显示的美国地图，改为显示中国地图时，居然没有台湾，好气哦! 然后特别好运的，让我在网上下载到了一个包含台湾省的中国地图数据，这下妥了。</p>
+      <div class="row m-b-xl">
+        <div class="col-sm-8">                      
+          <div style="height:240px;" ui-jq="vectorMap" ui-options="{
+            map: 'china_ch',
+            markers: __usa_markers__,
+            backgroundColor: '#fff',
+            regionsSelectable: true,
+            markersSelectable: true,
+            markerStyle: {
+              initial: {
+                fill: '__app.color.warning__'
+              },
+              selected: {
+                fill: '#ffffff'
+              }
+            },
+            regionStyle: {
+              initial: {
+                fill: '__app.color.info__'
+              },
+              selected: {
+                fill: '__app.color.success__'
+              }
+            },
+            series: {
+              markers: [{
+                attribute: 'r',
+                scale: [5, 15],
+                values: [
+                  187.70,
+                  255.16,
+                  310.69,
+                  605.17,
+                  248.31,
+                  107.35,
+                  217.22
+                ]
+              }]
+            }
+          }" >
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="h4 m-b font-thin">统计</div>
+          <p>内部行政边界</p>
+          <div>
+            <div class="inline text-center">
+              <div ui-jq="easyPieChart" ui-options="{
+                      percent: 60,
+                      lineWidth: 4,
+                      trackColor: '__app.color.light__',
+                      barColor: '__app.color.info__',
+                      scaleColor: '#fff',
+                      size: 100,
+                      lineCap: 'butt',
+                      animate: 1000
+                    }">
+                <div>
+                  <span class="step">60</span>%
+                </div>
+              </div>
+              <p class="text-info font-bold">数据</p>
+            </div>
+            <div class="inline text-center">
+              <div ui-jq="easyPieChart"  ui-options="{
+                      percent: 30,
+                      lineWidth: 4,
+                      trackColor: '__app.color.light__',
+                      barColor: '__app.color.warning__',
+                      scaleColor: '#fff',
+                      size: 100,
+                      lineCap: 'butt',
+                      animate: 1000
+                    }">
+                <div>
+                  <span class="step">30</span>%
+                </div>
+              </div>
+              <p class="text-warning font-bold">信息</p>
+            </div> 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,62 @@
+﻿<div class="wrapper-md">
+  <div class="panel b-a" ng-controller="MapCtrl">
+    <div class="panel-heading">谷歌地图 <kbd class="pull-right">Google Map</kbd></div>
+    <div class="panel-body">
+        在中国，为什么要使用谷歌地图呢？用
+        <a class="text-danger-dk" href="http://lbsyun.baidu.com/" target="_blank">百度地图</a>
+        、
+        <a class="text-danger-dk" href="http://lbs.amap.com/" target="_blank">高德地图</a>
+        和
+        <a class="text-danger-dk" href="http://lbs.qq.com/index.html" target="_blank">腾讯地图</a>
+        就好了。 <br />
+        如果你一定要使用google地图，那请你先翻墙，然后找到 src\js\config.router.js，在该文件中查找 googlemap，然后取消我注释的三行代码，就可以看到google地图了。 <br />
+        如果此时，你依然看不到google地图，有可能是 ApiKey 过期了，你需要自己去注册一个谷歌开发者账号，然后自己申请一个 ApiKey，然后打开 src\js\app\map\load-google-maps.js，替换成你的 ApiKey 即可。
+        <br />
+        <br />
+        天啦！我居然在一本正经的为你解释如何使用谷歌地图。不是说好使用
+        <a class="text-danger-dk" href="http://lbsyun.baidu.com/" target="_blank">百度地图</a>
+        、
+        <a class="text-danger-dk" href="http://lbs.amap.com/" target="_blank">高德地图</a>
+        和
+        <a class="text-danger-dk" href="http://lbs.qq.com/index.html" target="_blank">腾讯地图</a>
+        吗。
+    </div>
+    <div id="map_canvas" style="min-height:400px;text-align:center;line-height:400px;" ui-map="myMap"
+         ui-event="{'map-click': 'addMarker($event, $params)', 'map-zoom_changed': 'setZoomMessage(myMap.getZoom())' }"
+         ui-options="mapOptions">
+        这里是地图
+    </div>
+    <div class="panel-body">
+        <h4 class="m-t-none">点击添加标记物!</h4>
+    </div>
+    <div class="panel-body map-info" ng-show="googled==true">
+        <p>__zoomMessage__</p>
+        <ul class="list-unstyled list-inline">
+          <li ng-repeat="marker in myMarkers">
+            <a class="btn btn-default m-b-sm" ng-click="myMap.panTo(marker.getPosition())">
+              查看标记物 __$index__
+            </a>
+          </li>
+        </ul>
+
+        <!-- this is the confusing part. we have to point the map marker directive
+            at an existing google.maps.Marker object, so it can hook up events -->
+        <div ng-repeat="marker in myMarkers" ui-map-marker="myMarkers[$index]"
+             ui-event="{'map-click': 'openMarkerInfo(marker)'}">
+        </div>
+
+        <div ui-map-info-window="myInfoWindow">
+          <div class="m-b-sm">标记物</div>
+          <div class="m-b-sm">
+            <div class="pull-left m-t-xs">纬度 Lat: </div>
+            <input ng-model="currentMarkerLat" class="form-control input-sm w-sm m-l-lg">
+          </div>
+          <div class="m-b-sm">
+            <div class="pull-left m-t-xs">经度 Lng: </div>
+            <input ng-model="currentMarkerLng" class="form-control input-sm w-sm m-l-lg">
+          </div>
+          <a class="btn btn-default btn-sm m-l-lg m-b-sm" ng-click="setMarkerPosition(currentMarker, currentMarkerLat, currentMarkerLng)">设置定位</a>
+        </div>
+    </div>
+  </div>
+</div>

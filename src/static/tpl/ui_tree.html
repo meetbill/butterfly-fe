@@ -1,0 +1,56 @@
+﻿<div class="bg-light lter b-b wrapper-md">
+    <h1 class="m-n font-thin h3">树控件 <kbd class="pull-right">Tree</kbd></h1>
+</div>
+<div class="hbox hbox-auto-xs hbox-auto-sm" ng-controller="AbnTestController">
+  <div class="col w-lg bg-light b-r bg-auto">
+    <div class="wrapper-md">
+      <button ng-click="try_changing_the_tree_data()" class="btn btn-default btn-block m-b">修改数据源--加载本地数据</button>
+      <button ng-click="try_async_load()" class="btn btn-default btn-block">修改数据源--加载异步数据</button>
+      <div class="line b-b line-lg"></div>
+      <h5>测试树控件的 API:</h5>
+      <button ng-click="my_tree.select_first_branch()" class="btn btn-default btn-sm">第一个分支节点</button>
+      <div class="m-t-sm m-b-sm">
+        <button ng-click="my_tree.select_next_sibling()" class="btn btn-default btn-sm">下一个兄弟节点</button>
+        <button ng-click="my_tree.select_prev_sibling()" class="btn btn-default btn-sm">上一个兄弟节点</button>
+      </div>
+      <div class="m-b-sm">
+        <button ng-click="my_tree.select_next_branch()" class="btn btn-default btn-sm">下一个分支节点</button>
+        <button ng-click="my_tree.select_prev_branch()" class="btn btn-default btn-sm">上一个分支节点</button>
+      </div>
+      <button ng-click="my_tree.select_parent_branch()" class="btn btn-default btn-sm">父节点</button>
+      <div class="m-t-sm m-b-sm">
+        <button ng-click="my_tree.expand_branch()" class="btn btn-default btn-sm">展开</button>
+        <button ng-click="my_tree.collapse_branch()" class="btn btn-default btn-sm">折叠</button>
+      </div>
+      <div class="m-t-sm m-b-sm">
+        <button ng-click="my_tree.expand_all()" class="btn btn-default btn-sm">全部展开</button>
+        <button ng-click="my_tree.collapse_all()" class="btn btn-default btn-sm">全部折叠</button>
+      </div>
+      <div class="line b-b line-lg"></div>
+      <button ng-click="try_adding_a_branch()" class="btn btn-success btn-sm"><i class="fa fa-fw m-r-xs fa-plus"></i> 添加分支节点</button>
+    </div>
+  </div>
+  <div class="col">
+    <div class="wrapper-md">
+      <div class="b-a bg-light dk r r-2x">
+        <span ng-if="doing_async">...加载中...</span>
+        <abn-tree 
+          tree-data         = "my_data" 
+          tree-control      = "my_tree" 
+          on-select         = "my_tree_handler(branch)" 
+          expand-level      = "2" 
+          initial-selection = "Granny Smith"
+          icon-leaf         = "fa fa-file-o"
+          icon-expand       = "fa fa-plus"
+          icon-collapse     = "fa fa-minus"
+          >
+        </abn-tree>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="wrapper-md">
+      <div class="alert alert-info">__output__</div>
+    </div>
+  </div>
+</div>

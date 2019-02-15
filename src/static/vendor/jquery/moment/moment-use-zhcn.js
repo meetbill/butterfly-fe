@@ -1,0 +1,4 @@
+
+//...
+//    moment.locale("zh-cn");
+

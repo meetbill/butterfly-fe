@@ -1,0 +1,151 @@
+﻿<div class="bg-light lter b-b wrapper-md">
+  <h1 class="m-n font-thin h3">排序组件 <kbd class="pull-right">Sortable</kbd></h1>
+</div>
+<div class="wrapper-md">
+  <h4 class="m-t-none m-b">普通排序列表 <code>ui-jq="sortable"</code> <small>(不支持移动端)</small></h4>
+  <ul ui-jq="sortable" class="list-group gutter list-group-lg list-group-sp" >
+    <li class="list-group-item bg-primary">
+      <span class="pull-right" >
+        <a href><i class="fa fa-pencil fa-fw m-r-xs"></i></a>
+        <a href><i class="fa fa-plus fa-fw m-r-xs"></i></a>
+        <a href><i class="fa fa-times fa-fw"></i></a>                  
+      </span>
+      <span class="pull-left"><i class="fa fa-sort text-muted fa m-r-sm"></i> </span>
+      <div class="clear">
+        浏览器兼容
+      </div>
+    </li>
+      <li class="list-group-item bg-info">
+          <span class="pull-right">
+              <a href><i class="fa fa-pencil fa-fw m-r-xs"></i></a>
+              <a href><i class="fa fa-plus fa-fw m-r-xs"></i></a>
+              <a href><i class="fa fa-times fa-fw"></i></a>
+          </span>
+          <span class="pull-left"><i class="fa fa-sort text-muted fa m-r-sm"></i> </span>
+          <div class="clear">
+              寻找更多的实例模板
+          </div>
+      </li>
+      <li class="list-group-item bg-success">
+          <span class="pull-right">
+              <a href><i class="fa fa-pencil fa-fw m-r-xs"></i></a>
+              <a href><i class="fa fa-plus fa-fw m-r-xs"></i></a>
+              <a href><i class="fa fa-times fa-fw"></i></a>
+          </span>
+          <span class="pull-left"><i class="fa fa-sort text-muted fa m-r-sm"></i> </span>
+          <div class="clear">
+              自定义组件
+          </div>
+      </li>
+    <li class="list-group-item">
+      <span class="pull-right" >
+        <a href><i class="fa fa-pencil fa-fw m-r-xs"></i></a>
+        <a href><i class="fa fa-plus fa-fw m-r-xs"></i></a>
+        <a href><i class="fa fa-times fa-fw"></i></a>                  
+      </span>
+      <span class="pull-left"><i class="fa fa-sort text-muted fa m-r-sm"></i> </span>
+      <div class="clear">
+        上手最快的方法
+      </div>
+    </li>
+    <li class="list-group-item">
+      <span class="pull-right" >
+        <a href><i class="fa fa-fw m-r-xs fa-pencil"></i></a>
+        <a href><i class="fa fa-fw m-r-xs fa-plus"></i></a>
+        <a href><i class="fa fa-fw fa-times"></i></a>
+      </span>
+      <span class="pull-left"><i class="fa fa-sort text-muted fa m-r-sm"></i> </span>
+      <div class="clear">
+          HTML5的doctype要求
+      </div>
+    </li>
+  </ul>
+  <h4 class="m-t-none m-b">嵌套排序列表 <code>ui-jq="nestable"</code> <small>(支持移动端)</small></h4>
+  <blockquote>
+      <p class="text-sm text-info-lter">在谷歌浏览器中，切换到手机模式之后，你需要刷新一下网页，才能正确的测试移动端表现。</p>
+  </blockquote>
+  <div class="row">
+    <div class="col-sm-4">
+      <div ui-jq="nestable" class="dd">
+        <ol class="dd-list">
+          <li class="dd-item" data-id="1">
+              <div class="dd-handle">数据 1</div>
+          </li>
+          <li class="dd-item" data-id="2">
+              <div class="dd-handle">数据 2</div>
+              <ol class="dd-list">
+                  <li class="dd-item" data-id="3"><div class="dd-handle">数据 3</div></li>
+                  <li class="dd-item" data-id="4"><div class="dd-handle">数据 4</div></li>
+                  <li class="dd-item" data-id="5">
+                      <div class="dd-handle">数据 5</div>
+                      <ol class="dd-list">
+                          <li class="dd-item" data-id="6"><div class="dd-handle">数据 6</div></li>
+                          <li class="dd-item" data-id="7"><div class="dd-handle">数据 7</div></li>
+                          <li class="dd-item" data-id="8"><div class="dd-handle">数据 8</div></li>
+                      </ol>
+                  </li>
+                  <li class="dd-item" data-id="9"><div class="dd-handle">数据 9</div></li>
+              </ol>
+          </li>
+      </ol>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div ui-jq="nestable" class="dd">
+        <ol class="dd-list">
+          <li class="dd-item" data-id="10">                    
+            <div class="dd-handle">数据 10</div>
+            <ol class="dd-list">
+              <li class="dd-item" data-id="11">
+                <div class="dd-handle">数据 11</div>
+              </li>
+            </ol>
+          </li>                  
+          <li class="dd-item" data-id="12">
+              <div class="dd-handle">数据 12</div>
+          </li>
+          <li class="dd-item" data-id="13">
+              <div class="dd-handle">数据 13</div>
+          </li>
+          <li class="dd-item" data-id="14">
+              <div class="dd-handle">数据 14</div>
+          </li>
+          <li class="dd-item" data-id="15">
+              <div class="dd-handle">数据 15</div>
+              <ol class="dd-list">
+                  <li class="dd-item" data-id="16"><div class="dd-handle">数据 16</div></li>
+                  <li class="dd-item" data-id="17"><div class="dd-handle">数据 17</div></li>
+                  <li class="dd-item" data-id="18"><div class="dd-handle">数据 18</div></li>
+              </ol>
+          </li>
+        </ol>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div ui-jq="nestable" class="dd">
+        <ol class="dd-list">
+          <li class="dd-item dd3-item" data-id="13">
+              <div class="dd-handle dd3-handle">Drag</div><div class="dd3-content">数据 13</div>
+          </li>
+          <li class="dd-item dd3-item" data-id="14">
+              <div class="dd-handle dd3-handle">Drag</div><div class="dd3-content">数据 14</div>
+          </li>
+          <li class="dd-item dd3-item" data-id="15">
+              <div class="dd-handle dd3-handle">Drag</div><div class="dd3-content">数据 15 点左边的减号可以折叠哦</div>
+              <ol class="dd-list">
+                  <li class="dd-item dd3-item" data-id="16">
+                      <div class="dd-handle dd3-handle">Drag</div><div class="dd3-content">数据 16</div>
+                  </li>
+                  <li class="dd-item dd3-item" data-id="17">
+                      <div class="dd-handle dd3-handle">Drag</div><div class="dd3-content">数据 17</div>
+                  </li>
+                  <li class="dd-item dd3-item" data-id="18">
+                      <div class="dd-handle dd3-handle">Drag</div><div class="dd3-content">数据 18</div>
+                  </li>
+              </ol>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>

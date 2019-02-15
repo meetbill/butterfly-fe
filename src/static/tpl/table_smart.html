@@ -1,0 +1,228 @@
+﻿<div class="bg-light lter b-b wrapper-md">
+    <h1 class="m-n font-thin h3">时髦表格 <kbd class="pull-right">Smart Table</kbd></h1>
+</div>
+
+<div class="wrapper-md" ng-controller="TableCtrl">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            因 Smart 有漂亮的、整齐的意思，又因为 Smart 的发言，故翻译为<code>时髦表格</code>
+        </div>
+    </div>
+    <label class="checkbox i-checks m-l-md m-b-md">
+        <input type="checkbox" ng-init="oneAtATime=true;" ng-model="oneAtATime"><i></i>
+        一次只打开一个示例
+    </label>
+    <accordion close-others="oneAtATime">
+
+        <accordion-group heading="1. 基础演示" is-open="true">
+            <table st-table="rowCollectionBasic" class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>姓氏</th>
+                        <th>名字</th>
+                        <th>生日</th>
+                        <th>存款</th>
+                        <th>邮箱</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="row in rowCollectionBasic" st-select-row="row">
+                        <td>__row.firstName__</td>
+                        <td>__row.lastName__</td>
+                        <td>__row.birthDate | date:'yyyy-MM-dd'__</td>
+                        <td>__row.balance__</td>
+                        <td>__row.email__</td>
+                    </tr>
+                </tbody>
+            </table>
+        </accordion-group>
+
+        <accordion-group heading="2. 随机数据 & 添加 & 删除 & 排序 演示">
+            <div class="panel-body">
+                <button type="button" ng-click="addRandomItem(row)" class="btn btn-sm btn-success">
+                    <i class="glyphicon glyphicon-plus">
+                    </i> 添加随机数据
+                </button>
+            </div>
+            <table st-table="displayedCollection" st-safe-src="rowCollection" class="table table-striped">
+                <thead>
+                    <tr>
+                        <th st-sort="firstName">姓氏</th>
+                        <th st-sort="lastName">名字</th>
+                        <th st-sort="birthDate">生日</th>
+                        <th st-sort="balance">存款</th>
+                        <th width="50"></th>
+                    </tr>
+                    <tr>
+                        <th colspan="5"><input st-search="" class="form-control" placeholder="全局搜索..." type="text" /></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="row in displayedCollection">
+                        <td>__row.firstName__</td>
+                        <td>__row.lastName__</td>
+                        <td>__row.birthDate__</td>
+                        <td>__row.balance__</td>
+                        <td>
+                            <button type="button" ng-click="removeItem(row)" class="btn btn-xs btn-default">
+                                <i class="fa fa-times"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </accordion-group>
+
+        <accordion-group heading="3. 格式化数据 & 单元格模板" is-open="true">
+            <table st-table="rowCollectionBasic" class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>姓氏</th>
+                        <th>名字</th>
+                        <th>生日</th>
+                        <th>存款</th>
+                        <th>邮箱</th>
+                        <th width="50"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="row in rowCollectionBasic">
+                        <td>__row.firstName | uppercase__</td>
+                        <td>__row.lastName__</td>
+                        <td>__row.birthDate | date__</td>
+                        <td>__row.balance | currency__</td>
+                        <td>
+                            <button class="btn btn-xs" popover="__row.email__" popover-trigger="mouseenter" type="button">
+                                <i class="fa fa-eye"></i>
+                            </button>
+                            <a ng-href="mailto:__row.email__">邮箱</a>
+                        </td>
+                        <td>
+                            <button type="button" ng-click="removeRow(row)" class="btn btn-xs btn-default">
+                                <i class="fa fa-times">
+                                </i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </accordion-group>
+
+        <accordion-group heading="4. 搜索/过滤数据" is-open="true">
+            <div class="panel-body">
+                <label for="predicate">选择字段:</label>
+                
+            </div>
+            <table st-table="rowCollectionBasic" class="table table-striped">
+                <thead>
+                    <tr>
+                        <th st-sort="firstName">姓氏</th>
+                        <th st-sort="lastName">名字</th>
+                        <th st-sort="birthDate">生日</th>
+                        <th st-sort="balance">存款</th>
+                        <th>邮箱</th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <select class="form-control" id="predicate" ng-model="selectedPredicate"
+                                    ng-options="p.text for p in predicates"></select>
+                        </th>
+                        <th colspan="4">
+                            <input st-search="selectedPredicate.value" placeholder="搜索__ selectedPredicate.text __..." class="input-sm form-control" type="search" />
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="row in rowCollectionBasic">
+                        <td>__row.firstName | uppercase__</td>
+                        <td>__row.lastName__</td>
+                        <td>__row.birthDate | date__</td>
+                        <td>__row.balance | currency__</td>
+                        <td><a ng-href="mailto:__row.email__">邮箱</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </accordion-group>
+
+        <accordion-group heading="5. 客户端分页" is-open="true">
+            <div class="panel-body">
+                <form>
+                    <label>页大小</label>
+                    <input class="input-sm form-control" name="items" id="items" type="number" ng-model="itemsByPage">
+                </form>
+            </div>
+            <table st-table="rowCollectionPage" class="table table-striped">
+                <thead>
+                    <tr>
+                        <th st-sort="firstName">姓氏</th>
+                        <th st-sort="lastName">名字</th>
+                        <th st-sort="birthDate">生日</th>
+                        <th st-sort="balance">存款</th>
+                        <th>邮箱</th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <input st-search="'firstName'" placeholder="搜索姓氏..." class="input-sm form-control" type="search" />
+                        </th>
+                        <th colspan="4">
+                            <input st-search placeholder="搜索全局..." class="input-sm form-control" type="search" />
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="row in rowCollectionPage">
+                        <td>__row.firstName | uppercase__</td>
+                        <td>__row.lastName__</td>
+                        <td>__row.birthDate | date__</td>
+                        <td>__row.balance | currency__</td>
+                        <td><a ng-href="mailto:__row.email__">邮箱</a></td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="5" class="text-center">
+                            <div st-pagination="" st-items-by-page="itemsByPage" st-displayed-pages="7" class="no-margin"></div>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </accordion-group>
+
+        <accordion-group heading="6. 数据管道/Ajax请求数据" is-open="true">
+            <table st-table="rowCollectionPip" st-pipe="callServer" class="table table-striped">
+                <thead>
+                    <tr>
+                        <th st-sort="firstName">姓氏</th>
+                        <th st-sort="lastName">名字</th>
+                        <th st-sort="birthDate">生日</th>
+                        <th st-sort="balance">存款</th>
+                        <th>邮箱</th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <input st-search="firstName" placeholder="姓氏搜索..." class="input-sm form-control" type="search" />
+                        </th>
+                        <th colspan="4">
+                            <input st-search placeholder="全局搜索..." class="input-sm form-control" type="search" />
+                        </th>
+                    </tr>
+                </thead>
+                <tbody ng-hide="isLoading">
+                    <tr ng-repeat="row in rowCollectionPip">
+                        <td>__row.firstName | uppercase__</td>
+                        <td>__row.lastName__</td>
+                        <td>__row.birthDate | date__</td>
+                        <td>__row.balance | currency__</td>
+                        <td><a ng-href="mailto:__row.email__">邮箱</a></td>
+                    </tr>
+                </tbody>
+                <tbody ng-show="isLoading">
+                    <tr>
+                        <td colspan="5" class="text-center"><i class="fa fa-spin fa-refresh"></i></td>
+                    </tr>
+                </tbody>
+            </table>
+        </accordion-group>
+
+    </accordion>
+</div>

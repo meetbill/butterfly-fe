@@ -1,0 +1,50 @@
+﻿<div class="bg-light lter b-b wrapper-md">
+  <h1 class="m-n font-thin h3">待办 <kbd class="pull-right">Todos</kbd></h1>
+</div>
+<div class="wrapper-md" ng-controller="TodoCtrl">
+  <div>
+    <form id="todo-form" ng-submit="addTodo()">
+        <input placeholder="需要做什么？ 输入完成后按回车!" ng-model="newTodo" autofocus class="form-control input-lg">
+    </form>
+  </div>
+  <div ng-show="todos.length">
+    <ul class="nav nav-xs nav-pills m-t m-b">
+      <li ui-sref-active="active">
+        <a ui-sref="app.todo.list({fold:''})">全部</a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.todo.list({fold:'active'})">进行中</a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.todo.list({fold:'completed'})">已完成</a>
+      </li>
+    </ul>
+    <ul class="list-group">
+      <li ng-repeat="todo in todos | filter:statusFilter track by $index" ng-class="{completed: todo.completed, editing: todo == editedTodo}" class="list-group-item">
+        <div class="hover-anchor" ng-dblclick="editTodo(todo)" ng-hide="todo.editedTodo">
+          <a ng-click="removeTodo(todo)" class="text-muted hover-action"><i class="icon-close text-md m-t-xs pull-right"></i></a>
+          <label class="i-checks i-checks-sm">
+            <input type="checkbox" ng-model="todo.completed" ng-change="todoCompleted(todo)"><i></i>
+          </label>
+          <span ng-dblclick="editTodo(todo)">__todo.title__</span>
+        </div>
+        <form ng-submit="doneEditing(todo)" ng-show="todo.editedTodo">
+          <input class="form-control" ng-trim="false" ng-model="todo.title" ng-blur="doneEditing(todo)" ui-focus="todo.editedTodo">
+        </form>
+      </li>
+    </ul>
+  </div>
+  <div ng-show="todos.length" class="row">
+    <div class="col-sm-6">
+      <label class="i-checks i-checks-sm">
+        <input type="checkbox" ng-model="allChecked" ng-click="markAll(allChecked)"><i></i>
+          全部标记为完成
+      </label>
+    </div>
+    <div class="col-sm-6 text-right">
+        <button class="btn btn-default btn-xs" ng-click="clearCompletedTodos()" ng-show="remainingCount < todos.length">清除已完成的任务 (__todos.length - remainingCount__)</button>
+      <strong>__remainingCount__</strong>
+        <ng-pluralize count="remainingCount" when="{ one: '项未完成', other: '项未完成' }"></ng-pluralize>
+    </div>
+  </div>
+</div>
