@@ -247,7 +247,7 @@ app.controller('RatingDemoCtrl', ['$scope', function ($scope) {
 app.controller('TooltipDemoCtrl', ['$scope', function ($scope) {
     $scope.dynamicTooltip = '你好，世界!';
     $scope.dynamicTooltipText = '放上来';
-    $scope.htmlTooltip = '加我 <i class="fa fa-qq"></i> 191458000，如果你不主动我们可能永远没有机会';
+    $scope.htmlTooltip = '代码改变世界';
 }])
 ;
 
