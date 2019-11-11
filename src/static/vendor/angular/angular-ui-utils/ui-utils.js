@@ -1,4 +1,4 @@
-﻿/**
+/**
  * angular-ui-utils - Swiss-Army-Knife of AngularJS tools (with no external dependencies!)
  * @version v0.2.3 - 2015-03-30
  * @link http://angular-ui.github.com

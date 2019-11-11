@@ -1,4 +1,4 @@
-﻿/*
+/*
  * bootstrap-filestyle
  * doc: http://markusslima.github.io/bootstrap-filestyle/
  * github: https://github.com/markusslima/bootstrap-filestyle
@@ -218,24 +218,11 @@
 				});
 			}
 
-			var $this = _self.$element, _defaults = $.fn.filestyle.defaults;
-			_self.options = {
-			    'input': $this.attr('data-input') === 'false' ? false : true,
-			    'icon': $this.attr('data-icon') === 'false' ? false : true,
-			    'buttonBefore': $this.attr('data-buttonBefore') === 'true' ? true : false,
-			    'disabled': $this.attr('data-disabled') === 'true' ? true : false,
-			    'size': $this.attr('data-size') || _defaults.size,
-			    'buttonText': $this.attr('data-buttonText') || _defaults.buttonText,
-			    'buttonName': $this.attr('data-buttonName') || _defaults.buttonName,
-			    'iconName': $this.attr('data-iconName') || _defaults.iconName,
-			    'badge': $this.attr('data-badge') === 'false' ? false : true
-			};
-
 			btn = '<span class="group-span-filestyle ' + (_self.options.input ? 'input-group-btn' : '') + '">' + 
 				  '<label for="' + id + '" class="btn ' + _self.options.buttonName + ' ' + 
 				  	(_self.options.size == 'nr' ? '' : 'btn-' + _self.options.size) + '" ' + 
 				  	(_self.options.disabled ? 'disabled="true"' : '') + '>' + 
-				  		_self.htmlIcon() + '&nbsp;&nbsp;' + _self.options.buttonText +
+				  		_self.htmlIcon() + _self.options.buttonText + 
 				  '</label>' + 
 				  '</span>';
 

@@ -1,4 +1,4 @@
-﻿(function($, F){
+(function($, F){
 	// add in console we use in case it's missing
 	window.console = window.console || { log:function(){}, error:function(){} };
 
@@ -3897,7 +3897,7 @@
 		delay: 1200,
 		min: 3,
 		space: 'AND',
-		placeholder: '搜索',
+		placeholder: 'Search',
 		position: 'right'
 	};
 })(FooTable);

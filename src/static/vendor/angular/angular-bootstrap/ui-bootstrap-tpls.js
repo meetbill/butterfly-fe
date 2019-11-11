@@ -2887,7 +2887,6 @@ angular.module('ui.bootstrap.rating', [])
 
 .constant('ratingConfig', {
   max: 5,
-  iconLib: 'glyphicon', 
   stateOn: null,
   stateOff: null
 })
@@ -2899,7 +2898,6 @@ angular.module('ui.bootstrap.rating', [])
     ngModelCtrl = ngModelCtrl_;
     ngModelCtrl.$render = this.render;
 
-    this.iconLib = angular.isDefined($attrs.iconLib) ? $scope.$parent.$eval($attrs.iconLib) : ratingConfig.iconLib;
     this.stateOn = angular.isDefined($attrs.stateOn) ? $scope.$parent.$eval($attrs.stateOn) : ratingConfig.stateOn;
     this.stateOff = angular.isDefined($attrs.stateOff) ? $scope.$parent.$eval($attrs.stateOff) : ratingConfig.stateOff;
 
@@ -2910,7 +2908,7 @@ angular.module('ui.bootstrap.rating', [])
 
   this.buildTemplateObjects = function(states) {
     for (var i = 0, n = states.length; i < n; i++) {
-      states[i] = angular.extend({ index: i }, { stateOn: this.stateOn, stateOff: this.stateOff, iconLib: this.iconLib }, states[i]);
+      states[i] = angular.extend({ index: i }, { stateOn: this.stateOn, stateOff: this.stateOff }, states[i]);
     }
     return states;
   };
@@ -4137,7 +4135,7 @@ angular.module("template/progressbar/progressbar.html", []).run(["$templateCache
 angular.module("template/rating/rating.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("template/rating/rating.html",
     "<span ng-mouseleave=\"reset()\" ng-keydown=\"onKeydown($event)\" tabindex=\"0\" role=\"slider\" aria-valuemin=\"0\" aria-valuemax=\"{{range.length}}\" aria-valuenow=\"{{value}}\">\n" +
-    "    <i ng-repeat=\"r in range track by $index\" ng-mouseenter=\"enter($index + 1)\" ng-click=\"rate($index + 1)\" ng-class=\"(r.iconLib || 'glyphicon') + ' ' + ($index < value && (r.stateOn || 'glyphicon-star') || (r.stateOff || 'glyphicon-star-empty'))\">\n" +
+    "    <i ng-repeat=\"r in range track by $index\" ng-mouseenter=\"enter($index + 1)\" ng-click=\"rate($index + 1)\" class=\"glyphicon\" ng-class=\"$index < value && (r.stateOn || 'glyphicon-star') || (r.stateOff || 'glyphicon-star-empty')\">\n" +
     "        <span class=\"sr-only\">({{ $index < value ? '*' : ' ' }})</span>\n" +
     "    </i>\n" +
     "</span>");

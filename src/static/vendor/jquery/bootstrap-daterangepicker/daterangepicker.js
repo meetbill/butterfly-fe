@@ -1,4 +1,4 @@
-﻿/**
+/**
 * @version: 1.3.23
 * @author: Dan Grossman http://www.dangrossman.info/
 * @copyright: Copyright (c) 2012-2015 Dan Grossman. All rights reserved.
@@ -30,10 +30,7 @@
     root.daterangepicker = factory(root, {}, root.moment || moment, (root.jQuery || root.Zepto || root.ender || root.$));
   }
 
-}(this, function (root, daterangepicker, moment, $) {
-
-    //简体中文
-    moment.locale("zh-cn");
+}(this, function(root, daterangepicker, moment, $) {
 
     var DateRangePicker = function (element, options, cb) {
 
@@ -152,12 +149,12 @@
             this.separator = ' - ';
 
             this.locale = {
-                applyLabel: '应用',
-                cancelLabel: '取消',
-                fromLabel: '开始日期',
-                toLabel: '结束日期',
-                weekLabel: '周',
-                customRangeLabel: '自定义日期范围',
+                applyLabel: 'Apply',
+                cancelLabel: 'Cancel',
+                fromLabel: 'From',
+                toLabel: 'To',
+                weekLabel: 'W',
+                customRangeLabel: 'Custom Range',
                 daysOfWeek: moment.weekdaysMin(),
                 monthNames: moment.monthsShort(),
                 firstDay: moment.localeData()._week.dow

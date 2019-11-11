@@ -1,4 +1,4 @@
-﻿/* Modernizr 2.7.1 (Custom Build) | MIT & BSD
+/* Modernizr 2.7.1 (Custom Build) | MIT & BSD
  * Build: http://modernizr.com/download/#-inputtypes-load
  */
 ;
@@ -700,7 +700,7 @@ angular.module('vr.directives.slider', ['ngTouch']).directive('slider',
                              */
                             scope.rangeTranslation = function(low, high) {
                                 if(angular.isUndefined(attributes.translateRangeFn)) {
-                                    return "区间: " + scope.translation((high - low).toFixed(scope.precision));
+                                    return "Range: " + scope.translation((high - low).toFixed(scope.precision));
                                 }
                                 return scope.translateRangeFn({low: low, high: high});
                             };

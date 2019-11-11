@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * Angular Material Design
  * https://github.com/angular/material
  * @license MIT
@@ -69,20 +69,10 @@ input[type="search"] {
   border-radius: inherit;
   pointer-events: none; }
 
+.md-shadow-bottom-z-1, .md-button.md-raised:not([disabled]), .md-button.md-fab, .md-button.md-raised.md-focused:not([disabled]), .md-button.md-fab.md-focused:not([disabled]) {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26); }
 
-.md-shadow-bottom-z-1, .md-button.md-raised:not([disabled]), 
-/*.md-button.md-fab,*/  /* 目前不适合给圆角的东西添加阴影 by zhouyou 2017/8/28 */
-.md-button.md-raised.md-focused:not([disabled]), 
-.md-button.md-fab.md-focused:not([disabled]) {
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26); 
-
-}
-
-.md-shadow-bottom-z-2, 
-.md-button.md-raised:not([disabled]):active 
-/*, .md-button.md-fab:not([disabled]):active*/ 
-/* 目前不适合给圆角的东西添加阴影 by zhouyou 2017/8/28 */
-{
+.md-shadow-bottom-z-2, .md-button.md-raised:not([disabled]):active, .md-button.md-fab:not([disabled]):active {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4); }
 
 .md-shadow-animated.md-shadow {
@@ -6610,10 +6600,7 @@ md-switch {
     height: 20px;
     width: 20px;
     border-radius: 50%;
-    /* 目前不适合给圆角的东西添加阴影 by zhouyou 2017/8/28 */
-    /*box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.14), 0px 2px 2px 0px rgba(0, 0, 0, 0.098), 0px 1px 5px 0px rgba(0, 0, 0, 0.084);*/ 
-    border:1px solid rgba(0, 0, 0, 0.098);
-  }
+    box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.14), 0px 2px 2px 0px rgba(0, 0, 0, 0.098), 0px 1px 5px 0px rgba(0, 0, 0, 0.084); }
     md-switch .md-thumb:before {
       background-color: transparent;
       border-radius: 50%;
