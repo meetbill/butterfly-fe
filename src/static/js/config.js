@@ -30,6 +30,20 @@ angular.module('app')
     // Tell the module to store the language in the local storage
     $translateProvider.useLocalStorage();
   }])
+    //-----------------------------------------------------------------------------------jwt
+    //.config(['$httpProvider','jwtOptionsProvider',function($httpProvider, jwtOptionsProvider) {
+    //jwtOptionsProvider.config({
+    //  tokenGetter: ['$localStorage',function($localStorage) {
+    //    return $localStorage.jwt;
+    //  }],
+    //  unauthenticatedRedirector: ['$state', function($state) {
+    //    $state.go('access.signin');
+    //  }]
+    //});
+
+    //$httpProvider.interceptors.push('jwtInterceptor');
+    //}])
+    //-----------------------------------------------------------------------------------jwt End
   .config(
     function($interpolateProvider) {
         $interpolateProvider.startSymbol('__');

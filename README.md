@@ -26,11 +26,11 @@ Angulr 是一个以 Bootstrap 和 AngularJS 为基础，并使用了大量前端
 
 本项目 Angulr 2.2 汉化版本，相关依赖的版本如下：
 
-> * Angularjs: v1.4.7
+> * Angularjs: v1.5.8
 
 ### 2.2 变更
 
-> * 相对于原 Angulr , Pine-angulr 表达式 {{expression}} 修改为 `__expression__`
+[更新日志](https://github.com/meetbill/pine-Angulr/wiki/CHANGELOG)
 
 ### 2.3 使用
 

@@ -5,10 +5,14 @@
  */
 angular.module('app')
   .run(
-    [          '$rootScope', '$state', '$stateParams',
-      function ($rootScope,   $state,   $stateParams) {
+    [          '$rootScope', '$state', '$stateParams', 'authManager',
+      function ($rootScope,   $state,   $stateParams,   authManager) {
           $rootScope.$state = $state;
-          $rootScope.$stateParams = $stateParams;        
+          $rootScope.$stateParams = $stateParams;
+
+          //---------------------------------------------jwt
+          //authManager.checkAuthOnRefresh();
+          //authManager.redirectWhenUnauthenticated()
       }
     ]
   )
@@ -24,7 +28,7 @@ angular.module('app')
             $urlRouterProvider
               .otherwise('/app/dashboard-v1');
           }
-          
+
           $stateProvider
               .state('app', {
                   abstract: true,
@@ -65,7 +69,7 @@ angular.module('app')
               .state('app.ui.widgets', {
                   url: '/widgets',
                   templateUrl: 'static/tpl/ui_widgets.html'
-              })          
+              })
               .state('app.ui.bootstrap', {
                   url: '/bootstrap',
                   templateUrl: 'static/tpl/ui_bootstrap.html'
