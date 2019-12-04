@@ -52,14 +52,14 @@ angular.module('app')
                           'static/vendor/jquery/bootstrap-daterangepicker/daterangepicker-bs3.css'],
       tagsinput:      [   'static/vendor/jquery/bootstrap-tagsinput/dist/bootstrap-tagsinput.js',
                           'static/vendor/jquery/bootstrap-tagsinput/dist/bootstrap-tagsinput.css']
-                      
+
     }
   )
   .constant('MODULE_CONFIG', [
       {
           name: 'ngGrid',
           files: [
-              'static/vendor/angular/ng-grid/build/ng-grid.min.js',
+              'static/vendor/angular/ng-grid/build/ng-grid.js',
               'static/vendor/angular/ng-grid/ng-grid.min.css',
               'static/vendor/angular/ng-grid/ng-grid.bootstrap.css'
           ]

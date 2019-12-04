@@ -24,14 +24,14 @@ app.controller('GridDemoCtrl', ['$scope', '$http', function ($scope, $http) {
             var data;
             if (searchText) {
                 var ft = searchText.toLowerCase();
-                $http.get('js/controllers/largeLoad.json').success(function (largeLoad) {
+                $http.get('static/js/controllers/largeLoad.json').success(function (largeLoad) {
                     data = largeLoad.filter(function (item) {
                         return JSON.stringify(item).toLowerCase().indexOf(ft) != -1;
                     });
                     $scope.setPagingData(data, page, pageSize);
                 });
             } else {
-                $http.get('js/controllers/largeLoad.json').success(function (largeLoad) {
+                $http.get('static/js/controllers/largeLoad.json').success(function (largeLoad) {
                     $scope.setPagingData(largeLoad, page, pageSize);
                 });
             }

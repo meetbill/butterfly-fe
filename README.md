@@ -24,7 +24,7 @@ Angulr 是一个以 Bootstrap 和 AngularJS 为基础，并使用了大量前端
 
 ### 2.1 版本
 
-本项目 Angulr 2.2 汉化版本，相关依赖的版本如下：
+本项目 Angulr 2.2.1 汉化版本，相关依赖的版本如下：
 
 > * Angularjs: v1.5.8
 

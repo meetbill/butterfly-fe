@@ -3463,9 +3463,9 @@ angular.module('ngGrid').run(['$templateCache', function($templateCache) {
   $templateCache.put('aggregateTemplate.html',
     "<div ng-click=\"row.toggleExpand()\" ng-style=\"rowStyle(row)\" class=\"ngAggregate\">\r" +
     "\n" +
-    "    <span class=\"ngAggregateText\">{{row.label CUSTOM_FILTERS}} ({{row.totalChildren()}} {{AggItemsLabel}})</span>\r" +
+    "    <span class=\"ngAggregateText\">__row.label CUSTOM_FILTERS__ (__row.totalChildren()__ __AggItemsLabel__)</span>\r" +
     "\n" +
-    "    <div class=\"{{row.aggClass()}}\"></div>\r" +
+    "    <div class=\"__row.aggClass()__\"></div>\r" +
     "\n" +
     "</div>\r" +
     "\n"
@@ -3489,7 +3489,7 @@ angular.module('ngGrid').run(['$templateCache', function($templateCache) {
     "\n"
   );
   $templateCache.put('cellTemplate.html',
-    "<div class=\"ngCellText\" ng-class=\"col.colIndex()\"><span ng-cell-text>{{COL_FIELD CUSTOM_FILTERS}}</span></div>"
+    "<div class=\"ngCellText\" ng-class=\"col.colIndex()\"><span ng-cell-text>__COL_FIELD CUSTOM_FILTERS__</span></div>"
   );
   $templateCache.put('checkboxCellTemplate.html',
     "<div class=\"ngSelectionCell\"><input tabindex=\"-1\" class=\"ngSelectionCheckbox\" type=\"checkbox\" ng-checked=\"row.selected\" /></div>"
@@ -3507,13 +3507,13 @@ angular.module('ngGrid').run(['$templateCache', function($templateCache) {
     "\n" +
     "        <div class=\"ngFooterTotalItems\" ng-class=\"{'ngNoMultiSelect': !multiSelect}\" >\r" +
     "\n" +
-    "            <span class=\"ngLabel\">{{i18n.ngTotalItemsLabel}} {{maxRows()}}</span><span ng-show=\"filterText.length > 0\" class=\"ngLabel\">({{i18n.ngShowingItemsLabel}} {{totalFilteredItemsLength()}})</span>\r" +
+    "            <span class=\"ngLabel\">__i18n.ngTotalItemsLabel__ __maxRows()__</span><span ng-show=\"filterText.length > 0\" class=\"ngLabel\">(__i18n.ngShowingItemsLabel__ __totalFilteredItemsLength()__)</span>\r" +
     "\n" +
     "        </div>\r" +
     "\n" +
     "        <div class=\"ngFooterSelectedItems\" ng-show=\"multiSelect\">\r" +
     "\n" +
-    "            <span class=\"ngLabel\">{{i18n.ngSelectedItemsLabel}} {{selectedItems.length}}</span>\r" +
+    "            <span class=\"ngLabel\">__i18n.ngSelectedItemsLabel__ __selectedItems.length__</span>\r" +
     "\n" +
     "        </div>\r" +
     "\n" +
@@ -3523,11 +3523,11 @@ angular.module('ngGrid').run(['$templateCache', function($templateCache) {
     "\n" +
     "        <div style=\"float:left; margin-right: 10px;\" class=\"ngRowCountPicker\">\r" +
     "\n" +
-    "            <span style=\"float: left; margin-top: 3px;\" class=\"ngLabel\">{{i18n.ngPageSizeLabel}}</span>\r" +
+    "            <span style=\"float: left; margin-top: 3px;\" class=\"ngLabel\">__i18n.ngPageSizeLabel__</span>\r" +
     "\n" +
     "            <select style=\"float: left;height: 27px; width: 100px\" ng-model=\"pagingOptions.pageSize\" >\r" +
     "\n" +
-    "                <option ng-repeat=\"size in pagingOptions.pageSizes\">{{size}}</option>\r" +
+    "                <option ng-repeat=\"size in pagingOptions.pageSizes\">__size__</option>\r" +
     "\n" +
     "            </select>\r" +
     "\n" +
@@ -3535,17 +3535,17 @@ angular.module('ngGrid').run(['$templateCache', function($templateCache) {
     "\n" +
     "        <div style=\"float:left; margin-right: 10px; line-height:25px;\" class=\"ngPagerControl\" style=\"float: left; min-width: 135px;\">\r" +
     "\n" +
-    "            <button type=\"button\" class=\"ngPagerButton\" ng-click=\"pageToFirst()\" ng-disabled=\"cantPageBackward()\" title=\"{{i18n.ngPagerFirstTitle}}\"><div class=\"ngPagerFirstTriangle\"><div class=\"ngPagerFirstBar\"></div></div></button>\r" +
+    "            <button type=\"button\" class=\"ngPagerButton\" ng-click=\"pageToFirst()\" ng-disabled=\"cantPageBackward()\" title=\"__i18n.ngPagerFirstTitle__\"><div class=\"ngPagerFirstTriangle\"><div class=\"ngPagerFirstBar\"></div></div></button>\r" +
     "\n" +
-    "            <button type=\"button\" class=\"ngPagerButton\" ng-click=\"pageBackward()\" ng-disabled=\"cantPageBackward()\" title=\"{{i18n.ngPagerPrevTitle}}\"><div class=\"ngPagerFirstTriangle ngPagerPrevTriangle\"></div></button>\r" +
+    "            <button type=\"button\" class=\"ngPagerButton\" ng-click=\"pageBackward()\" ng-disabled=\"cantPageBackward()\" title=\"__i18n.ngPagerPrevTitle__\"><div class=\"ngPagerFirstTriangle ngPagerPrevTriangle\"></div></button>\r" +
     "\n" +
-    "            <input class=\"ngPagerCurrent\" min=\"1\" max=\"{{currentMaxPages}}\" type=\"number\" style=\"width:50px; height: 24px; margin-top: 1px; padding: 0 4px;\" ng-model=\"pagingOptions.currentPage\"/>\r" +
+    "            <input class=\"ngPagerCurrent\" min=\"1\" max=\"__currentMaxPages__\" type=\"number\" style=\"width:50px; height: 24px; margin-top: 1px; padding: 0 4px;\" ng-model=\"pagingOptions.currentPage\"/>\r" +
     "\n" +
-    "            <span class=\"ngGridMaxPagesNumber\" ng-show=\"maxPages() > 0\">/ {{maxPages()}}</span>\r" +
+    "            <span class=\"ngGridMaxPagesNumber\" ng-show=\"maxPages() > 0\">/ __maxPages()__</span>\r" +
     "\n" +
-    "            <button type=\"button\" class=\"ngPagerButton\" ng-click=\"pageForward()\" ng-disabled=\"cantPageForward()\" title=\"{{i18n.ngPagerNextTitle}}\"><div class=\"ngPagerLastTriangle ngPagerNextTriangle\"></div></button>\r" +
+    "            <button type=\"button\" class=\"ngPagerButton\" ng-click=\"pageForward()\" ng-disabled=\"cantPageForward()\" title=\"__i18n.ngPagerNextTitle__\"><div class=\"ngPagerLastTriangle ngPagerNextTriangle\"></div></button>\r" +
     "\n" +
-    "            <button type=\"button\" class=\"ngPagerButton\" ng-click=\"pageToLast()\" ng-disabled=\"cantPageToLast()\" title=\"{{i18n.ngPagerLastTitle}}\"><div class=\"ngPagerLastTriangle\"><div class=\"ngPagerLastBar\"></div></div></button>\r" +
+    "            <button type=\"button\" class=\"ngPagerButton\" ng-click=\"pageToLast()\" ng-disabled=\"cantPageToLast()\" title=\"__i18n.ngPagerLastTitle__\"><div class=\"ngPagerLastTriangle\"><div class=\"ngPagerLastBar\"></div></div></button>\r" +
     "\n" +
     "        </div>\r" +
     "\n" +
@@ -3559,7 +3559,7 @@ angular.module('ngGrid').run(['$templateCache', function($templateCache) {
     "\n" +
     "    <div class=\"ngGroupPanel\" ng-show=\"showGroupPanel()\" ng-style=\"groupPanelStyle()\">\r" +
     "\n" +
-    "        <div class=\"ngGroupPanelDescription\" ng-show=\"configGroups.length == 0\">{{i18n.ngGroupPanelDescription}}</div>\r" +
+    "        <div class=\"ngGroupPanelDescription\" ng-show=\"configGroups.length == 0\">__i18n.ngGroupPanelDescription__</div>\r" +
     "\n" +
     "        <ul ng-show=\"configGroups.length > 0\" class=\"ngGroupList\">\r" +
     "\n" +
@@ -3567,7 +3567,7 @@ angular.module('ngGrid').run(['$templateCache', function($templateCache) {
     "\n" +
     "                <span class=\"ngGroupElement\">\r" +
     "\n" +
-    "                    <span class=\"ngGroupName\">{{group.displayName}}\r" +
+    "                    <span class=\"ngGroupName\">__group.displayName__\r" +
     "\n" +
     "                        <span ng-click=\"removeGroup($index)\" class=\"ngRemoveGroup\">x</span>\r" +
     "\n" +
@@ -3607,15 +3607,15 @@ angular.module('ngGrid').run(['$templateCache', function($templateCache) {
     "\n"
   );
   $templateCache.put('headerCellTemplate.html',
-    "<div class=\"ngHeaderSortColumn {{col.headerClass}}\" ng-style=\"{'cursor': col.cursor}\" ng-class=\"{ 'ngSorted': !col.noSortVisible() }\">\r" +
+    "<div class=\"ngHeaderSortColumn __col.headerClass__\" ng-style=\"{'cursor': col.cursor}\" ng-class=\"{ 'ngSorted': !col.noSortVisible() }\">\r" +
     "\n" +
-    "    <div ng-click=\"col.sort($event)\" ng-class=\"'colt' + col.index\" class=\"ngHeaderText\">{{col.displayName}}</div>\r" +
+    "    <div ng-click=\"col.sort($event)\" ng-class=\"'colt' + col.index\" class=\"ngHeaderText\">__col.displayName__</div>\r" +
     "\n" +
     "    <div class=\"ngSortButtonDown\" ng-click=\"col.sort($event)\" ng-show=\"col.showSortButtonDown()\"></div>\r" +
     "\n" +
     "    <div class=\"ngSortButtonUp\" ng-click=\"col.sort($event)\" ng-show=\"col.showSortButtonUp()\"></div>\r" +
     "\n" +
-    "    <div class=\"ngSortPriority\">{{col.sortPriority}}</div>\r" +
+    "    <div class=\"ngSortPriority\">__col.sortPriority__</div>\r" +
     "\n" +
     "    <div ng-class=\"{ ngPinnedIcon: col.pinned, ngUnPinnedIcon: !col.pinned }\" ng-click=\"togglePin(col)\" ng-show=\"col.pinnable\"></div>\r" +
     "\n" +
@@ -3644,23 +3644,23 @@ angular.module('ngGrid').run(['$templateCache', function($templateCache) {
     "\n" +
     "    <div ng-show=\"showFilter\">\r" +
     "\n" +
-    "        <input placeholder=\"{{i18n.ngSearchPlaceHolder}}\" type=\"text\" ng-model=\"filterText\"/>\r" +
+    "        <input placeholder=\"__i18n.ngSearchPlaceHolder__\" type=\"text\" ng-model=\"filterText\"/>\r" +
     "\n" +
     "    </div>\r" +
     "\n" +
     "    <div ng-show=\"showColumnMenu\">\r" +
     "\n" +
-    "        <span class=\"ngMenuText\">{{i18n.ngMenuText}}</span>\r" +
+    "        <span class=\"ngMenuText\">__i18n.ngMenuText__</span>\r" +
     "\n" +
     "        <ul class=\"ngColList\">\r" +
     "\n" +
     "            <li class=\"ngColListItem\" ng-repeat=\"col in columns | ngColumns\">\r" +
     "\n" +
-    "                <label><input ng-disabled=\"col.pinned\" type=\"checkbox\" class=\"ngColListCheckbox\" ng-model=\"col.visible\"/>{{col.displayName}}</label>\r" +
+    "                <label><input ng-disabled=\"col.pinned\" type=\"checkbox\" class=\"ngColListCheckbox\" ng-model=\"col.visible\"/>__col.displayName__</label>\r" +
     "\n" +
     "\t\t\t\t<a title=\"Group By\" ng-class=\"col.groupedByClass()\" ng-show=\"col.groupable && col.visible\" ng-click=\"groupBy(col)\"></a>\r" +
     "\n" +
-    "\t\t\t\t<span class=\"ngGroupingNumber\" ng-show=\"col.groupIndex > 0\">{{col.groupIndex}}</span>          \r" +
+    "\t\t\t\t<span class=\"ngGroupingNumber\" ng-show=\"col.groupIndex > 0\">__col.groupIndex__</span>          \r" +
     "\n" +
     "            </li>\r" +
     "\n" +
@@ -3671,7 +3671,7 @@ angular.module('ngGrid').run(['$templateCache', function($templateCache) {
     "</div>"
   );
   $templateCache.put('rowTemplate.html',
-    "<div ng-style=\"{ 'cursor': row.cursor }\" ng-repeat=\"col in renderedColumns\" ng-class=\"col.colIndex()\" class=\"ngCell {{col.cellClass}}\">\r" +
+    "<div ng-style=\"{ 'cursor': row.cursor }\" ng-repeat=\"col in renderedColumns\" ng-class=\"col.colIndex()\" class=\"ngCell __col.cellClass__\">\r" +
     "\n" +
     "\t<div class=\"ngVerticalBar\" ng-style=\"{height: rowHeight}\" ng-class=\"{ ngVerticalBarVisible: !$last }\">&nbsp;</div>\r" +
     "\n" +
