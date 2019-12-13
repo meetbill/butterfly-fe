@@ -18,7 +18,6 @@ angular.module('app')
       moment:         [   'static/vendor/jquery/moment/moment.js',
                           'static/vendor/jquery/moment/moment-with-locales.js',
                           'static/vendor/jquery/moment/moment-use-zhcn.js'],
-      screenfull:     [   'static/vendor/jquery/screenfull/dist/screenfull.min.js'],
       slimScroll:     [   'static/vendor/jquery/slimscroll/jquery.slimscroll.min.js'],
       sortable:       [   'static/vendor/jquery/html5sortable/jquery.sortable.js'],
       nestable:       [   'static/vendor/jquery/nestable/jquery.nestable.js',
