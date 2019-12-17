@@ -1,0 +1,29 @@
+﻿<!-- list -->
+<ul class="nav" ng-controller="navController">
+    <!-- 导航 -->
+    <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
+        <span translate="aside.nav.HEADER">Navigation</span></li>
+    <!--/导航 -->
+    <li ng-repeat="first in menus | orderBy:'sort'">
+        <!-- 一级菜单 -->
+        <a href class="auto">
+            <span class="pull-right text-muted">
+                <i class="fa fa-fw fa-angle-right text"></i>
+                <i class="fa fa-fw fa-angle-down text-active"></i>
+            </span>
+            <i class="glyphicon" ng-class="first.glyphicon"></i>
+            <span class="font-bold" translate="">__ first.description __</span></a>
+        </a>
+        <!--/一级菜单 -->
+        <ul  ng-repeat="second in first.children | orderBy:'sort'" class="nav nav-sub dk">
+            <!-- 二级菜单 -->
+            <li ui-sref-active="active">
+                <a ui-sref="__second.sref__">
+                    <span>__second.description__</span>
+                </a>
+            </li>
+            <!-- /二级菜单 -->
+        </ul>
+    </li>
+</ul>
+<!-- / list -->

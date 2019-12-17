@@ -72,6 +72,12 @@ angular.module('app')
           ]
       },
       {
+          name: 'ui.grid.resizeColumns',
+          files: [
+              'static/vendor/angular/angular-ui-grid/ui-grid.min.js',
+          ]
+      },
+      {
           name: 'ui.select',
           files: [
               'static/vendor/angular/angular-ui-select/dist/select.min.js',

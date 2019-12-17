@@ -33,7 +33,8 @@ angular.module('app')
               .state('app', {
                   abstract: true,
                   url: '/app',
-                  templateUrl: layout
+                  templateUrl: layout,
+                  resolve: load(["static/js/controllers/blocks/nav.js"])
               })
               .state('app.dashboard-v1', {
                   url: '/dashboard-v1',
@@ -147,7 +148,7 @@ angular.module('app')
               .state('app.table.uigrid', {
                   url: '/uigrid',
                   templateUrl: 'static/tpl/table_uigrid.html',
-                  resolve: load(['ui.grid','static/js/controllers/uigrid.js'])
+                  resolve: load(['ui.grid','ui.grid.resizeColumns','static/js/controllers/uigrid.js'])
               })
               .state('app.table.editable', {
                   url: '/editable',

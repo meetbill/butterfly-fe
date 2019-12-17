@@ -14,7 +14,7 @@ angular.module('app')
       $scope.app = {
         //name: 'Angulr UI',
         name: 'Pine',
-        version: '2.2.2',
+        version: '2.2.3',
         // for chart colors
         color: {
           primary: '#7266ba',
