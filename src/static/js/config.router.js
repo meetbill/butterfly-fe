@@ -451,8 +451,8 @@ angular.module('app')
 
           function load(srcs, callback) {
             return {
-                deps: ['$ocLazyLoad', '$q',
-                  function( $ocLazyLoad, $q ){
+                deps: ['$$animateJs', '$ocLazyLoad', '$q',
+                  function( $$animateJs, $ocLazyLoad, $q ){
                     var deferred = $q.defer();
                     var promise  = false;
                     srcs = angular.isArray(srcs) ? srcs : srcs.split(/\s+/);
