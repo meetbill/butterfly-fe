@@ -1472,3 +1472,12 @@ div.ui-grid-cell input.ng-valid {
   content: '\ea61';
 }
 /* '' */
+
+/* CSS FOR UI GRID Pagination*/
+
+.ui-grid-pager-max-pages-number {
+  position: relative;
+  bottom: 4px;
+}
+}
+/* END CSS FOR UI GRID Pagination*/
