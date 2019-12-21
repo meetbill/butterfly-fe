@@ -1,4 +1,4 @@
-# pine-Angulr
+# butterfly-fe(butterfly 前端)
 
 <!-- vim-markdown-toc GFM -->
 
@@ -30,7 +30,7 @@ Angulr 是一个以 Bootstrap 和 AngularJS 为基础，并使用了大量前端
 
 ### 2.2 变更
 
-[更新日志](https://github.com/meetbill/pine-Angulr/wiki/CHANGELOG)
+[更新日志](https://github.com/meetbill/butterfly-fe/wiki/CHANGELOG)
 
 ### 2.3 使用
 
@@ -48,14 +48,14 @@ templates 目录下 index.html 移动到 Pine 目录下
 
 ## 3 更多信息了解
 
-[pine-Angulr 进阶](https://github.com/meetbill/pine-Angulr/wiki)
+[butterfly-fe 进阶](https://github.com/meetbill/butterfly-fe/wiki)
 
 ## 4 参加步骤
 
 * 在 GitHub 上 `fork` 到自己的仓库，然后 `clone` 到本地，并设置用户信息。
 ```
-$ git clone https://github.com/meetbill/pine-Angulr.git
-$ cd pine-Angulr
+$ git clone https://github.com/meetbill/butterfly-fe.git
+$ cd butterfly-fe
 $ git config user.name "yourname"
 $ git config user.email "your email"
 ```
@@ -68,7 +68,7 @@ $ git push
 * 在 GitHub 网站上提交 pull request。
 * 定期使用项目仓库内容更新自己仓库内容。
 ```
-$ git remote add upstream https://github.com/meetbill/pine-Angulr.git
+$ git remote add upstream https://github.com/meetbill/butterfly-fe.git
 $ git fetch upstream
 $ git checkout master
 $ git rebase upstream/master

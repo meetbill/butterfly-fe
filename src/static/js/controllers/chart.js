@@ -3,7 +3,7 @@
 /* Controllers */
 
 app
-  // Flot Chart controller 
+  // Flot Chart controller
   .controller('FlotChartDemoCtrl', ['$scope', function($scope) {
     $scope.d = [ [1,6.5],[2,6.5],[3,7],[4,8],[5,7.5],[6,7],[7,6.8],[8,7],[9,7.2],[10,7],[11,6.8],[12,7] ];
 
@@ -21,10 +21,10 @@ app
 
     for (var i = 0; i < 20; ++i) {
       $scope.d2.push([i, Math.round( Math.sin(i)*100)/100] );
-    }   
+    }
 
-    $scope.d3 = [ 
-      { label: "华为", data: 16 }, 
+    $scope.d3 = [
+      { label: "华为", data: 16 },
       { label: "小米", data: 18 },
       { label: "oppo", data: 31 },
       { label: "vivo", data: 33 },

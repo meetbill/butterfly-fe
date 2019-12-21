@@ -12,7 +12,7 @@ angular.module('app')
             ;
 
         !prev.length && (parent = _el.parent());
-        
+
         function sm(){
           $timeout(function () {
             var method = attr.uiShift;
@@ -20,7 +20,7 @@ angular.module('app')
             _el.hasClass('in') || _el[method](target).addClass('in');
           });
         }
-        
+
         function md(){
           parent && parent['prepend'](el);
           !parent && _el['insertAfter'](prev);

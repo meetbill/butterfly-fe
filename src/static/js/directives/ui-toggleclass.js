@@ -9,7 +9,7 @@ angular.module('app')
               targets = (attr.target && attr.target.split(',')) || Array(el),
               key = 0;
           angular.forEach(classes, function( _class ) {
-            var target = targets[(targets.length && key)];            
+            var target = targets[(targets.length && key)];
             ( _class.indexOf( '*' ) !== -1 ) && magic(_class, target);
             $( target ).toggleClass(_class);
             key ++;

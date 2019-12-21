@@ -3,7 +3,7 @@ angular.module('app')
      return {
       restrict: 'AC',
       template:'<span class="bar"></span>',
-      link: function(scope, el, attrs) {        
+      link: function(scope, el, attrs) {
         el.addClass('butterbar hide');
         scope.$on('$stateChangeStart', function(event) {
           $anchorScroll();
