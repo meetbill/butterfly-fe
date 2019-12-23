@@ -12,7 +12,10 @@ angular.module('app')
 
           //---------------------------------------------jwt
           //authManager.checkAuthOnRefresh();
+          // 普通登录时使用，会跳转到内部登录页
           //authManager.redirectWhenUnauthenticated()
+          // 单点登录时使用，会跳转到特定单点登录页
+          //authManager.redirectWhenUnauthenticatedSSO()
       }
     ]
   )

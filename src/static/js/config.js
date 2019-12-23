@@ -1,6 +1,6 @@
 // config
 
-var app =  
+var app =
 angular.module('app')
   .config(
     [        '$controllerProvider', '$compileProvider', '$filterProvider', '$provide',
@@ -21,8 +21,8 @@ angular.module('app')
     // So, the module will search missing translation tables under the specified urls.
     // Those urls are [prefix][langKey][suffix].
     $translateProvider.useStaticFilesLoader({
-      prefix: 'static/l10n/',
-      suffix: '.js'
+        prefix: 'static/l10n/',
+        suffix: '.js'
     });
     // Tell the module what language to use by default
     //$translateProvider.preferredLanguage('en');
@@ -31,6 +31,8 @@ angular.module('app')
     $translateProvider.useLocalStorage();
   }])
     //-----------------------------------------------------------------------------------jwt
+    // 如果单点登录的话，通过此方法获取 token  $cookies.get("butterfly_token");
+    //
     //.config(['$httpProvider','jwtOptionsProvider',function($httpProvider, jwtOptionsProvider) {
     //jwtOptionsProvider.config({
     //  tokenGetter: ['$localStorage',function($localStorage) {
@@ -38,7 +40,8 @@ angular.module('app')
     //  }],
     //  unauthenticatedRedirector: ['$state', function($state) {
     //    $state.go('access.signin');
-    //  }]
+    //  }],
+    //  authPrefix: 'Bearer: '
     //});
 
     //$httpProvider.interceptors.push('jwtInterceptor');

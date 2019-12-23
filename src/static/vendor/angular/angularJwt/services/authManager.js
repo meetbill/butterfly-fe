@@ -1,7 +1,7 @@
 angular.module('angular-jwt.authManager', [])
   .provider('authManager', function () {
 
-    this.$get = function ($rootScope, $injector, $location, jwtHelper, jwtInterceptor, jwtOptions) {
+    this.$get = function ($rootScope, $injector, $location, jwtHelper, jwtInterceptor, jwtOptions, $window) {
 
       var config = jwtOptions.getConfig();
 
@@ -44,6 +44,8 @@ angular.module('angular-jwt.authManager', [])
         var token = invokeToken(config.tokenGetter);
         if (token) {
           if (!jwtHelper.isTokenExpired(token)) {
+            decode_token = jwtHelper.decodeToken(token);
+            $rootScope.username = decode_token.username;
             authenticate();
           } else {
             $rootScope.$broadcast('tokenHasExpired', token);
@@ -64,6 +66,14 @@ angular.module('angular-jwt.authManager', [])
         $rootScope.$on('unauthenticated', function () {
           invokeRedirector(config.unauthenticatedRedirector);
           unauthenticate();
+        });
+      }
+
+      function redirectWhenUnauthenticatedSSO() {
+        $rootScope.$on('unauthenticated', function (event,response) {
+          unauthenticate();
+          target_url = response.data.data.Target_url;
+          $window.location.href = target_url;
         });
       }
 
@@ -105,6 +115,7 @@ angular.module('angular-jwt.authManager', [])
         redirect: function() { return invokeRedirector(config.unauthenticatedRedirector); },
         checkAuthOnRefresh: checkAuthOnRefresh,
         redirectWhenUnauthenticated: redirectWhenUnauthenticated,
+        redirectWhenUnauthenticatedSSO: redirectWhenUnauthenticatedSSO,
         isAuthenticated: isAuthenticated
       }
     }
