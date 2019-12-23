@@ -1,5 +1,18 @@
 # butterfly-fe(butterfly 前端)
 
+<div align=center><img src="https://github.com/meetbill/butterfly/blob/master/images/butterfly.png" width="350"/></div>
+
+蝴蝶（轻量化 Web 框架）如同蝴蝶一样，此框架小而美
+
+```
+    __          __  __            ______
+   / /_  __  __/ /_/ /____  _____/ __/ /_  __
+  / __ \/ / / / __/ __/ _ \/ ___/ /_/ / / / /
+ / /_/ / /_/ / /_/ /_/  __/ /  / __/ / /_/ /
+/_.___/\__,_/\__/\__/\___/_/  /_/ /_/\__, /
+                                    /____/
+```
+
 <!-- vim-markdown-toc GFM -->
 
 * [1 简介](#1-简介)
