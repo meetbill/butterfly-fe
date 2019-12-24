@@ -38,7 +38,6 @@
         "TABLE_STATIC" : "静态表格",
         "DATATABLE" : "数据表格",
         "FOOTABLE" : "分条表格",
-        "NGGRID" : "ngGrid 组件",
         "UIGRID" : "uiGrid 组件",
         "SMARTTABLE" : "时髦表格",
         "EDITABLE" : "编辑表格"

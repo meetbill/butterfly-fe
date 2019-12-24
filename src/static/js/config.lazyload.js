@@ -56,14 +56,6 @@ angular.module('app')
   )
   .constant('MODULE_CONFIG', [
       {
-          name: 'ngGrid',
-          files: [
-              'static/vendor/angular/ng-grid/build/ng-grid.js',
-              'static/vendor/angular/ng-grid/ng-grid.min.css',
-              'static/vendor/angular/ng-grid/ng-grid.bootstrap.css'
-          ]
-      },
-      {
           name: 'ui.grid',
           files: [
               'static/vendor/angular/angular-ui-grid/ui-grid.min.js',

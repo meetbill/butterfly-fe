@@ -143,11 +143,6 @@ angular.module('app')
                   url: '/footable',
                   templateUrl: 'static/tpl/table_footable.html'
               })
-              .state('app.table.grid', {
-                  url: '/grid',
-                  templateUrl: 'static/tpl/table_grid.html',
-                  resolve: load(['ngGrid','static/js/controllers/grid.js'])
-              })
               .state('app.table.uigrid', {
                   url: '/uigrid',
                   templateUrl: 'static/tpl/table_uigrid.html',
