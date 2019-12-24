@@ -72,7 +72,7 @@ angular.module('angular-jwt.authManager', [])
       function redirectWhenUnauthenticatedSSO() {
         $rootScope.$on('unauthenticated', function (event,response) {
           unauthenticate();
-          target_url = response.data.data.Target_url;
+          target_url = response.data.data.redirect;
           $window.location.href = target_url;
         });
       }
