@@ -1,84 +1,77 @@
 ﻿<!DOCTYPE html>
 <html lang="en" data-ng-app="app">
-<head>
-  <meta charset="utf-8" />
-  <title>Angulr 2.2【主要风格】</title>
-  <meta name="description" content="Angularjs, Html5, Music, Landing, 4 in 1 ui kits package" />
-  <meta name="keywords" content="AngularJS, angular, bootstrap, admin, dashboard, panel, app, charts, components,flat, responsive, layout, kit, ui, route, web, app, widgets" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-  <link rel="stylesheet" href="static/vendor/assets/animate.css/animate.css" type="text/css" />
-  <link rel="stylesheet" href="static/vendor/assets/font-awesome/css/font-awesome.min.css" type="text/css" />
-  <link rel="stylesheet" href="static/vendor/assets/simple-line-icons/css/simple-line-icons.css" type="text/css" />
-  <link rel="stylesheet" href="static/vendor/jquery/bootstrap/dist/css/bootstrap.css" type="text/css" />
 
-  <!-- build:css css/app.min.css -->
-  <link href="static/logo/logo.css" rel="stylesheet" />
-  <link rel="stylesheet" href="static/css/font.css" type="text/css" />
-  <link rel="stylesheet" href="static/css/app.css" type="text/css" />
-  <!-- endbuild -->
-</head>
-<body ng-controller="AppCtrl">
-  <div class="app" id="app" ng-class="{'app-header-fixed':app.settings.headerFixed, 'app-aside-fixed':app.settings.asideFixed, 'app-aside-folded':app.settings.asideFolded, 'app-aside-dock':app.settings.asideDock, 'container':app.settings.container}" ui-view></div>
+    <head>
+        <meta charset="utf-8" />
+        <title>Angulr 2.2【主要风格】</title>
+        <meta name="description" content="Angularjs, Html5, Music, Landing, 4 in 1 ui kits package" />
+        <meta name="keywords" content="AngularJS, angular, bootstrap, admin, dashboard, panel, app, charts, components,flat, responsive, layout, kit, ui, route, web, app, widgets" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+        <link rel="stylesheet" href="static/vendor/assets/animate.css/animate.css" type="text/css" />
+        <link rel="stylesheet" href="static/vendor/assets/font-awesome/css/font-awesome.min.css" type="text/css" />
+        <link rel="stylesheet" href="static/vendor/assets/simple-line-icons/css/simple-line-icons.css" type="text/css" />
+        <link rel="stylesheet" href="static/vendor/jquery/bootstrap/dist/css/bootstrap.min.css" type="text/css" />
+        <!-- build:css css/app.min.css -->
+        <link href="static/logo/logo.css" rel="stylesheet" />
+        <link rel="stylesheet" href="static/css/font.css" type="text/css" />
+        <link rel="stylesheet" href="static/css/app.css" type="text/css" />
+        <!-- endbuild --></head>
 
-<!-- build:js js/app.angular.js -->
-  <!-- jQuery -->
-  <script src="static/vendor/jquery/jquery/dist/jquery.js"></script>
-  <!-- Bootstrap -->
-  <script src="static/vendor/jquery/bootstrap/dist/js/bootstrap.js"></script>
+    <body ng-controller="AppCtrl">
+        <div class="app" id="app" ng-class="{'app-header-fixed':app.settings.headerFixed, 'app-aside-fixed':app.settings.asideFixed, 'app-aside-folded':app.settings.asideFolded, 'app-aside-dock':app.settings.asideDock, 'container':app.settings.container}" ui-view></div>
+        <!-- build:js js/app.angular.js -->
+        <!-- jQuery -->
+        <script src="static/vendor/jquery/jquery/dist/jquery.min.js"></script>
+        <!-- Bootstrap -->
+        <script src="static/vendor/jquery/bootstrap/dist/js/bootstrap.min.js"></script>
+        <!-- Angular -->
+        <script src="static/vendor/angular/angular/angular.min.js"></script>
+        <script src="static/vendor/angular/angular-animate/angular-animate.min.js"></script>
+        <script src="static/vendor/angular/angular-aria/angular-aria.min.js"></script>
+        <script src="static/vendor/angular/angular-cookies/angular-cookies.min.js"></script>
+        <script src="static/vendor/angular/angular-messages/angular-messages.min.js"></script>
+        <script src="static/vendor/angular/angular-resource/angular-resource.min.js"></script>
+        <script src="static/vendor/angular/angular-sanitize/angular-sanitize.min.js"></script>
+        <script src="static/vendor/angular/angular-touch/angular-touch.min.js"></script>
+        <script src="static/vendor/angular/angular-ui-router/release/angular-ui-router.min.js"></script>
+        <script src="static/vendor/angular/ngstorage/ngStorage.js"></script>
+        <script src="static/vendor/angular/angular-ui-utils/ui-utils.js"></script>
+        <!-- jwt -->
+        <script src="static/vendor/angular/angularJwt/services/authManager.js"></script>
+        <script src="static/vendor/angular/angularJwt/services/interceptor.js"></script>
+        <script src="static/vendor/angular/angularJwt/services/jwt.js"></script>
+        <script src="static/vendor/angular/angularJwt/services/jwtOptions.js"></script>
+        <script src="static/vendor/angular/angularJwt/services/urlUtils.js"></script>
+        <script src="static/vendor/angular/angularJwt/angularJwt.js"></script>
+        <!-- bootstrap -->
+        <script src="static/vendor/angular/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+        <script src="static/vendor/angular/angular-bootstrap/angular-locale_zh-cn.js"></script>
+        <!-- lazyload -->
+        <script src="static/vendor/angular/oclazyload/dist/ocLazyLoad.js"></script>
+        <!-- translate -->
+        <script src="static/vendor/angular/angular-translate/angular-translate.js"></script>
+        <script src="static/vendor/angular/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
+        <script src="static/vendor/angular/angular-translate-storage-cookie/angular-translate-storage-cookie.js"></script>
+        <script src="static/vendor/angular/angular-translate-storage-local/angular-translate-storage-local.js"></script>
+        <!-- App -->
+        <script src="static/js/app.js"></script>
+        <script src="static/js/config.js"></script>
+        <script src="static/js/config.lazyload.js"></script>
+        <script src="static/js/config.router.js"></script>
+        <script src="static/js/main.js"></script>
+        <script src="static/js/services/ui-load.js"></script>
+        <script src="static/js/filters/fromNow.js"></script>
+        <script src="static/js/directives/setnganimate.js"></script>
+        <script src="static/js/directives/ui-butterbar.js"></script>
+        <script src="static/js/directives/ui-focus.js"></script>
+        <script src="static/js/directives/ui-jq.js"></script>
+        <script src="static/js/directives/ui-module.js"></script>
+        <script src="static/js/directives/ui-nav.js"></script>
+        <script src="static/js/directives/ui-scroll.js"></script>
+        <script src="static/js/directives/ui-shift.js"></script>
+        <script src="static/js/directives/ui-toggleclass.js"></script>
+        <script src="static/js/controllers/bootstrap.js"></script>
+        <!-- endbuild -->
+        <!-- Lazy loading --></body>
 
-  <!-- Angular -->
-  <script src="static/vendor/angular/angular/angular.min.js"></script>
-
-  <script src="static/vendor/angular/angular-animate/angular-animate.min.js"></script>
-  <script src="static/vendor/angular/angular-aria/angular-aria.min.js"></script>
-  <script src="static/vendor/angular/angular-cookies/angular-cookies.min.js"></script>
-  <script src="static/vendor/angular/angular-messages/angular-messages.min.js"></script>
-  <script src="static/vendor/angular/angular-resource/angular-resource.min.js"></script>
-  <script src="static/vendor/angular/angular-sanitize/angular-sanitize.min.js"></script>
-  <script src="static/vendor/angular/angular-touch/angular-touch.min.js"></script>
-
-  <script src="static/vendor/angular/angular-ui-router/release/angular-ui-router.min.js"></script>
-  <script src="static/vendor/angular/ngstorage/ngStorage.js"></script>
-  <script src="static/vendor/angular/angular-ui-utils/ui-utils.js"></script>
-
-  <!-- jwt -->
-  <script src="static/vendor/angular/angularJwt/services/authManager.js"></script>
-  <script src="static/vendor/angular/angularJwt/services/interceptor.js"></script>
-  <script src="static/vendor/angular/angularJwt/services/jwt.js"></script>
-  <script src="static/vendor/angular/angularJwt/services/jwtOptions.js"></script>
-  <script src="static/vendor/angular/angularJwt/services/urlUtils.js"></script>
-  <script src="static/vendor/angular/angularJwt/angularJwt.js"></script>
-
-  <!-- bootstrap -->
-  <script src="static/vendor/angular/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-  <script src="static/vendor/angular/angular-bootstrap/angular-locale_zh-cn.js"></script>
-  <!-- lazyload -->
-  <script src="static/vendor/angular/oclazyload/dist/ocLazyLoad.js"></script>
-  <!-- translate -->
-  <script src="static/vendor/angular/angular-translate/angular-translate.js"></script>
-  <script src="static/vendor/angular/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
-  <script src="static/vendor/angular/angular-translate-storage-cookie/angular-translate-storage-cookie.js"></script>
-  <script src="static/vendor/angular/angular-translate-storage-local/angular-translate-storage-local.js"></script>
-
-  <!-- App -->
-  <script src="static/js/app.js"></script>
-  <script src="static/js/config.js"></script>
-  <script src="static/js/config.lazyload.js"></script>
-  <script src="static/js/config.router.js"></script>
-  <script src="static/js/main.js"></script>
-  <script src="static/js/services/ui-load.js"></script>
-  <script src="static/js/filters/fromNow.js"></script>
-  <script src="static/js/directives/setnganimate.js"></script>
-  <script src="static/js/directives/ui-butterbar.js"></script>
-  <script src="static/js/directives/ui-focus.js"></script>
-  <script src="static/js/directives/ui-jq.js"></script>
-  <script src="static/js/directives/ui-module.js"></script>
-  <script src="static/js/directives/ui-nav.js"></script>
-  <script src="static/js/directives/ui-scroll.js"></script>
-  <script src="static/js/directives/ui-shift.js"></script>
-  <script src="static/js/directives/ui-toggleclass.js"></script>
-  <script src="static/js/controllers/bootstrap.js"></script>
-<!-- endbuild -->
-  <!-- Lazy loading -->
-</body>
 </html>
