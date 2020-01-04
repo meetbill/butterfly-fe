@@ -180,6 +180,13 @@ angular.module('app')
         files: [
             'static/vendor/angular/angular-skycons/angular-skycons.js'
         ]
+    },
+    {
+        name: 'angular-echarts',
+        files: [
+            'static/vendor/angular/angular-echarts/echarts.min.js',
+            'static/vendor/angular/angular-echarts/angular-echarts.min.js'
+        ]
     }
 ])
 // oclazyload config

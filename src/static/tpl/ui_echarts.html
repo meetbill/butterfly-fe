@@ -1,0 +1,53 @@
+﻿<div class="bg-light lter b-b wrapper-md">
+    <h1 class="m-n font-thin h3">图表 <kbd class="pull-right">Echarts</kbd></h1>
+</div>
+<div class="wrapper-md" ng-controller="EchartsDemoCtrl">
+    <div class="col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading font-bold">曲线图/折线图 <kbd class="pull-right">line-chart</kbd></div>
+            <div class="panel-body" style="height:340px">
+                <line-chart config="config" data="multiple"></line-chart>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading font-bold">柱状图 <kbd class="pull-right">bar-chart</kbd></div>
+            <div class="panel-body" style="height:340px">
+                <bar-chart config="config" data="bar"></bar-chart>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading font-bold">饼图 <kbd class="pull-right">pie-chart</kbd></div>
+            <div class="panel-body" style="height:340px">
+                <pie-chart config="config" data="bar"></pie-chart>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading font-bold">环图 <kbd class="pull-right">donut-chart</kbd></div>
+            <div class="panel-body" style="height:340px">
+                <donut-chart config="config" data="bar"></donut-chart>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading font-bold">折线区域图 <kbd class="pull-right">area-chart</kbd></div>
+            <div class="panel-body" style="height:340px">
+                <area-chart config="config" data="multiple"></area-chart>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading font-bold">仪表盘 <kbd class="pull-right">gauge-chart</kbd></div>
+            <div class="panel-body" style="height:340px">
+                <gauge-chart config="config" data="gauge"></gauge-chart>
+            </div>
+        </div>
+    </div>
+</div>
