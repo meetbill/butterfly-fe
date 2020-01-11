@@ -58,7 +58,7 @@ angular.module('app')
         name: 'ui.grid',
         files: [
             'static/vendor/angular/angular-ui-grid/ui-grid.min.js',
-            'static/vendor/angular/angular-ui-grid/ui-grid.css',
+            'static/vendor/angular/angular-ui-grid/ui-grid.min.css',
             'static/vendor/angular/angular-ui-grid/ui-grid.bootstrap.css'
         ]
     },
