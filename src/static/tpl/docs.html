@@ -266,6 +266,29 @@
                 <code>.col</code>创建自动宽度的列，还可以使用
                 <code>.w-lg, .w-md, .w, .w-sm, .w-xs</code>创建固定宽度的列。 还可以使用
                 <code>.hbox-auto-sm, .hbox-auto-xs</code>在小屏幕下去除固定宽度，变回自动宽度。</p>
+            <xmp class="bg-dark" >
+                <h1>如下代码为：左侧标签栏，右侧显示内容</h1>
+                <div class="hbox hbox-auto-xs hbox-auto-sm" ng-controller="ClusterDetailCtrl">
+                    <div class="col w-sm bg-light b-r bg-auto">
+                        <ul class="nav nav-pills nav-stacked nav-sm">
+                            <li ui-sref-active="active">
+                                <a data-toggle="tab" data-target="#proxy" >proxy 实例</a>
+                            </li>
+                            <li ui-sref-active="active">
+                                <a data-toggle="tab" data-target="#redis" >redis 实例</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col  tab-content">
+                        <div class="tab-pane" id="proxy">
+                            xxx
+                        </div>
+                        <div class="tab-pane" id="redis">
+                            ppp
+                        </div>
+                    </div>
+                </div>
+            </xmp>
             <div id="utilities" class="wrapper"></div>
             <div class="line b-b"></div>
             <h4 class="m-t-xl">样式工具 CSS Utilities</h3>
