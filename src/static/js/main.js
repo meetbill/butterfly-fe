@@ -17,7 +17,7 @@ function ($scope, $translate, $localStorage, $window) {
     $scope.app = {
         //name: 'Angulr UI',
         name: 'Pine',
-        version: '2.2.4_20200101',
+        version: '2.2.5_20200209',
         // for chart colors
         color: {
             primary: '#7266ba',
