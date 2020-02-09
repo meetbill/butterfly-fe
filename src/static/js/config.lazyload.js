@@ -108,8 +108,8 @@ angular.module('app')
     {
         name: 'toaster',
         files: [
-            'static/vendor/angular/angularjs-toaster/toaster.js',
-            'static/vendor/angular/angularjs-toaster/toaster.css'
+            'static/vendor/angular/angularjs-toaster/toaster.min.js',
+            'static/vendor/angular/angularjs-toaster/toaster.min.css'
         ]
     },
     {
