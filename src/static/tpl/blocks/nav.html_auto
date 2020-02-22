@@ -6,24 +6,28 @@
     <!--/导航 -->
     <li ng-repeat="first in menus | orderBy:'sort'">
         <!-- 一级菜单 -->
-        <a href class="auto">
-            <span class="pull-right text-muted">
+        <!-- 如果有二级菜单，则有右侧折叠图标,且无跳转链接 -->
+        <a ng-if="first.is_have_second == true" class="auto">
+            <span ng-if="first.is_have_second == true" class="pull-right text-muted">
                 <i class="fa fa-fw fa-angle-right text"></i>
                 <i class="fa fa-fw fa-angle-down text-active"></i>
             </span>
             <i class="glyphicon" ng-class="first.glyphicon"></i>
             <span class="font-bold" translate="">__ first.description __</span></a>
         </a>
+        <!-- 如果没有二级菜单，则没有右侧折叠图标,且有跳转链接 -->
+        <a ng-if="first.is_have_second != true" class="auto" ui-sref="__first.sref__">
+            <i class="glyphicon" ng-class="first.glyphicon"></i>
+            <span class="font-bold" translate="">__ first.description __</span></a>
+        </a>
         <!--/一级菜单 -->
-        <ul  ng-repeat="second in first.children | orderBy:'sort'" class="nav nav-sub dk">
+        <ul ng-repeat="second in first.children | orderBy:'sort'" class="nav nav-sub dk">
             <!-- 二级菜单 -->
             <li ui-sref-active="active">
                 <a ui-sref="__second.sref__">
-                    <span>__second.description__</span>
-                </a>
+                    <span>__second.description__</span></a>
             </li>
-            <!-- /二级菜单 -->
-        </ul>
+            <!-- /二级菜单 --></ul>
     </li>
 </ul>
 <!-- / list -->

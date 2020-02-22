@@ -7,6 +7,7 @@ app.controller('navController', ['$scope', function($scope) {
             "sort": 2,
             //柱状图小图标
             "glyphicon": "glyphicon-stats icon text-primary-dker",
+            "is_have_second": true,
             "children":[
                 {
                     "sref":"app.dashboard-v1",
@@ -26,6 +27,7 @@ app.controller('navController', ['$scope', function($scope) {
             "description":"常用页面",
             "sort": 1,
             "glyphicon": "glyphicon-cloud",
+            "is_have_second": true,
             "children":[
                 {
                     "sref":"app.page.profile",
@@ -35,11 +37,15 @@ app.controller('navController', ['$scope', function($scope) {
                     "sref":"app.page.search",
                     "description":"搜索页"
                 },
-                {
-                    "sref":"app.docs",
-                    "description":"Angulr 文档"
-                },
             ]
+        },
+        {
+            "description":"使用文档",
+            "sort": 1,
+            "glyphicon": "glyphicon-cloud",
+            "is_have_second": false,
+            "sref": "app.docs",
+            "children":[]
         },
     ];
 }]);
