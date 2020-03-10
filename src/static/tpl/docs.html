@@ -268,7 +268,7 @@
                 <code>.hbox-auto-sm, .hbox-auto-xs</code>在小屏幕下去除固定宽度，变回自动宽度。</p>
             <xmp class="bg-dark" >
                 <h1>如下代码为：左侧标签栏，右侧显示内容</h1>
-                <h1>class="active" 为默认标签</h1>
+                <h1>class="active" 为默认标签, class="tab-pane active" 为默认显示页面</h1>
 
                 <div class="hbox hbox-auto-xs hbox-auto-sm" ng-controller="ClusterDetailCtrl">
                     <div class="col w-sm bg-light b-r bg-auto">
@@ -282,7 +282,7 @@
                         </ul>
                     </div>
                     <div class="col  tab-content">
-                        <div class="tab-pane" id="proxy">
+                        <div class="tab-pane active" id="proxy">
                             xxx
                         </div>
                         <div class="tab-pane" id="redis">
