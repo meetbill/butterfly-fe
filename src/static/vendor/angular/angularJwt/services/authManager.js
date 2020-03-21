@@ -73,7 +73,8 @@ angular.module('angular-jwt.authManager', [])
         $rootScope.$on('unauthenticated', function (event,response) {
           unauthenticate();
           target_url = response.data.data.redirect;
-          $window.location.href = target_url;
+          // 跳转单点登录逻辑时，传入当前的路由 cur_path, 即 # 号后的路径
+          $window.location.href = target_url+ "?cur_path=" + encodeURIComponent($window.location.hash);
         });
       }
 
