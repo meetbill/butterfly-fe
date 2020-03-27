@@ -55,8 +55,8 @@ Angulr 是一个以 Bootstrap 和 AngularJS 为基础，并使用了大量前端
 ```
 将本项目src 下的
 
-static 目录下文件移动到 Pine 项目的 static 目录下
-templates 目录下 index.html 移动到 Pine 目录下
+static 目录下文件移动到 butterfly 项目的 static 目录下
+templates 目录下 index.html 移动到 butterfly 项目的 templates 目录下
 ```
 
 ## 3 更多信息了解
