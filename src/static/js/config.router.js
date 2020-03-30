@@ -377,15 +377,7 @@ function($stateProvider, $urlRouterProvider, JQ_CONFIG, MODULE_CONFIG) {
                         if (JQ_CONFIG[src]) {
                             return $ocLazyLoad.load(JQ_CONFIG[src]);
                         }
-                        angular.forEach(MODULE_CONFIG,
-                        function(module) {
-                            if (module.name == src) {
-                                name = module.name;
-                            } else {
-                                name = src;
-                            }
-                        });
-                        return $ocLazyLoad.load(name);
+                        return $ocLazyLoad.load(src);
                     });
                 });
                 deferred.resolve();
