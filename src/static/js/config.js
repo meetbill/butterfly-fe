@@ -1,22 +1,17 @@
 // config
-
-var app =
-angular.module('app')
-  .config(
-    [        '$controllerProvider', '$compileProvider', '$filterProvider', '$provide',
-    function ($controllerProvider,   $compileProvider,   $filterProvider,   $provide) {
-        //
-        // lazy controller, directive and service
-        app.controller = $controllerProvider.register;
-        app.directive  = $compileProvider.directive;
-        app.filter     = $filterProvider.register;
-        app.factory    = $provide.factory;
-        app.service    = $provide.service;
-        app.constant   = $provide.constant;
-        app.value      = $provide.value;
-    }
-  ])
-  .config(['$translateProvider', function($translateProvider){
+var app = angular.module('app').config(['$controllerProvider', '$compileProvider', '$filterProvider', '$provide',
+function ($controllerProvider, $compileProvider, $filterProvider, $provide) {
+    //
+    // lazy controller, directive and service
+    app.controller = $controllerProvider.register;
+    app.directive = $compileProvider.directive;
+    app.filter = $filterProvider.register;
+    app.factory = $provide.factory;
+    app.service = $provide.service;
+    app.constant = $provide.constant;
+    app.value = $provide.value;
+}]).config(['$translateProvider',
+function ($translateProvider) {
     // Register a loader for the static files
     // So, the module will search missing translation tables under the specified urls.
     // Those urls are [prefix][langKey][suffix].
@@ -29,26 +24,24 @@ angular.module('app')
     $translateProvider.preferredLanguage('zh_CN');
     // Tell the module to store the language in the local storage
     $translateProvider.useLocalStorage();
-  }])
-    //-----------------------------------------------------------------------------------jwt
-    // 如果单点登录的话，通过此方法获取 token  $cookies.get("butterfly_token");
-    //
-    //.config(['$httpProvider','jwtOptionsProvider',function($httpProvider, jwtOptionsProvider) {
-    //jwtOptionsProvider.config({
-    //  tokenGetter: ['$localStorage',function($localStorage) {
-    //    return $localStorage.jwt;
-    //  }],
-    //  unauthenticatedRedirector: ['$state', function($state) {
-    //    $state.go('access.signin');
-    //  }],
-    //  authPrefix: 'Bearer: '
-    //});
-
-    //$httpProvider.interceptors.push('jwtInterceptor');
-    //}])
-    //-----------------------------------------------------------------------------------jwt End
-  .config(
-    function($interpolateProvider) {
-        $interpolateProvider.startSymbol('__');
-        $interpolateProvider.endSymbol('__');
-  });
+}])
+//-----------------------------------------------------------------------------------
+// 如果单点登录的话，通过此方法获取 token  $cookies.get("butterfly_token");
+//-----------------------------------------------------------------------------------jwt
+//.config(['$httpProvider','jwtOptionsProvider',function($httpProvider, jwtOptionsProvider) {
+//jwtOptionsProvider.config({
+//  tokenGetter: ['$localStorage',function($localStorage) {
+//    return $localStorage.jwt;
+//  }],
+//  unauthenticatedRedirector: ['$state', function($state) {
+//    $state.go('access.signin');
+//  }],
+//  authPrefix: 'Bearer: '
+//});
+//$httpProvider.interceptors.push('jwtInterceptor');
+//}])
+//-----------------------------------------------------------------------------------jwt End
+.config(function ($interpolateProvider) {
+    $interpolateProvider.startSymbol('__');
+    $interpolateProvider.endSymbol('__');
+});
