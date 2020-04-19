@@ -7,6 +7,7 @@ function($http, $scope, $location, $timeout, toaster) {
         title: 'Title',
         text: 'Message'
     };
+
     $scope.pop = function(type, title, text) {
         toaster.pop(type, '', text);
     };
@@ -16,6 +17,7 @@ function($http, $scope, $location, $timeout, toaster) {
     var _successFuncBinder = function(callback, quiet) {
         return function(data) {
             $scope.processing = false;
+            // 如果返回 response 中含有 stat 属性, 则 stat 为非 "OK" 时，则 stat 内容为异常信息
             if (!quiet && data.stat) {
                 if (data.stat == "OK") {
                     $scope.pop('success', '', data.stat);
@@ -23,6 +25,16 @@ function($http, $scope, $location, $timeout, toaster) {
                     $scope.pop('error', '', data.stat);
                 }
             }
+
+            // 如果返回 response 中含有 code 属性, 则 code 为非 0 时，则 message 内容为异常信息
+            if (!quiet && data.code) {
+                if (data.code == 0) {
+                    $scope.pop('success', '', data.message);
+                } else {
+                    $scope.pop('error', '', data.message);
+                }
+            }
+
             if (callback) callback.call(null, data);
         };
     };
@@ -33,6 +45,7 @@ function($http, $scope, $location, $timeout, toaster) {
             if (!quiet && callback) {
                 if (!callback.call(null, data, status)) return;
             }
+
             if (status == 401) {
                 $scope.pop('wait', '', '正尝试自动登录');
             } else {
