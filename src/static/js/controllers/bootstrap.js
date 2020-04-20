@@ -3,21 +3,19 @@
 /* Controllers */
 
 // bootstrap controller
-
 //手风琴指令演示代码
-app.controller('AccordionDemoCtrl', ['$scope', function ($scope) {
+app.controller('AccordionDemoCtrl', ['$scope',
+function ($scope) {
     $scope.oneAtATime = true;
 
-    $scope.groups = [
-      {
-          title: '手风琴动态数据 - #1',
-          content: '这个数据由js提供 - #1'
-      },
-      {
-          title: '手风琴动态数据 - #2',
-          content: '这个数据由js提供 - #2'
-      }
-    ];
+    $scope.groups = [{
+        title: '手风琴动态数据 - #1',
+        content: '这个数据由js提供 - #1'
+    },
+    {
+        title: '手风琴动态数据 - #2',
+        content: '这个数据由js提供 - #2'
+    }];
 
     $scope.items = ['数据 1', '数据 2', '数据 3'];
 
@@ -30,29 +28,39 @@ app.controller('AccordionDemoCtrl', ['$scope', function ($scope) {
         isFirstOpen: true,
         isFirstDisabled: false
     };
-}])
-;
+}]);
 
 //消息指令演示代码
-app.controller('AlertDemoCtrl', ['$scope', function ($scope) {
-    $scope.alerts = [
-      { type: 'success', msg: '做得好!你成功地读这重要的警告信息。 ' },
-      { type: 'info', msg: '哥们！这提醒需要你的关注，但它不是特别重要的。 ' },
-      { type: 'warning', msg: '警告！最好的去检查一下哟，你的脸色看起来不太好… ' }
-    ];
+app.controller('AlertDemoCtrl', ['$scope',
+function ($scope) {
+    $scope.alerts = [{
+        type: 'success',
+        msg: '做得好!你成功地读这重要的警告信息。 '
+    },
+    {
+        type: 'info',
+        msg: '哥们！这提醒需要你的关注，但它不是特别重要的。 '
+    },
+    {
+        type: 'warning',
+        msg: '警告！最好的去检查一下哟，你的脸色看起来不太好… '
+    }];
 
     $scope.addAlert = function () {
-        $scope.alerts.push({ type: 'danger', msg: '天啦噜! 夭寿啦! 上厕所忘记带纸啦!' });
+        $scope.alerts.push({
+            type: 'danger',
+            msg: '天啦噜! 夭寿啦! 上厕所忘记带纸啦!'
+        });
     };
 
     $scope.closeAlert = function (index) {
         $scope.alerts.splice(index, 1);
     };
-}])
-;
+}]);
 
 //单选和复选按钮演示代码
-app.controller('ButtonsDemoCtrl', ['$scope', function ($scope) {
+app.controller('ButtonsDemoCtrl', ['$scope',
+function ($scope) {
     $scope.singleModel = 1;
 
     $scope.radioModel = '中';
@@ -62,11 +70,11 @@ app.controller('ButtonsDemoCtrl', ['$scope', function ($scope) {
         middle: true,
         right: false
     };
-}])
-;
+}]);
 
 //轮播指令演示代码
-app.controller('CarouselDemoCtrl', ['$scope', function ($scope) {
+app.controller('CarouselDemoCtrl', ['$scope',
+function ($scope) {
     $scope.myInterval = 5000;
     var slides = $scope.slides = [];
     $scope.addSlide = function () {
@@ -78,16 +86,12 @@ app.controller('CarouselDemoCtrl', ['$scope', function ($scope) {
     for (var i = 0; i < 4; i++) {
         $scope.addSlide();
     }
-}])
-;
+}]);
 
 //下拉框演示代码
-app.controller('DropdownDemoCtrl', ['$scope', function ($scope) {
-    $scope.items = [
-      '吃饭饭',
-      '碎叫叫',
-      '小锤锤'
-    ];
+app.controller('DropdownDemoCtrl', ['$scope',
+function ($scope) {
+    $scope.items = ['吃饭饭', '碎叫叫', '小锤锤'];
 
     $scope.status = {
         isopen: false
@@ -102,11 +106,11 @@ app.controller('DropdownDemoCtrl', ['$scope', function ($scope) {
         $event.stopPropagation();
         $scope.status.isopen = !$scope.status.isopen;
     };
-}])
-;
+}]);
 
 //模式对话框演示代码
-app.controller('ModalInstanceCtrl', ['$scope', '$modalInstance', 'items', function ($scope, $modalInstance, items) {
+app.controller('ModalInstanceCtrl', ['$scope', '$modalInstance', 'items',
+function ($scope, $modalInstance, items) {
     $scope.items = items;
     $scope.selected = {
         item: $scope.items[0]
@@ -119,9 +123,9 @@ app.controller('ModalInstanceCtrl', ['$scope', '$modalInstance', 'items', functi
     $scope.cancel = function () {
         $modalInstance.dismiss('cancel');
     };
-}])
-;
-app.controller('ModalDemoCtrl', ['$scope', '$modal', '$log', function ($scope, $modal, $log) {
+}]);
+app.controller('ModalDemoCtrl', ['$scope', '$modal', '$log',
+function ($scope, $modal, $log) {
     $scope.items = ['项目1', '项目2', '项目3'];
     $scope.open = function (size) {
         var modalInstance = $modal.open({
@@ -138,17 +142,19 @@ app.controller('ModalDemoCtrl', ['$scope', '$modal', '$log', function ($scope, $
         modalInstance.result.then(function (selectedItem) {
             $scope.selected = selectedItem;
             $log.info('选择结果: ', selectedItem);
-        }, function () {
+        },
+        function () {
             $log.info('模式对话框关闭时间: ' + new Date());
         });
     };
-}])
-;
+}]);
 
 //分页控件
-app.controller('PaginationDemoCtrl', ['$scope', '$log', function ($scope, $log) {
+app.controller('PaginationDemoCtrl', ['$scope', '$log',
+function ($scope, $log) {
     $scope.totalItems = 64;
     $scope.currentPage = 4;
+    $scope.itemsPerPage = 10;
 
     $scope.setPage = function (pageNo) {
         $scope.currentPage = pageNo;
@@ -161,27 +167,27 @@ app.controller('PaginationDemoCtrl', ['$scope', '$log', function ($scope, $log) 
     $scope.maxSize = 5;
     $scope.bigTotalItems = 175;
     $scope.bigCurrentPage = 1;
-}])
-;
+}]);
 
 //针对提示
-app.controller('PopoverDemoCtrl', ['$scope', function ($scope) {
+app.controller('PopoverDemoCtrl', ['$scope',
+function ($scope) {
     $scope.dynamicPopover = '你好，世界!';
     $scope.dynamicPopoverTitle = '提示';
-}])
-;
+}]);
 
 //进度条
-app.controller('ProgressDemoCtrl', ['$scope', function ($scope) {
+app.controller('ProgressDemoCtrl', ['$scope',
+function ($scope) {
     $scope.max = 200;
 
     $scope.getTypeName = function (type) {
         return {
-            "success" : "成功",
-            "info" : "信息",
-            "warning" : "警告",
-            "danger" : "危险"
-        }[type];
+            "success": "成功",
+            "info": "信息",
+            "warning": "警告",
+            "danger": "危险"
+        } [type];
     };
 
     $scope.random = function () {
@@ -209,7 +215,8 @@ app.controller('ProgressDemoCtrl', ['$scope', function ($scope) {
         $scope.stacked = [];
         var types = ['success', 'info', 'warning', 'danger'];
 
-        for (var i = 0, n = Math.floor((Math.random() * 4) + 1) ; i < n; i++) {
+        for (var i = 0,
+        n = Math.floor((Math.random() * 4) + 1); i < n; i++) {
             var index = Math.floor((Math.random() * 4));
             $scope.stacked.push({
                 value: Math.floor((Math.random() * 30) + 1),
@@ -218,20 +225,25 @@ app.controller('ProgressDemoCtrl', ['$scope', function ($scope) {
         }
     };
     $scope.randomStacked();
-}])
-;
+}]);
 
 //选项卡
-app.controller('TabsDemoCtrl', ['$scope', function ($scope) {
-    $scope.tabs = [
-      { title: '动态标题2', content: '动态内容2' },
-      { title: '动态标题3', content: '动态内容3', disabled: true }
-    ];
-}])
-;
+app.controller('TabsDemoCtrl', ['$scope',
+function ($scope) {
+    $scope.tabs = [{
+        title: '动态标题2',
+        content: '动态内容2'
+    },
+    {
+        title: '动态标题3',
+        content: '动态内容3',
+        disabled: true
+    }];
+}]);
 
 //星级评分
-app.controller('RatingDemoCtrl', ['$scope', function ($scope) {
+app.controller('RatingDemoCtrl', ['$scope',
+function ($scope) {
     $scope.rate = 7;
     $scope.max = 10;
     $scope.isReadonly = false;
@@ -240,19 +252,19 @@ app.controller('RatingDemoCtrl', ['$scope', function ($scope) {
         $scope.overStar = value;
         $scope.percent = 100 * (value / $scope.max);
     };
-}])
-;
+}]);
 
 //工具提示
-app.controller('TooltipDemoCtrl', ['$scope', function ($scope) {
+app.controller('TooltipDemoCtrl', ['$scope',
+function ($scope) {
     $scope.dynamicTooltip = '你好，世界!';
     $scope.dynamicTooltipText = '放上来';
     $scope.htmlTooltip = '代码改变世界';
-}])
-;
+}]);
 
 //字模
-app.controller('TypeaheadDemoCtrl', ['$scope', '$http', function ($scope, $http) {
+app.controller('TypeaheadDemoCtrl', ['$scope', '$http',
+function ($scope, $http) {
     $scope.selected = undefined;
     $scope.states = ['阿娇', '阿sa', '阿里巴巴', 'Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Dakota', 'North Carolina', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'];
     // 访问谷歌地图需要有网络，而且还要翻墙，比较麻烦。我就注释掉啦
@@ -271,19 +283,17 @@ app.controller('TypeaheadDemoCtrl', ['$scope', '$http', function ($scope, $http)
     //        return addresses;
     //    });
     //};
-
     // 访问本站数据
     $scope.getLocation = function (val) {
-        return $http.get('static/api/typehead/' + val + '.json')
-            .then(function (res) {
-                return res.data;
-            });
+        return $http.get('static/api/typehead/' + val + '.json').then(function (res) {
+            return res.data;
+        });
     };
-}])
-;
+}]);
 
 //日期标签
-app.controller('DatepickerDemoCtrl', ['$scope', '$filter', function ($scope, $filter) {
+app.controller('DatepickerDemoCtrl', ['$scope', '$filter',
+function ($scope, $filter) {
     $scope.today = function () {
         $scope.dt = $filter('date')(new Date(), "yyyy-MM-dd");
     };
@@ -299,7 +309,7 @@ app.controller('DatepickerDemoCtrl', ['$scope', '$filter', function ($scope, $fi
     };
 
     $scope.toggleMin = function () {
-        $scope.minDate = $scope.minDate ? null : new Date();
+        $scope.minDate = $scope.minDate ? null: new Date();
     };
     $scope.toggleMin();
 
@@ -318,9 +328,9 @@ app.controller('DatepickerDemoCtrl', ['$scope', '$filter', function ($scope, $fi
 
     $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
     $scope.format = $scope.formats[1];
-}])
-;
-app.directive('formatDate', ['$filter', function ($filter) {
+}]);
+app.directive('formatDate', ['$filter',
+function ($filter) {
     return {
         require: 'ngModel',
         link: function (scope, elem, attr, ngModelCtrl) {
@@ -336,11 +346,11 @@ app.directive('formatDate', ['$filter', function ($filter) {
             });
         }
     };
-}]);
-;
+}]);;
 
 //时间标签
-app.controller('TimepickerDemoCtrl', ['$scope', function ($scope) {
+app.controller('TimepickerDemoCtrl', ['$scope',
+function ($scope) {
     $scope.mytime = new Date();
 
     $scope.hstep = 1;

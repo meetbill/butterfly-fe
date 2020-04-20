@@ -1,530 +1,506 @@
 ﻿<div class="bg-light lter b-b wrapper-md">
-  <h1 class="m-n font-thin h3">UI Bootstrap <span class="badge">16</span> <kbd class="pull-right">Angular UI Bootstrap</kbd></h1>
-  <small class="text-muted">Angular UI Bootstrap 是著名的前端 UI 框架，他的官网是 <a href="http://angular-ui.github.io/bootstrap/" target="_blank">http://angular-ui.github.io/bootstrap/</a></small>
+    <h1 class="m-n font-thin h3">UI Bootstrap
+        <span class="badge">16</span>
+        <kbd class="pull-right">Angular UI Bootstrap</kbd></h1>
+    <small class="text-muted">Angular UI Bootstrap 是著名的前端 UI 框架，他的官网是
+        <a href="http://angular-ui.github.io/bootstrap/" target="_blank">http://angular-ui.github.io/bootstrap/</a></small>
 </div>
 <div class="wrapper-md">
-  <div class="row">
-    <div class="col-lg-6">
-      <!-- accordion -->      
-      <div ng-controller="AccordionDemoCtrl">
-        <accordion close-others="oneAtATime">
-          <accordion-group heading="手机琴项头部, 初始是展开的" is-open="status.isFirstOpen" is-disabled="status.isFirstDisabled">
-              <p>
-                  手风琴标签 <code>&lt;accordion&gt;</code>
-              </p>
-              <p>
-                  <button class="btn btn-default btn-sm" ng-click="status.open = !status.open">切换最后一个手风琴项</button>
-                  <button class="btn btn-default btn-sm" ng-click="status.isFirstDisabled = ! status.isFirstDisabled">启用/禁用 第一个手风琴项</button>
-              </p>
-          </accordion-group>
-          <accordion-group heading="__group.title__" ng-repeat="group in groups">
-            __group.content__
-          </accordion-group>
-          <accordion-group heading="演示动态高度">
-            <p>手风琴项的内容高度会随着内容变高</p>
-              <button class="btn btn-default btn-sm" ng-click="addItem()">添加新数据</button>
-              <div class="list-group m-t">
-                <div ng-repeat="item in items" class="list-group-item">__item__</div>
-              </div>
-          </accordion-group>
-          <accordion-group is-open="status.open" class="b-info">
-              <accordion-heading>
-                  这个标题由HTML代码组成! 
-                  而且右边还有一个折叠展开指示图标哦!
-                  <i class="pull-right fa fa-angle-right" ng-class="{'fa-angle-down': status.open, 'fa-angle-right': !status.open}"></i>
-              </accordion-heading>
-              太阳当空照，花儿对我笑，小鸟说早早早，你为什么背上小书包
-          </accordion-group>
-        </accordion>
-        <label class="checkbox i-checks m-l-md m-b-md">
-          <input type="checkbox" ng-model="oneAtATime"><i></i>
-          一次只打开一个手风琴项
-        </label>
-      </div>
-      <!-- / accordion -->
-
-      <!-- alert -->
-      <div ng-controller="AlertDemoCtrl" class="m-b-md">
-        <alert ng-repeat="alert in alerts" type="__alert.type__" close="closeAlert($index)">__alert.msg__</alert>
-        <button class='btn btn-default' ng-click="addAlert()">添加提示消息</button>
-        &nbsp;&nbsp; <span> 消息标签 <code>&lt;alert&gt;</code> </span>
-      </div>
-      <!-- / alert -->
-
-      <!-- button -->
-      <div ng-controller="ButtonsDemoCtrl" class="panel panel-default">
-        <div class="panel-heading">
-          按钮 <code>btn-checkbox</code>、<code>btn-radio</code>
-        </div>
-        <div class="panel-body">
-          <div class="row">
-            <div class="col-md-4">
-              <h5>复选按钮 - 单独演示</h5>
-              <div class="well b bg-light lter wrapper-sm">__singleModel__</div>
-              <button type="button" class="btn btn-primary" ng-model="singleModel" btn-checkbox btn-checkbox-true="1" btn-checkbox-false="0">
-                  复选按钮
-              </button>
+    <div class="row">
+        <div class="col-lg-6">
+            <!-- accordion -->
+            <div ng-controller="AccordionDemoCtrl">
+                <accordion close-others="oneAtATime">
+                    <accordion-group heading="手机琴项头部, 初始是展开的" is-open="status.isFirstOpen" is-disabled="status.isFirstDisabled">
+                        <p>手风琴标签
+                            <code>&lt;accordion&gt;</code></p>
+                        <p>
+                            <button class="btn btn-default btn-sm" ng-click="status.open = !status.open">切换最后一个手风琴项</button>
+                            <button class="btn btn-default btn-sm" ng-click="status.isFirstDisabled = ! status.isFirstDisabled">启用/禁用 第一个手风琴项</button></p>
+                    </accordion-group>
+                    <accordion-group heading="__group.title__" ng-repeat="group in groups">__group.content__</accordion-group>
+                    <accordion-group heading="演示动态高度">
+                        <p>手风琴项的内容高度会随着内容变高</p>
+                        <button class="btn btn-default btn-sm" ng-click="addItem()">添加新数据</button>
+                        <div class="list-group m-t">
+                            <div ng-repeat="item in items" class="list-group-item">__item__</div></div>
+                    </accordion-group>
+                    <accordion-group is-open="status.open" class="b-info">
+                        <accordion-heading>这个标题由HTML代码组成! 而且右边还有一个折叠展开指示图标哦!
+                            <i class="pull-right fa fa-angle-right" ng-class="{'fa-angle-down': status.open, 'fa-angle-right': !status.open}"></i></accordion-heading>太阳当空照，花儿对我笑，小鸟说早早早，你为什么背上小书包</accordion-group>
+                </accordion>
+                <label class="checkbox i-checks m-l-md m-b-md">
+                    <input type="checkbox" ng-model="oneAtATime">
+                    <i>
+                    </i>一次只打开一个手风琴项</label>
             </div>
-            <div class="col-md-8">
-              <h5>复选按钮 - 分组演示</h5>
-              <div class="well b bg-light lter wrapper-sm">__checkModel__</div>
-              <div class="btn-group">
-                  <label class="btn btn-primary" ng-model="checkModel.left" btn-checkbox>左</label>
-                  <label class="btn btn-primary" ng-model="checkModel.middle" btn-checkbox>中</label>
-                  <label class="btn btn-primary" ng-model="checkModel.right" btn-checkbox>右</label>
-              </div>
+            <!-- / accordion -->
+            <!-- alert -->
+            <div ng-controller="AlertDemoCtrl" class="m-b-md">
+                <alert ng-repeat="alert in alerts" type="__alert.type__" close="closeAlert($index)">__alert.msg__</alert>
+                <button class='btn btn-default' ng-click="addAlert()">添加提示消息</button>&nbsp;&nbsp;
+                <span>消息标签
+                    <code>&lt;alert&gt;</code></span>
             </div>
-          </div>
-          <div class="m-t m-b">
-            <h5>单选按钮 &amp; 联动 &amp; 右边的可以取消选择哦!</h5>
-            <div class="well b bg-light lter wrapper-sm">__radioModel || 'null'__</div>
-            <div class="btn-group">
-                <label class="btn btn-primary" ng-model="radioModel" btn-radio="'左'">左</label>
-                <label class="btn btn-primary" ng-model="radioModel" btn-radio="'中'">中</label>
-                <label class="btn btn-primary" ng-model="radioModel" btn-radio="'右'">右</label>
+            <!-- / alert -->
+            <!-- button -->
+            <div ng-controller="ButtonsDemoCtrl" class="panel panel-default">
+                <div class="panel-heading">按钮
+                    <code>btn-checkbox</code>、
+                    <code>btn-radio</code></div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h5>复选按钮 - 单独演示</h5>
+                            <div class="well b bg-light lter wrapper-sm">__singleModel__</div>
+                            <button type="button" class="btn btn-primary" ng-model="singleModel" btn-checkbox btn-checkbox-true="1" btn-checkbox-false="0">复选按钮</button></div>
+                        <div class="col-md-8">
+                            <h5>复选按钮 - 分组演示</h5>
+                            <div class="well b bg-light lter wrapper-sm">__checkModel__</div>
+                            <div class="btn-group">
+                                <label class="btn btn-primary" ng-model="checkModel.left" btn-checkbox>左</label>
+                                <label class="btn btn-primary" ng-model="checkModel.middle" btn-checkbox>中</label>
+                                <label class="btn btn-primary" ng-model="checkModel.right" btn-checkbox>右</label></div>
+                        </div>
+                    </div>
+                    <div class="m-t m-b">
+                        <h5>单选按钮 &amp; 联动 &amp; 右边的可以取消选择哦!</h5>
+                        <div class="well b bg-light lter wrapper-sm">__radioModel || 'null'__</div>
+                        <div class="btn-group">
+                            <label class="btn btn-primary" ng-model="radioModel" btn-radio="'左'">左</label>
+                            <label class="btn btn-primary" ng-model="radioModel" btn-radio="'中'">中</label>
+                            <label class="btn btn-primary" ng-model="radioModel" btn-radio="'右'">右</label></div>
+                        <div class="btn-group">
+                            <label class="btn btn-success" ng-model="radioModel" btn-radio="'左'" uncheckable>左</label>
+                            <label class="btn btn-success" ng-model="radioModel" btn-radio="'中'" uncheckable>中</label>
+                            <label class="btn btn-success" ng-model="radioModel" btn-radio="'右'" uncheckable>右</label></div>
+                    </div>
+                </div>
             </div>
-            <div class="btn-group">
-                <label class="btn btn-success" ng-model="radioModel" btn-radio="'左'" uncheckable>左</label>
-                <label class="btn btn-success" ng-model="radioModel" btn-radio="'中'" uncheckable>中</label>
-                <label class="btn btn-success" ng-model="radioModel" btn-radio="'右'" uncheckable>右</label>
+            <!-- / button -->
+            <!-- carousel -->
+            <div ng-controller="CarouselDemoCtrl" class="panel b-a" set-ng-animate="false">
+                <div class="panel-heading">轮播标签
+                    <code>&lt;carousel&gt;</code></div>
+                <carousel interval="myInterval">
+                    <slide ng-repeat="slide in slides" active="slide.active">
+                        <img ng-src="__slide.image__" class="img-full">
+                        <div class="carousel-caption">
+                            <h4>第 __$index+1__ 项</h4>
+                            <p>__slide.text__</p>
+                        </div>
+                    </slide>
+                </carousel>
+                <div class="panel-footer">
+                    <button type="button" class="btn btn-default m-r" ng-click="addSlide()">添加轮播项</button>时间间隔:
+                    <input type="number" class="form-control w-sm inline" ng-model="myInterval">ms</div></div>
+            <!-- / carousel -->
+            <!-- collapse -->
+            <div class="panel b-a">
+                <div class="panel-heading b-b b-light">折叠属性
+                    <code>collapse</code>
+                    <button class="btn btn-default btn-xs pull-right" ng-init="isCollapsed = false" ng-click="isCollapsed = !isCollapsed">切换折叠</button></div>
+                <div collapse="isCollapsed" class="panel-body">宁折不弯，宁折不弯，宁折不弯，宁折不弯</div></div>
+            <!-- / collapse -->
+            <!-- dropdown -->
+            <div ng-controller="DropdownDemoCtrl" class="panel b-a">
+                <div class="panel-heading">下拉框
+                    <code>dropdown</code></div>
+                <div class="panel-body">
+                    <!-- Simple dropdown -->
+                    <span class="dropdown" dropdown on-toggle="toggled(open)">
+                        <a href dropdown-toggle>文字链接下拉框</a>
+                        <ul class="dropdown-menu">
+                            <li ng-repeat="choice in items">
+                                <a href>__choice__</a></li>
+                        </ul>
+                    </span>
+                    <!-- Single button -->
+                    <div class="btn-group" dropdown is-open="status.isopen">
+                        <button type="button" class="btn btn-primary" dropdown-toggle ng-disabled="disabled">下拉框
+                            <span class="caret"></span></button>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>
+                                <a href>吃饭</a></li>
+                            <li>
+                                <a href>睡觉</a></li>
+                            <li>
+                                <a href>打代码</a></li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href>人生完美</a></li>
+                        </ul>
+                    </div>
+                    <!-- Split button -->
+                    <div class="btn-group" dropdown>
+                        <button type="button" class="btn btn-danger">带分割线</button>
+                        <button type="button" class="btn btn-danger dropdown-toggle" dropdown-toggle>
+                            <span class="caret"></span>
+                            <span class="sr-only">下拉框</span></button>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>
+                                <a href>吃饭</a></li>
+                            <li>
+                                <a href>睡觉</a></li>
+                            <li>
+                                <a href>打代码</a></li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href>人生完美</a></li>
+                        </ul>
+                    </div>
+                    <p class="m-t">
+                        <button type="button" class="btn btn-default btn-sm" ng-click="toggleDropdown($event)">切换下拉框</button>
+                        <button type="button" class="btn btn-default btn-sm" ng-click="disabled = !disabled">启用/禁用</button></p>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
-      <!-- / button -->
-
-      <!-- carousel -->
-      <div ng-controller="CarouselDemoCtrl" class="panel b-a" set-ng-animate="false">
-        <div class="panel-heading">
-          轮播标签 <code>&lt;carousel&gt;</code>
-        </div>
-        <carousel interval="myInterval">
-          <slide ng-repeat="slide in slides" active="slide.active">
-            <img ng-src="__slide.image__" class="img-full">
-            <div class="carousel-caption">
-              <h4>第 __$index+1__ 项</h4>
-              <p>__slide.text__</p>
+            <!-- / dropdown -->
+            <!-- modal -->
+            <div ng-controller="ModalDemoCtrl" class="panel b-a">
+                <script type="text/ng-template" id="myModalContent.html">< div ng - include = "'static/tpl/modal.html'" ></div>
+          /</script>
+                <div class="panel-heading b-b b-light">模式对话框
+                    <code>$modal.open()</code></div>
+                <div class="panel-body">
+                    <button class="btn btn-success" ng-click="open()">模式对话框</button>
+                    <button class="btn btn-default" ng-click="open('lg')">大框框</button>
+                    <button class="btn btn-dark" ng-click="open('sm')">小框框</button></div>
             </div>
-          </slide>
-        </carousel>
-        <div class="panel-footer">
-          <button type="button" class="btn btn-default m-r" ng-click="addSlide()">添加轮播项</button>
-            时间间隔: <input type="number" class="form-control w-sm inline" ng-model="myInterval"> ms          
-        </div>
-      </div>
-      <!-- / carousel -->      
-
-      <!-- collapse -->
-      <div class="panel b-a">
-        <div class="panel-heading b-b b-light">折叠属性 <code>collapse</code>
-          <button class="btn btn-default btn-xs pull-right" ng-init="isCollapsed = false" ng-click="isCollapsed = !isCollapsed">切换折叠</button>
-        </div>
-        <div collapse="isCollapsed" class="panel-body">
-            宁折不弯，宁折不弯，宁折不弯，宁折不弯 
-        </div>
-      </div>
-      <!-- / collapse -->
-
-      <!-- dropdown -->
-      <div ng-controller="DropdownDemoCtrl" class="panel b-a">
-        <div class="panel-heading">下拉框 <code>dropdown</code></div>
-        <div class="panel-body">
-          <!-- Simple dropdown -->
-            <span class="dropdown" dropdown on-toggle="toggled(open)">
-                <a href dropdown-toggle>
-                    文字链接下拉框
-                </a>
-                <ul class="dropdown-menu">
-                    <li ng-repeat="choice in items">
-                        <a href>__choice__</a>
+            <!-- /modal -->
+            <!-- pagination -->
+            <div ng-controller="PaginationDemoCtrl">
+                <h4>分页标签
+                    <code>&lt;pagination&gt;</code></h4>
+                <pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()" class="m-t-none m-b"></pagination>
+                <pagination boundary-links="true" total-items="totalItems" ng-model="currentPage" class="pagination-sm m-t-none m-b" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></pagination>
+                <pagination direction-links="false" boundary-links="true" total-items="totalItems" ng-model="currentPage" class="m-t-none m-b"></pagination>
+                <pagination direction-links="false" total-items="totalItems" ng-model="currentPage" num-pages="smallnumPages" class="m-t-none m-b"></pagination>
+                <!-- meetbill 推荐 boundary-links C (Default: false) - 是否显示第一个/最后一个按钮 total-items $ - 所有页中的项目总数 ng-model $ - 当前页数. 第一页为 1（即从 1 开始计算而不是 0）. max-size $ (Default: null) - 限制分页按钮显示的数量大小。默认会将所有分页显示出来 ng-change $ - 点击分页按钮触发的方法，可用于更改不同页面数据 previous-text C (Default: Previous) - 上一个按钮的文本 next-text C (Default: Next) - 下一个按钮的文本 first-text C (Default: First) - 第一个按钮的文本。 last-text C (Default: Last) - 最后一个按钮的文本。 items-per-page 默认 10 表示每页显示的数量, 设置值小于 1 表示显示所有项 总结：在控件中，num-pages 是只读属性，由控件根据 total-items 和 items-per-page 计算出总页数。 -->
+                <p>推荐</p>
+                <pagination boundary-links="true" total-items="totalItems" ng-model="currentPage" max-size="maxSize" items-per-page="itemsPerPage" ng-change="pageChanged()" previous-text="上一页" next-text="下一页" first-text="第一页" last-text="第末页"></pagination>
+                <div>
+                    <span class="m-r">当前页码:
+                        <strong>__currentPage__</strong></span>
+                    <button class="btn btn-default" ng-click="setPage(3)">转到第 3 页</button></div>
+                <h4>分页按钮标签
+                    <code>&lt;pager&gt;</code></h4>
+                <pager total-items="totalItems" ng-model="currentPage" previous-text="上一页" next-text="下一页"></pager>
+                <h4>
+                    <span class="text-sm">第 __bigCurrentPage__ 页/共 __numPages__ 页</span></h4>
+                <pagination total-items="bigTotalItems" ng-model="bigCurrentPage" max-size="maxSize" class="pagination-sm m-t-sm m-b" boundary-links="true" previous-text="上一页" next-text="下一页" first-text="第一页" last-text="第末页"></pagination>
+                <br />
+                <pagination total-items="bigTotalItems" ng-model="bigCurrentPage" max-size="maxSize" class="pagination-sm m-t-none m-b" boundary-links="true" rotate="false" num-pages="numPages" previous-text="上一页" next-text="下一页" first-text="第一页" last-text="第末页"></pagination>
+            </div>
+            <!-- / pagination -->
+            <!-- popover -->
+            <div ng-controller="PopoverDemoCtrl" class="m-b">
+                <h4>针对提示
+                    <code>popover</code></h4>
+                <div class="row">
+                    <div class="form-group col-sm-6">
+                        <label>内容:</label>
+                        <input type="text" ng-model="dynamicPopover" class="form-control"></div>
+                    <div class="form-group col-sm-6">
+                        <label>标题:</label>
+                        <input type="text" ng-model="dynamicPopoverTitle" class="form-control"></div>
+                </div>
+                <button popover="__dynamicPopover__" popover-title="__dynamicPopoverTitle__" class="btn btn-info">弹出针对提示</button>
+                <h5 class="m-t-md">显示方位</h5>
+                <button popover-placement="top" popover="显示在上方!" class="btn btn-default">上</button>
+                <button popover-placement="left" popover="显示在左边!" class="btn btn-default">左</button>
+                <button popover-placement="right" popover="显示在右边!" class="btn btn-default">右</button>
+                <button popover-placement="bottom" popover="显示在下方!" class="btn btn-default">下</button>
+                <h5 class="m-t-md">触发时机</h5>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <button popover="鼠标移入时显示此针对提示!" popover-trigger="mouseenter" class="btn btn-success">鼠标移入</button></div>
+                    <div class="col-sm-6">
+                        <input type="text" value="点我! (获得焦点)" popover="获取焦点时显示此针对提示!" popover-trigger="focus" class="form-control"></div>
+                </div>
+                <h5 class="m-t-md">其它</h5>
+                <button Popover-animation="true" popover="我是渐入渐出的针对提示!" class="btn btn-default">动画</button>
+                <button popover="我有一个标题，好厉害!" popover-title="我是标题" class="btn btn-default">带标题</button></div>
+            <!-- / popover --></div>
+        <div class="col-lg-6">
+            <!-- progressbar -->
+            <div ng-controller="ProgressDemoCtrl" class="panel panel-default">
+                <div class="panel-heading">
+                    <ul class="nav nav-pills pull-right">
+                        <li>
+                            <a href ng-click="random()">产生随机示例数据</a></li>
+                        <li>
+                            <a href ng-click="randomStacked()">产生随机
+                                <strong class="text-danger">分段</strong>示例数据</a></li>
+                    </ul>进度条
+                    <code>&lt;progressbar&gt;</code></div>
+                <div class="list-group">
+                    <div class="list-group-item">
+                        <progressbar value="35" class="progress-xxs m-t-sm"></progressbar>
+                        <progressbar value="55" class="progress-xs" type="info"></progressbar>
+                        <progressbar class="progress-striped progress-xs" value="22" type="success">22%</progressbar>
+                        <progressbar class="progress-striped active progress-xs m-b-sm" max="200" value="90" type="warning">
+                            <i>90 / 200</i>
+                        </progressbar>
+                    </div>
+                    <div class="list-group-item">
+                        <progressbar max="max" value="dynamic" type="info" class="progress-sm m-t-sm">
+                            <span style="white-space:nowrap;">__dynamic__ / __max__</span></progressbar>
+                        <progressbar animate="false" value="dynamic" type="success">
+                            <b>__dynamic__%</b>
+                        </progressbar>
+                        <progressbar class="progress-striped active m-b-sm" value="dynamic" type="__type__">__getTypeName(type)__
+                            <i ng-show="showWarning">!!! 大危机 !!!</i></progressbar>
+                    </div>
+                    <div class="list-group-item">
+                        <progress class="m-t-sm m-b-sm">
+                            <bar ng-repeat="bar in stacked track by $index" value="bar.value" type="__bar.type__">
+                                <span ng-hide="bar.value < 5">__bar.value__%</span></bar>
+                        </progress>
+                    </div>
+                </div>
+            </div>
+            <!-- / progressbar -->
+            <!-- rating -->
+            <div ng-controller="RatingDemoCtrl" class="m-b-lg">
+                <h4>星级评分标签
+                    <code>&lt;rating&gt;</code></h4>
+                <rating ng-model="rate" max="max" readonly="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null"></rating>
+                <span class="label" ng-class="{'label-warning': percent<30, 'label-info': percent>=30 && percent<70, 'label-success': percent>=70}" ng-show="overStar && !isReadonly">__percent__%</span>
+                <div class="well b bg-light lt wrapper-sm m-t">当前选择星级:
+                    <b>__rate__</b>- 只读:
+                    <b>__isReadonly__</b>- 鼠标所示星级:
+                    <b>__overStar || "none"__</b>
+                </div>
+                <button class="btn btn-sm btn-default" ng-click="rate = 0" ng-disabled="isReadonly">清除</button>
+                <button class="btn btn-sm btn-default" ng-click="isReadonly = ! isReadonly">切换只读</button>
+                <h5 class="m-t">自定义图标</h5>
+                <div ng-init="xx = 4" class="m-b text-lg">
+                    <rating ng-model="xx" max="5" icon-lib="'fa'" state-on="'fa-star text-warning'" state-off="'fa-star-o'"></rating>
+                    <b>(__xx__)</b>
+                </div>
+                <div ng-init="x = 5">
+                    <rating ng-model="x" max="15" icon-lib="'fa'" state-on="'fa-female text-info'" state-off="'fa-female'"></rating>
+                    <b>(
+                        <i>当前选择:</i>__x__)</b>
+                </div>
+            </div>
+            <!-- / rating -->
+            <!-- tab -->
+            <div ng-controller="TabsDemoCtrl">
+                <h4>选项卡
+                    <code>&lt;tabset&gt;</code></h4>
+                <p>只要设置 active = true 就可以激活一个选项卡了哦:</p>
+                <p>
+                    <button class="btn btn-default btn-sm" ng-click="tabs[0].active = true">选择第二个选项卡页</button>
+                    <button class="btn btn-default btn-sm" ng-click="tabs[1].active = true">选择第三个选项卡页</button>
+                    <button class="btn btn-default btn-sm" ng-click="tabs[1].disabled = ! tabs[1].disabled">启用/禁用第三个选项卡页</button></p>
+                <tabset class="tab-container">
+                    <tab heading="静态标题">静态内容</tab>
+                    <tab ng-repeat="tab in tabs" heading="__tab.title__" active="tab.active" disabled="tab.disabled">__tab.content__</tab>
+                    <tab>
+                        <tab-heading>
+                            <i class="glyphicon glyphicon-bell"></i>提示!</tab-heading>我有一个HTML组成的头部，厉害死我了</tab>
+                </tabset>
+                <tabset vertical="true" type="pills" class="tab-container">
+                    <tab heading="垂直 1">看到没，我是锤子的，还有谁!</tab>
+                    <tab heading="垂直 2">拿小锤锤，锤你胸口!</tab></tabset>
+                <tabset justified="true" class="tab-container">
+                    <tab heading="选项卡标签">选项卡标签会填满整行1</tab>
+                    <tab heading="会填满">选项卡标签会填满整行2</tab>
+                    <tab heading="整行">选项卡标签会填满整行3</tab></tabset>
+            </div>
+            <!-- / tab -->
+            <!-- tooltip -->
+            <div ng-controller="TooltipDemoCtrl" class="panel panel-default">
+                <div class="panel-heading">工具提示
+                    <code>tooltip</code></div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="form-group col-sm-6">
+                            <label>动态文本</label>
+                            <input type="text" ng-model="dynamicTooltipText" class="form-control"></div>
+                        <div class="form-group col-sm-6">
+                            <label>动态工具提示文本</label>
+                            <input type="text" ng-model="dynamicTooltip" class="form-control"></div>
+                    </div>
+                    <p>我叫你一声鼠标，你敢
+                        <a href="#" class="text-info" tooltip="__dynamicTooltip__">__dynamicTooltipText__</a>吗? 我
+                        <a href="#" class="text-info" tooltip-placement="left" tooltip="如花!">左看</a>、
+                        <a href="#" class="text-info" tooltip-placement="right" tooltip="凤姐!">右看</a>、
+                        <a href="#" class="text-info" tooltip-placement="top" tooltip="芙蓉姐姐!">上看</a>、
+                        <a href="#" class="text-info" tooltip-placement="bottom" tooltip="孔连顺!">下看</a>，原来每个女孩都不简单.
+                        <br />你可以
+                        <a href="#" class="text-info" tooltip-animation="false" tooltip="没动画，宝宝不开森. :-(">关闭动画</a>，或者
+                        <a href="#" class="text-info" tooltip-popup-delay='1000' tooltip='天空一声巨响，老子延迟登场'>延迟显示</a>工具提示.</p>
+                    <p>或许你可以试试
+                        <a href="#" class="text-info" tooltip-html-unsafe="__htmlTooltip__">用 HTML 组成工具提示</a>!</p>
+                    <form role="form">
+                        <div class="form-group">
+                            <label>或者自定义触发时机，比如获取焦点时触发:</label>
+                            <input type="text" value="参奏!" tooltip="朕累了，点击其它任意位置退朝..." tooltip-trigger="focus" tooltip-placement="top" class="form-control" /></div>
+                    </form>
+                </div>
+            </div>
+            <!-- / tooltip -->
+            <!-- typehead -->
+            <div ng-controller="TypeaheadDemoCtrl" class="m-b-lg">
+                <h4>字模 (功能为：自动补全)
+                    <code tooltip-html-unsafe="用的时候，其实是: typeahead">typehead</code></h4>
+                <h5>数据源为静态数组</h5>
+                <div class="well b bg-light wrapper-sm">选择的是: __selected | json__</div>
+                <input type="text" ng-model="selected" placeholder='打“阿”或者打英文试一下' typeahead="state for state in states | filter:$viewValue | limitTo:8" class="form-control">
+                <h5>数据源为异步Json数组</h5>
+                <div class="well b bg-light wrapper-sm">选择的是: __asyncSelected | json__</div>
+                <div class="pos-rlt">
+                    <i ng-show="loadingLocations" class="fa fa-spinner fa-spin form-control-spin"></i>
+                    <input type="text" ng-model="asyncSelected" placeholder="通过 $http 加载异步数据，请在web容器下运行示例" typeahead="address for address in getLocation($viewValue)" typeahead-loading="loadingLocations" class="form-control"></div>
+            </div>
+            <!-- / typehead -->
+            <!-- datepicker -->
+            <div ng-controller="DatepickerDemoCtrl" class="m-b-lg">
+                <h4>日期标签
+                    <code>&lt;datepicker&gt;</code></h4>
+                <h5>内联</h5>
+                <div class="m-b">
+                    <datepicker ng-model="dt" min-date="minDate" show-weeks="true" class="datepicker" data-format="yyyy+MM+dd"></datepicker>
+                </div>
+                <pre class="alert alert-info">选择的日期是:
+                    <em>__dt | date:'yyyy-MM-dd' __</em></pre>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label>弹出</label>
+                        <p class="input-group">
+                            <input type="text" class="form-control" datepicker-popup="__format__" ng-model="dt" is-open="opened" min-date="minDate" max-date="'2100-12-31'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="关闭" clear-text="清除" current-text="今天" format-date />
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-default" ng-click="open($event)">
+                                    <i class="glyphicon glyphicon-calendar"></i>
+                                </button>
+                            </span>
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <label>日期格式:</label>
+                        <select class="form-control" ng-model="format" ng-options="f for f in formats">
+                            <option></option>
+                        </select>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-sm btn-info" ng-click="today()">今天</button>
+                <button type="button" class="btn btn-sm btn-default" ng-click="dt = '2017-08-24'">2017-08-24</button>
+                <button type="button" class="btn btn-sm btn-default" ng-click="clear()">清除</button>
+                <button type="button" class="btn btn-sm btn-default" ng-click="toggleMin()" tooltip="禁止选择今天之前的日期">禁选往日</button>注：该弹出日期框已禁止了选择周六周日</div>
+            <!-- / datepicker -->
+            <!-- timepicker -->
+            <div ng-controller="TimepickerDemoCtrl" class="m-b-lg">
+                <h4>时间标签
+                    <code>&lt;timepicker&gt;</code></h4>
+                <timepicker ng-model="mytime" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></timepicker>
+                <pre class="alert alert-info">选择的时间是: __mytime | date:'shortTime' __ ，或是: __mytime | date:'HH:mm'__</pre>
+                <div class="row m-b">
+                    <div class="col-xs-6">时针步长:
+                        <select class="form-control" ng-model="hstep" ng-options="opt for opt in options.hstep"></select></div>
+                    <div class="col-xs-6">分针步长:
+                        <select class="form-control" ng-model="mstep" ng-options="opt for opt in options.mstep"></select></div>
+                </div>
+                <button class="btn btn-info" ng-click="toggleMode()">12H / 24H</button>
+                <button class="btn btn-default" ng-click="update()">设置为 14:00</button>
+                <button class="btn btn-default" ng-click="clear()">清除</button></div>
+            <!-- / tiempicker -->
+            <!-- dropdown-menu -->
+            <div class="pos-rlt clearfix m-b-lg">
+                <h4>下拉菜单
+                    <code>dropdown</code></h4>
+                <div class="dropdown pull-left m-r">
+                    <ul class="dropdown-menu pos-stc inline" role="menu">
+                        <li>
+                            <a tabindex="-1" href>吃饭</a></li>
+                        <li>
+                            <a tabindex="-1" href>睡觉</a></li>
+                        <li>
+                            <a tabindex="-1" href>打代码</a></li>
+                        <li class="divider"></li>
+                        <li class="dropdown-submenu">
+                            <a tabindex="-1" href>再来</a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li>
+                                    <a tabindex="-1" href>吃饭</a></li>
+                                <li>
+                                    <a tabindex="-1" href>睡觉</a></li>
+                                <li>
+                                    <a tabindex="-1" href>打代码</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="dropdown dropup pull-left">
+                    <ul class="dropdown-menu pos-stc inline" role="menu">
+                        <li>
+                            <a tabindex="-1" href>吃饭</a></li>
+                        <li>
+                            <a tabindex="-1" href>睡觉</a></li>
+                        <li>
+                            <a tabindex="-1" href>打代码</a></li>
+                        <li class="divider"></li>
+                        <li class="dropdown-submenu">
+                            <a tabindex="-1" href>再来</a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li class="dropdown-submenu  pull-left">
+                                    <a tabindex="-1" href>再来</a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li>
+                                            <a tabindex="-1" href>吃饭</a></li>
+                                        <li>
+                                            <a tabindex="-1" href>睡觉</a></li>
+                                        <li>
+                                            <a tabindex="-1" href>打代码</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a tabindex="-1" href>吃饭</a></li>
+                                <li>
+                                    <a tabindex="-1" href>睡觉</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- / dropdown-menu -->
+            <!-- breadcrumb -->
+            <div>
+                <h4>面包屑导航
+                    <code>breadcrumb</code></h4>
+                <ul class="breadcrumb bg-white b-a">
+                    <li>
+                        <a href>
+                            <i class="fa fa-home"></i>湖南</a>
                     </li>
-                </ul>
-            </span>
-
-          <!-- Single button -->
-          <div class="btn-group" dropdown is-open="status.isopen">
-            <button type="button" class="btn btn-primary" dropdown-toggle ng-disabled="disabled">
-              下拉框 <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href>吃饭</a></li>
-              <li><a href>睡觉</a></li>
-              <li><a href>打代码</a></li>
-              <li class="divider"></li>
-              <li><a href>人生完美</a></li>
-            </ul>
-          </div>
-
-          <!-- Split button -->
-          <div class="btn-group" dropdown>
-            <button type="button" class="btn btn-danger">带分割线</button>
-            <button type="button" class="btn btn-danger dropdown-toggle" dropdown-toggle>
-              <span class="caret"></span>
-              <span class="sr-only">下拉框</span>
-            </button>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href>吃饭</a></li>
-              <li><a href>睡觉</a></li>
-              <li><a href>打代码</a></li>
-              <li class="divider"></li>
-              <li><a href>人生完美</a></li>
-            </ul>
-          </div>
-          <p class="m-t">
-              <button type="button" class="btn btn-default btn-sm" ng-click="toggleDropdown($event)">切换下拉框</button>
-              <button type="button" class="btn btn-default btn-sm" ng-click="disabled = !disabled">启用/禁用</button>
-          </p>
-        </div>
-      </div>
-      <!-- / dropdown -->
-
-      <!-- modal -->
-      <div ng-controller="ModalDemoCtrl" class="panel b-a">
-          <script type="text/ng-template" id="myModalContent.html">
-            <div ng-include="'static/tpl/modal.html'"></div>
-          </script>
-          <div class="panel-heading b-b b-light">模式对话框 <code>$modal.open()</code></div>
-          <div class="panel-body">
-            <button class="btn btn-success" ng-click="open()">模式对话框</button>
-            <button class="btn btn-default" ng-click="open('lg')">大框框</button>
-            <button class="btn btn-dark" ng-click="open('sm')">小框框</button>
-          </div>
-      </div>
-      <!-- /modal -->
-
-      <!-- pagination -->
-      <div ng-controller="PaginationDemoCtrl">
-        <h4>分页标签 <code>&lt;pagination&gt;</code></h4>
-        <pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()" class="m-t-none m-b"></pagination>
-        <pagination boundary-links="true" total-items="totalItems" ng-model="currentPage" class="pagination-sm m-t-none m-b" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></pagination>
-        <pagination direction-links="false" boundary-links="true" total-items="totalItems" ng-model="currentPage" class="m-t-none m-b"></pagination>
-        <pagination direction-links="false" total-items="totalItems" ng-model="currentPage" num-pages="smallnumPages" class="m-t-none m-b"></pagination>
-        <pagination boundary-links="true" total-items="totalItems" ng-model="currentPage" previous-text="上一页" next-text="下一页" first-text="第一页" last-text="第末页"></pagination>
-        <div>
-          <span class="m-r">当前页码: <strong>__currentPage__</strong></span>
-          <button class="btn btn-default" ng-click="setPage(3)">转到第 3 页</button>
-        </div>
-        <h4>分页按钮标签 <code>&lt;pager&gt;</code></h4>
-        <pager total-items="totalItems" ng-model="currentPage" previous-text="上一页" next-text="下一页"></pager>
-        <h4><span class="text-sm">第 __bigCurrentPage__ 页/共 __numPages__ 页</span></h4>
-          <pagination total-items="bigTotalItems" ng-model="bigCurrentPage" max-size="maxSize" class="pagination-sm m-t-sm m-b" boundary-links="true" previous-text="上一页" next-text="下一页" first-text="第一页" last-text="第末页"></pagination> <br />
-          <pagination total-items="bigTotalItems" ng-model="bigCurrentPage" max-size="maxSize" class="pagination-sm m-t-none m-b" boundary-links="true" rotate="false" num-pages="numPages" previous-text="上一页" next-text="下一页" first-text="第一页" last-text="第末页"></pagination>
-      </div>
-      <!-- / pagination -->
-
-      <!-- popover -->
-      <div ng-controller="PopoverDemoCtrl" class="m-b">
-        <h4>针对提示 <code>popover</code></h4>
-        <div class="row">
-          <div class="form-group col-sm-6">
-            <label>内容:</label>
-            <input type="text" ng-model="dynamicPopover" class="form-control">
-          </div>
-          <div class="form-group col-sm-6">
-            <label>标题:</label>
-            <input type="text" ng-model="dynamicPopoverTitle" class="form-control">
-          </div>
-        </div>
-        <button popover="__dynamicPopover__" popover-title="__dynamicPopoverTitle__" class="btn btn-info">弹出针对提示</button>
-        
-        <h5 class="m-t-md">显示方位</h5>
-        <button popover-placement="top" popover="显示在上方!" class="btn btn-default">上</button>
-        <button popover-placement="left" popover="显示在左边!" class="btn btn-default">左</button>
-        <button popover-placement="right" popover="显示在右边!" class="btn btn-default">右</button>
-        <button popover-placement="bottom" popover="显示在下方!" class="btn btn-default">下</button>
-        
-        <h5 class="m-t-md">触发时机</h5>
-        <div class="row">
-          <div class="col-sm-6">
-            <button popover="鼠标移入时显示此针对提示!" popover-trigger="mouseenter" class="btn btn-success">鼠标移入</button>
-          </div>
-          <div class="col-sm-6">
-            <input type="text" value="点我! (获得焦点)" popover="获取焦点时显示此针对提示!"  popover-trigger="focus" class="form-control">
-          </div>
-        </div>
-
-        <h5 class="m-t-md">其它</h5>
-        <button Popover-animation="true" popover="我是渐入渐出的针对提示!" class="btn btn-default">动画</button>
-        <button popover="我有一个标题，好厉害!" popover-title="我是标题" class="btn btn-default">带标题</button>
-      </div>
-      <!-- / popover -->
+                    <li>
+                        <a href>长沙</a></li>
+                    <li class="active">Pine</li></ul>
+            </div>
+            <!-- / breadcrumb -->
+            <!-- label and badge -->
+            <div class="m-b-lg">
+                <h4>标签 &amp; 徽章
+                    <code>label</code>&amp;
+                    <code>badge</code></h4>
+                <p>
+                    <span class="label bg-primary">主要</span>
+                    <span class="label bg-success">成功</span>
+                    <span class="label bg-info">信息</span>
+                    <span class="label bg-dark">暗黑 dark</span>
+                    <span class="label bg-warning">警告</span>
+                    <span class="label bg-danger">危险</span>
+                    <span class="label bg-light dk">光明 Light</span></p>
+                <p class="m-b-none">
+                    <span class="badge bg-primary">15</span>
+                    <span class="badge bg-success">20</span>
+                    <span class="badge bg-info">21</span>
+                    <span class="badge bg-dark">13</span>
+                    <span class="badge bg-warning">35</span>
+                    <span class="badge bg-danger">32</span>
+                    <span class="badge">9</span></p>
+            </div>
+            <!-- / label and badge --></div>
     </div>
-    <div class="col-lg-6">
-      <!-- progressbar -->
-      <div ng-controller="ProgressDemoCtrl" class="panel panel-default">
-        <div class="panel-heading">
-          <ul class="nav nav-pills pull-right">
-            <li><a href ng-click="random()">产生随机示例数据</a></li>
-            <li><a href ng-click="randomStacked()">产生随机<strong class="text-danger">分段</strong>示例数据</a></li>
-          </ul>
-          进度条 <code>&lt;progressbar&gt;</code>
-        </div>
-        <div class="list-group">
-          <div class="list-group-item">
-            <progressbar value="35" class="progress-xxs m-t-sm"></progressbar>
-            <progressbar value="55" class="progress-xs" type="info"></progressbar>
-            <progressbar class="progress-striped progress-xs" value="22" type="success">22%</progressbar>
-            <progressbar class="progress-striped active progress-xs m-b-sm" max="200" value="90" type="warning"><i>90 / 200</i></progressbar>
-          </div>
-          <div class="list-group-item">
-            <progressbar max="max" value="dynamic" type="info" class="progress-sm m-t-sm"><span style="white-space:nowrap;">__dynamic__ / __max__</span></progressbar>            
-            <progressbar animate="false" value="dynamic" type="success"><b>__dynamic__%</b></progressbar>
-            <progressbar class="progress-striped active m-b-sm" value="dynamic" type="__type__">__getTypeName(type)__ <i ng-show="showWarning">!!! 大危机 !!!</i></progressbar>
-          </div>
-          <div class="list-group-item">
-            <progress class="m-t-sm m-b-sm">
-              <bar ng-repeat="bar in stacked track by $index" value="bar.value" type="__bar.type__">
-                <span ng-hide="bar.value < 5">__bar.value__%</span>
-              </bar>
-            </progress>
-          </div>
-        </div>
-      </div>
-      <!-- / progressbar -->
-
-      <!-- rating -->
-      <div ng-controller="RatingDemoCtrl" class="m-b-lg">
-        <h4>星级评分标签 <code>&lt;rating&gt;</code></h4>
-        <rating ng-model="rate" max="max" readonly="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null"></rating>
-        <span class="label" ng-class="{'label-warning': percent<30, 'label-info': percent>=30 && percent<70, 'label-success': percent>=70}" ng-show="overStar && !isReadonly">__percent__%</span>
-
-        <div class="well b bg-light lt wrapper-sm m-t">当前选择星级: <b>__rate__</b> - 只读: <b>__isReadonly__</b> - 鼠标所示星级: <b>__overStar || "none"__</b></div>
-
-        <button class="btn btn-sm btn-default" ng-click="rate = 0" ng-disabled="isReadonly">清除</button>
-        <button class="btn btn-sm btn-default" ng-click="isReadonly = ! isReadonly">切换只读</button>
-
-        <h5 class="m-t">自定义图标</h5>
-        <div ng-init="xx = 4" class="m-b text-lg">
-          <rating ng-model="xx" max="5" icon-lib="'fa'" state-on="'fa-star text-warning'" state-off="'fa-star-o'"></rating> <b>(__xx__)</b>
-        </div>
-        <div ng-init="x = 5">
-          <rating ng-model="x" max="15" icon-lib="'fa'" state-on="'fa-female text-info'" state-off="'fa-female'"></rating> <b>(<i>当前选择:</i> __x__)</b>
-        </div>
-      </div>
-      <!-- / rating -->
-
-      <!-- tab -->
-      <div ng-controller="TabsDemoCtrl">
-        <h4>选项卡 <code>&lt;tabset&gt;</code></h4>
-        <p>只要设置 active = true 就可以激活一个选项卡了哦:</p>
-        <p>
-          <button class="btn btn-default btn-sm" ng-click="tabs[0].active = true">选择第二个选项卡页</button>
-          <button class="btn btn-default btn-sm" ng-click="tabs[1].active = true">选择第三个选项卡页</button>
-          <button class="btn btn-default btn-sm" ng-click="tabs[1].disabled = ! tabs[1].disabled">启用/禁用第三个选项卡页</button>
-        </p>
-
-        <tabset class="tab-container">
-          <tab heading="静态标题">静态内容</tab>
-          <tab ng-repeat="tab in tabs" heading="__tab.title__" active="tab.active" disabled="tab.disabled">
-            __tab.content__
-          </tab>
-          <tab>
-            <tab-heading>
-              <i class="glyphicon glyphicon-bell"></i> 提示!
-            </tab-heading>
-              我有一个HTML组成的头部，厉害死我了
-          </tab>
-        </tabset>
-
-        <tabset vertical="true" type="pills" class="tab-container">
-          <tab heading="垂直 1">看到没，我是锤子的，还有谁!</tab>
-          <tab heading="垂直 2">拿小锤锤，锤你胸口!</tab>
-        </tabset>
-
-        <tabset justified="true" class="tab-container">
-            <tab heading="选项卡标签">选项卡标签会填满整行1</tab>
-          <tab heading="会填满">选项卡标签会填满整行2</tab>
-          <tab heading="整行">选项卡标签会填满整行3</tab>
-        </tabset>
-      </div>
-      <!-- / tab -->
-
-      <!-- tooltip -->
-      <div ng-controller="TooltipDemoCtrl" class="panel panel-default">
-        <div class="panel-heading">工具提示 <code>tooltip</code></div>
-        <div class="panel-body">
-          <div class="row">
-            <div class="form-group col-sm-6">
-              <label>动态文本</label>
-              <input type="text" ng-model="dynamicTooltipText" class="form-control">
-            </div>
-            <div class="form-group col-sm-6">
-              <label>动态工具提示文本</label>
-              <input type="text" ng-model="dynamicTooltip" class="form-control">
-            </div>
-          </div>
-          <p>
-            我叫你一声鼠标，你敢 <a href="#" class="text-info" tooltip="__dynamicTooltip__">__dynamicTooltipText__</a> 吗?
-            我
-            <a href="#" class="text-info" tooltip-placement="left" tooltip="如花!">左看</a>、
-            <a href="#" class="text-info" tooltip-placement="right" tooltip="凤姐!">右看</a>、
-            <a href="#" class="text-info" tooltip-placement="top" tooltip="芙蓉姐姐!">上看</a>、
-            <a href="#" class="text-info" tooltip-placement="bottom" tooltip="孔连顺!">下看</a>，原来每个女孩都不简单. <br />
-            你可以
-            <a href="#" class="text-info" tooltip-animation="false" tooltip="没动画，宝宝不开森. :-(">关闭动画</a> ，或者
-            <a href="#" class="text-info" tooltip-popup-delay='1000' tooltip='天空一声巨响，老子延迟登场'>延迟显示</a> 工具提示.
-          </p>
-          <p>
-            或许你可以试试 <a href="#" class="text-info" tooltip-html-unsafe="__htmlTooltip__">用 HTML 组成工具提示</a>!
-          </p>
-          <form role="form">
-            <div class="form-group">
-              <label>或者自定义触发时机，比如获取焦点时触发: </label>
-              <input type="text" value="参奏!" tooltip="朕累了，点击其它任意位置退朝..."  tooltip-trigger="focus" tooltip-placement="top" class="form-control" />
-            </div>
-          </form>
-        </div>
-      </div>
-      <!-- / tooltip -->
-
-      <!-- typehead -->
-      <div ng-controller="TypeaheadDemoCtrl" class="m-b-lg">
-        <h4>字模 (功能为：自动补全) <code tooltip-html-unsafe="用的时候，其实是: typeahead">typehead</code></h4>
-        <h5>数据源为静态数组</h5>
-        <div class="well b bg-light wrapper-sm">选择的是: __selected | json__</div>
-        <input type="text" ng-model="selected" placeholder='打“阿”或者打英文试一下' typeahead="state for state in states | filter:$viewValue | limitTo:8" class="form-control">
-
-        <h5>数据源为异步Json数组</h5>
-        <div class="well b bg-light wrapper-sm">选择的是: __asyncSelected | json__</div>
-        <div class="pos-rlt">
-          <i ng-show="loadingLocations" class="fa fa-spinner fa-spin form-control-spin"></i>
-          <input type="text" ng-model="asyncSelected" placeholder="通过 $http 加载异步数据，请在web容器下运行示例" typeahead="address for address in getLocation($viewValue)" typeahead-loading="loadingLocations" class="form-control">
-        </div>        
-      </div>
-      <!-- / typehead -->
-
-      <!-- datepicker -->
-      <div ng-controller="DatepickerDemoCtrl" class="m-b-lg">
-        <h4>日期标签 <code>&lt;datepicker&gt;</code></h4>
-        <h5>内联</h5>
-        <div class="m-b">
-          <datepicker ng-model="dt" min-date="minDate" show-weeks="true" class="datepicker" data-format="yyyy+MM+dd"></datepicker>
-        </div>
-        <pre class="alert alert-info">选择的日期是: <em>__dt | date:'yyyy-MM-dd' __</em></pre>    
-        <div class="row">
-          <div class="col-md-6">
-            <label>弹出</label>
-            <p class="input-group">
-              <input type="text" class="form-control" datepicker-popup="__format__" ng-model="dt" is-open="opened" min-date="minDate" max-date="'2100-12-31'" 
-                     datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" 
-                     close-text="关闭" clear-text="清除" current-text="今天" format-date />
-              <span class="input-group-btn">
-                <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
-              </span>
-            </p>
-          </div>
-          <div class="col-md-6">
-            <label>日期格式:</label> <select class="form-control" ng-model="format" ng-options="f for f in formats"><option></option></select>
-          </div>
-        </div>
-        <button type="button" class="btn btn-sm btn-info" ng-click="today()">今天</button>
-        <button type="button" class="btn btn-sm btn-default" ng-click="dt = '2017-08-24'">2017-08-24</button>
-        <button type="button" class="btn btn-sm btn-default" ng-click="clear()">清除</button>
-        <button type="button" class="btn btn-sm btn-default" ng-click="toggleMin()" tooltip="禁止选择今天之前的日期">禁选往日</button>
-          注：该弹出日期框已禁止了选择周六周日
-      </div>
-      <!-- / datepicker -->
-
-      <!-- timepicker -->
-      <div ng-controller="TimepickerDemoCtrl" class="m-b-lg">
-        <h4>时间标签 <code>&lt;timepicker&gt;</code></h4>
-        <timepicker ng-model="mytime" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></timepicker>
-
-        <pre class="alert alert-info">选择的时间是: __mytime | date:'shortTime' __ ，或是: __mytime | date:'HH:mm'__</pre>
-
-        <div class="row m-b"> 
-          <div class="col-xs-6">
-              时针步长:
-            <select class="form-control" ng-model="hstep" ng-options="opt for opt in options.hstep"></select>
-          </div>
-          <div class="col-xs-6">
-              分针步长:
-            <select class="form-control" ng-model="mstep" ng-options="opt for opt in options.mstep"></select>
-          </div>
-        </div>
-        <button class="btn btn-info" ng-click="toggleMode()">12H / 24H</button>
-        <button class="btn btn-default" ng-click="update()">设置为 14:00</button>
-        <button class="btn btn-default" ng-click="clear()">清除</button>
-      </div>
-      <!-- / tiempicker -->
-
-      <!-- dropdown-menu -->
-      <div class="pos-rlt clearfix m-b-lg">
-        <h4>下拉菜单 <code>dropdown</code></h4>
-        <div class="dropdown pull-left m-r">
-          <ul class="dropdown-menu pos-stc inline" role="menu">
-            <li><a tabindex="-1" href>吃饭</a></li>
-            <li><a tabindex="-1" href>睡觉</a></li>
-            <li><a tabindex="-1" href>打代码</a></li>
-            <li class="divider"></li>
-            <li class="dropdown-submenu">
-              <a tabindex="-1" href>再来</a>
-              <ul class="dropdown-menu" role="menu">
-                <li><a tabindex="-1" href>吃饭</a></li>
-                <li><a tabindex="-1" href>睡觉</a></li>
-                <li><a tabindex="-1" href>打代码</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-        <div class="dropdown dropup pull-left">
-          <ul class="dropdown-menu pos-stc inline" role="menu">
-            <li><a tabindex="-1" href>吃饭</a></li>
-            <li><a tabindex="-1" href>睡觉</a></li>
-            <li><a tabindex="-1" href>打代码</a></li>
-            <li class="divider"></li>
-            <li class="dropdown-submenu">
-              <a tabindex="-1" href>再来</a>
-              <ul class="dropdown-menu" role="menu">
-                <li class="dropdown-submenu  pull-left">
-                  <a tabindex="-1" href>再来</a>
-                  <ul class="dropdown-menu" role="menu">
-                    <li><a tabindex="-1" href>吃饭</a></li>
-                    <li><a tabindex="-1" href>睡觉</a></li>
-                    <li><a tabindex="-1" href>打代码</a></li>
-                  </ul>
-                </li>
-                <li><a tabindex="-1" href>吃饭</a></li>
-                <li><a tabindex="-1" href>睡觉</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <!-- / dropdown-menu -->
-      <!-- breadcrumb -->
-      <div>
-        <h4>面包屑导航 <code>breadcrumb</code></h4>
-        <ul class="breadcrumb bg-white b-a">
-          <li><a href><i class="fa fa-home"></i> 湖南</a></li>
-          <li><a href>长沙</a></li>
-          <li class="active">Pine</li>
-        </ul>
-      </div>
-      <!-- / breadcrumb -->
-      <!-- label and badge -->
-      <div class="m-b-lg">
-        <h4>标签 &amp; 徽章 <code>label</code> &amp; <code>badge</code></h4>
-        <p>
-          <span class="label bg-primary">主要</span>
-          <span class="label bg-success">成功</span>
-          <span class="label bg-info">信息</span>
-          <span class="label bg-dark">暗黑 dark</span>
-          <span class="label bg-warning">警告</span>
-          <span class="label bg-danger">危险</span>
-          <span class="label bg-light dk">光明 Light</span>
-        </p>
-        <p class="m-b-none">          
-          <span class="badge bg-primary">15</span>
-          <span class="badge bg-success">20</span>
-          <span class="badge bg-info">21</span>
-          <span class="badge bg-dark">13</span>
-          <span class="badge bg-warning">35</span>
-          <span class="badge bg-danger">32</span>
-          <span class="badge">9</span>
-        </p>
-      </div>
-      <!-- / label and badge -->
-    </div>
-  </div>
 </div>
