@@ -19,7 +19,7 @@ function($http, $scope, $location, $timeout, toaster) {
             $scope.processing = false;
             // 如果返回 response 中含有 stat 属性, 则 stat 为非 "OK" 时，则 stat 内容为异常信息
             if (!quiet && data.stat) {
-                if (data.stat == "OK") {
+                if (data.stat === 'OK') {
                     $scope.pop('success', '', data.stat);
                 } else {
                     $scope.pop('error', '', data.stat);
@@ -28,7 +28,7 @@ function($http, $scope, $location, $timeout, toaster) {
 
             // 如果返回 response 中含有 code 属性, 则 code 为非 0 时，则 message 内容为异常信息
             if (!quiet && data.code) {
-                if (data.code == 0) {
+                if (data.code === 0) {
                     $scope.pop('success', '', data.message);
                 } else {
                     $scope.pop('error', '', data.message);
@@ -46,7 +46,7 @@ function($http, $scope, $location, $timeout, toaster) {
                 if (!callback.call(null, data, status)) return;
             }
 
-            if (status == 401) {
+            if (status === 401) {
                 $scope.pop('wait', '', '正尝试自动登录');
             } else {
                 $scope.pop('error', '', '发生未知错误！');
