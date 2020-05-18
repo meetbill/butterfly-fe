@@ -15,8 +15,7 @@ function ($scope, $translate, $localStorage, $window) {
 
     // config
     $scope.app = {
-        //name: 'Angulr UI',
-        name: 'Pine',
+        name: 'Butterfly fe',
         version: '2.2.6_20200222',
         // for chart colors
         color: {
