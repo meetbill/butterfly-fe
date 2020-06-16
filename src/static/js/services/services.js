@@ -1,5 +1,5 @@
 angular.module('appservices', ['toaster']).factory('Request', ['$http', '$rootScope', '$location', '$timeout', 'toaster',
-function($http, $scope, $location, $timeout, toaster) {
+function ($http, $scope, $location, $timeout, toaster) {
 
     //---------------提示信息---------------
     $scope.toaster = {
@@ -8,13 +8,13 @@ function($http, $scope, $location, $timeout, toaster) {
         text: 'Message'
     };
 
-    $scope.pop = function(type, title, text) {
+    $scope.pop = function (type, title, text) {
         toaster.pop(type, '', text);
     };
     //---------------提示信息---------------end
     var Request = {};
 
-    var _successFuncBinder = function(callback, quiet) {
+    var successFuncBinder = function (callback, quiet) {
         return function(data) {
             $scope.processing = false;
             // 如果返回 response 中含有 stat 属性, 则 stat 为非 "OK" 时，则 stat 内容为异常信息
@@ -39,7 +39,7 @@ function($http, $scope, $location, $timeout, toaster) {
         };
     };
 
-    var _errorFuncBinder = function(callback, quiet) {
+    var errorFuncBinder = function (callback, quiet) {
         return function(data, status) {
             $scope.processing = false;
             if (!quiet && callback) {
@@ -54,24 +54,28 @@ function($http, $scope, $location, $timeout, toaster) {
         };
     };
 
-    Request.setProcessing = function(processing) {
+    Request.setProcessing = function (processing) {
         $scope.processing = processing;
     };
 
-    Request.get = function(url, callback, errcallback, quiet) {
+    Request.get = function (url, callback, errcallback, quiet) {
         $scope.processing = true;
         var rurl = url;
         //if (rurl.indexOf('?') > 0)
         //    rurl += '&' + Math.random();
         //else
         //    rurl += '?' + Math.random();
-        $http.get(rurl).success(_successFuncBinder(callback, quiet)).error(_errorFuncBinder(errcallback, quiet));
+        $http.get(rurl).success(successFuncBinder(callback, quiet)).error(errorFuncBinder(errcallback, quiet));
     };
 
-    Request.post = function(url, data, callback, errcallback, quiet) {
+    Request.post = function (url, data, callback, errcallback, quiet) {
         $scope.processing = true;
-        $http.post(url, data).success(_successFuncBinder(callback, quiet)).error(_errorFuncBinder(errcallback, quiet));
+        $http.post(url, data).success(successFuncBinder(callback, quiet)).error(errorFuncBinder(errcallback, quiet));
     };
 
+    Request.put = function (url, data, callback, errcallback, quiet) {
+        $scope.processing = true;
+        $http.put(url, data).success(successFuncBinder(callback, quiet)).error(errorFuncBinder(errcallback, quiet));
+    };
     return Request;
 }])
