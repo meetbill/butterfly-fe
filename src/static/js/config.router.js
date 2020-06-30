@@ -4,21 +4,21 @@
  * Config for the router
  */
 angular.module('app').run(['$rootScope', '$state', '$stateParams', 'authManager',
-function($rootScope, $state, $stateParams, authManager) {
+function ($rootScope, $state, $stateParams, authManager) {
     $rootScope.$state = $state;
     $rootScope.$stateParams = $stateParams;
 
     //---------------------------------------------jwt
     //authManager.checkAuthOnRefresh();
     // 普通登录时使用，会跳转到内部登录页
-    //authManager.redirectWhenUnauthenticated()
+    //authManager.redirectWhenUnauthenticated();
     // 单点登录时使用，会跳转到特定单点登录页
-    //authManager.redirectWhenUnauthenticatedSSO()
+    //authManager.redirectWhenUnauthenticatedSSO();
 }]).config(['$stateProvider', '$urlRouterProvider', 'JQ_CONFIG', 'MODULE_CONFIG',
-function($stateProvider, $urlRouterProvider, JQ_CONFIG, MODULE_CONFIG) {
-    var layout = "static/tpl/app.html";
-    if (window.location.href.indexOf("material") > 0) {
-        layout = "static/tpl/blocks/material.layout.html";
+function ($stateProvider, $urlRouterProvider, JQ_CONFIG, MODULE_CONFIG) {
+    var layout = 'static/tpl/app.html';
+    if (window.location.href.indexOf('material') > 0) {
+        layout = 'static/tpl/blocks/material.layout.html';
         $urlRouterProvider.otherwise('/app/dashboard-v3');
     } else {
         $urlRouterProvider.otherwise('/app/dashboard-v1');
@@ -28,7 +28,7 @@ function($stateProvider, $urlRouterProvider, JQ_CONFIG, MODULE_CONFIG) {
         abstract: true,
         url: '/app',
         templateUrl: layout,
-        resolve: load(["static/js/controllers/blocks/nav.js"])
+        resolve: load(['static/js/controllers/blocks/nav.js'])
     }).state('app.dashboard-v1', {
         url: '/dashboard-v1',
         templateUrl: 'static/tpl/app_dashboard_v1.html',
@@ -364,16 +364,16 @@ function($stateProvider, $urlRouterProvider, JQ_CONFIG, MODULE_CONFIG) {
     function load(srcs, callback) {
         return {
             deps: ['$$animateJs', '$ocLazyLoad', '$q',
-            function($$animateJs, $ocLazyLoad, $q) {
+            function ($$animateJs, $ocLazyLoad, $q) {
                 var deferred = $q.defer();
                 var promise = false;
-                srcs = angular.isArray(srcs) ? srcs: srcs.split(/\s+/);
+                srcs = angular.isArray(srcs) ? srcs : srcs.split(/\s+/);
                 if (!promise) {
                     promise = deferred.promise;
                 }
                 angular.forEach(srcs,
-                function(src) {
-                    promise = promise.then(function() {
+                function (src) {
+                    promise = promise.then(function () {
                         if (JQ_CONFIG[src]) {
                             return $ocLazyLoad.load(JQ_CONFIG[src]);
                         }
@@ -381,11 +381,11 @@ function($stateProvider, $urlRouterProvider, JQ_CONFIG, MODULE_CONFIG) {
                     });
                 });
                 deferred.resolve();
-                return callback ? promise.then(function() {
+                return callback ? promise.then(function () {
                     return callback();
                 }) : promise;
             }]
-        }
+        };
     }
 
 }]);
