@@ -133,7 +133,10 @@ function ($scope, $modal, $log) {
             controller: 'ModalInstanceCtrl',
             size: size,
             resolve: {
+                // 定义一个成员并将它传递给 $modal 指定的控制器
+                // 也就是将 items 传递给 ModalInstanceCtrl
                 items: function () {
+                    // 日常使用时，可以在这里传递 open 这个 function 的参数, 比如 id, 将 id 通过 resolve 传递到 ModalInstanceCtrl 控制器
                     return $scope.items;
                 }
             }
