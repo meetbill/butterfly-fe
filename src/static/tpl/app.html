@@ -1,27 +1,30 @@
-﻿  <!-- navbar -->
-  <div data-ng-include=" 'static/tpl/blocks/header.html' " class="app-header navbar">
-  </div>
-  <!-- / navbar -->
+﻿<!-- navbar -->
+<div data-ng-include=" 'static/tpl/blocks/header.html' " class="app-header navbar">
+</div>
+<!-- / navbar -->
 
-  <!-- menu -->
-  <div data-ng-include=" 'static/tpl/blocks/aside.html' " class="app-aside hidden-xs __app.settings.asideColor__">
-  </div>
-  <!-- / menu -->
+<!-- menu -->
+<div data-ng-include=" 'static/tpl/blocks/aside.html' " class="app-aside hidden-xs __app.settings.asideColor__">
+</div>
+<!-- / menu -->
 
-  <!-- content -->
-  <div class="app-content">
+<!-- content -->
+<div class="app-content">
+    <!-- toaster directive -->
+    <toaster-container toaster-options="{'position-class': 'toast-top-right', 'close-button':true}"></toaster-container>
+    <!-- / toaster directive -->
     <div ui-butterbar></div>
     <a href class="off-screen-toggle hide" ui-toggle-class="off-screen" data-target=".app-aside" ></a>
     <div class="app-content-body fade-in-up" ui-view></div>
-  </div>
-  <!-- /content -->
+</div>
+<!-- /content -->
 
-  <!-- footer -->
-  <div class="app-footer wrapper b-t bg-light">
+<!-- footer -->
+<div class="app-footer wrapper b-t bg-light">
     <span class="pull-right">__app.version__ <a href ui-scroll-to="app" class="m-l-sm text-muted"><i class="fa fa-long-arrow-up"></i></a></span>
-    Meetbill-Pine &copy; 2020 Copyright.
-  </div>
-  <!-- / footer -->
+    butterfly-fe &copy; 2020 Copyright.
+</div>
+<!-- / footer -->
 
-  <div data-ng-include=" 'static/tpl/blocks/settings.html' " class="settings panel panel-default">
-  </div>
+<div data-ng-include=" 'static/tpl/blocks/settings.html' " class="settings panel panel-default">
+</div>
