@@ -18,7 +18,7 @@ function ($http, $scope, $location, $timeout, toaster) {
         return function(data) {
             $scope.processing = false;
             // 如果返回 response 中含有 stat 属性, 则 stat 为非 "OK" 时，则 stat 内容为异常信息
-            if (!quiet && data.stat) {
+            if (!quiet && data.hasOwnProperty('stat')) {
                 if (data.stat === 'OK') {
                     $scope.pop('success', '', data.stat);
                 } else {
@@ -27,7 +27,7 @@ function ($http, $scope, $location, $timeout, toaster) {
             }
 
             // 如果返回 response 中含有 code 属性, 则 code 为非 0 时，则 message 内容为异常信息
-            if (!quiet && data.code) {
+            if (!quiet && data.hasOwnProperty('code')) {
                 if (data.code === 0) {
                     $scope.pop('success', '', data.message);
                 } else {
@@ -49,10 +49,10 @@ function ($http, $scope, $location, $timeout, toaster) {
             if (status === 401) {
                 $scope.pop('wait', '', '正尝试自动登录');
             } else {
-                if (data.stat) {
+                if (data.hasOwnProperty('stat')) {
                     $scope.pop('error', '', data.stat);
                 }
-                else if (data.message)
+                else if (data.hasOwnProperty('message'))
                 {
                     $scope.pop('error', '', data.message);
                 }
