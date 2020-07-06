@@ -49,7 +49,17 @@ function ($http, $scope, $location, $timeout, toaster) {
             if (status === 401) {
                 $scope.pop('wait', '', '正尝试自动登录');
             } else {
-                $scope.pop('error', '', '发生未知错误！');
+                if (data.stat) {
+                    $scope.pop('error', '', data.stat);
+                }
+                else if (data.message)
+                {
+                    $scope.pop('error', '', data.message);
+                }
+                else
+                {
+                    $scope.pop('error', '', '发生未知错误！');
+                }
             }
         };
     };
