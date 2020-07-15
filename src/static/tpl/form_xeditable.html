@@ -1,135 +1,118 @@
 ﻿<div class="bg-light lter b-b wrapper-md">
-  <h1 class="m-n font-thin h3">编辑引擎 <kbd class="pull-right">Xeditable</kbd></h1>
+    <h1 class="m-n font-thin h3">编辑引擎
+        <kbd class="pull-right">Xeditable</kbd></h1>
 </div>
 <div class="wrapper-md">
-	<div class="row">
-    <div class="col-sm-6">
-      <div class="panel panel-default">
-        <div class="panel-heading font-bold">编辑控件</div>
-        <div class="panel-body">
-          <div class="form-horizontal">
-            <div class="form-group">
-              <label class="col-sm-3 control-label">文本框:</label>
-              <div class="col-sm-9">
-              	<p class="form-control-static">
-                	<a editable-text="user.name">__ user.name || '空' __</a>
-                </p>
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="col-sm-3 control-label">下拉框:</label>
-              <div class="col-sm-9">
-              	<p class="form-control-static">
-                	<a editable-select="user.status" e-ng-options="s.value as s.text for s in statuses">
-                		__ showStatus(user) __
-                	</a>
-                </p>
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="col-sm-3 control-label">文本域:</label>
-              <div class="col-sm-9">
-              	<p class="form-control-static">
-                	<a editable-textarea="user.desc" e-rows="7">
-								    __ user.desc || 'no description' __
-								  </a>
-                </p>
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="col-sm-3 control-label">复选框:</label>
-              <div class="col-sm-9">
-              	<p class="form-control-static">
-                	<a editable-checkbox="user.remember" e-title="记住我?">
-					    __ user.remember && "记住我" || "不要记住我" __
-					</a>
-                </p>
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="col-sm-3 control-label">单选框组:</label>
-              <div class="col-sm-9">
-              	<p class="form-control-static">
-                	<a editable-radiolist="user.agenda" e-ng-options="s.value as s.text for s in agenda">
-								    __ showAgenda() __
-								  </a>
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          编辑表单
-        </div>
-        <div class="panel-body">
-          <form editable-form name="editableForm" onaftersave="saveUser()">
-            <div class="form-horizontal">
-              <div class="form-group">
-                <label class="col-sm-3 control-label">姓名:</label>
-                <div class="col-sm-9">
-                  <p class="form-control-static">
-                    <span editable-text="user.name">__ user.name || 'empty' __</span>
-                  </p>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="panel panel-default">
+                <div class="panel-heading font-bold">编辑控件</div>
+                <div class="panel-body">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">文本框:</label>
+                            <div class="col-sm-9">
+                                <p class="form-control-static">
+                                    <a editable-text="user.name">__ user.name || '空' __</a></p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">下拉框:</label>
+                            <div class="col-sm-9">
+                                <p class="form-control-static">
+                                    <a editable-select="user.status" e-ng-options="s.value as s.text for s in statuses">__ showStatus(user) __</a></p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">文本域:</label>
+                            <div class="col-sm-9">
+                                <p class="form-control-static">
+                                    <a editable-textarea="user.desc" e-rows="7">__ user.desc || 'no description' __</a></p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">复选框:</label>
+                            <div class="col-sm-9">
+                                <p class="form-control-static">
+                                    <a editable-checkbox="user.remember" e-title="记住我?">__ user.remember && "记住我" || "不要记住我" __</a></p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">单选框组:</label>
+                            <div class="col-sm-9">
+                                <p class="form-control-static">
+                                    <a editable-radiolist="user.agenda" e-ng-options="s.value as s.text for s in agenda">__ showAgenda() __</a></p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <div class="form-group">
-                <label class="col-sm-3 control-label">状态:</label>
-                <div class="col-sm-9">
-                  <p class="form-control-static">
-                    <span editable-select="user.status" e-ng-options="s.value as s.text for s in statuses">
-                      __ showStatus(user) __
-                    </span>
-                  </p>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <div class="col-sm-9 col-sm-offset-3">
-                  <button type="button" class="btn btn-default" ng-click="editableForm.$show()" ng-show="!editableForm.$visible">
-                    编辑
-                  </button>
-                  <!-- buttons to submit / cancel form -->
-                  <span ng-show="editableForm.$visible">
-                    <button type="submit" class="btn btn-primary" ng-disabled="editableForm.$waiting">
-                      保存
-                    </button>
-                    <button type="button" class="btn btn-default" ng-disabled="editableForm.$waiting" ng-click="editableForm.$cancel()">
-                      取消
-                    </button>
-                  </span>
-                </div>
-              </div>
             </div>
-          </form>
+            <div class="panel panel-default">
+                <div class="panel-heading">编辑表单</div>
+                <div class="panel-body">
+                    <form editable-form name="editableForm" onaftersave="saveUser()">
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">姓名:</label>
+                                <div class="col-sm-9">
+                                    <p class="form-control-static">
+                                        <span editable-text="user.name">__ user.name || 'empty' __</span></p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">状态:</label>
+                                <div class="col-sm-9">
+                                    <p class="form-control-static">
+                                        <span editable-select="user.status" e-ng-options="s.value as s.text for s in statuses">__ showStatus(user) __</span></p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-9 col-sm-offset-3">
+                                    <button type="button" class="btn btn-default" ng-click="editableForm.$show()" ng-show="!editableForm.$visible">编辑</button>
+                                    <!-- buttons to submit / cancel form -->
+                                    <span ng-show="editableForm.$visible">
+                                        <button type="submit" class="btn btn-primary" ng-disabled="editableForm.$waiting">保存</button>
+                                        <button type="button" class="btn btn-default" ng-disabled="editableForm.$waiting" ng-click="editableForm.$cancel()">取消</button></span>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
-      </div>
+        <div class="col-sm-6">
+            <div class="panel panel-default">
+                <div class="panel-heading font-bold">Html5 编辑框</div>
+                <div class="panel-body">
+                    <div>
+                        <div class="m-b">邮箱:
+                            <a editable-email="html5.email">__ html5.email || '空' __</a></div>
+                        <div class="m-b">手机:
+                            <a editable-tel="html5.tel" e-pattern="1\d{10}" e-title="1xxxxxxxxxx">__ html5.tel || '空' __</a></div>
+                        <div class="m-b">数字:
+                            <a editable-number="html5.number" e-min="18">__ html5.number || '空' __</a></div>
+                        <div class="m-b">滑块:
+                            <a editable-range="html5.range" e-step="5">__ html5.range || '空' __</a></div>
+                        <div class="m-b">网址:
+                            <a editable-url="html5.url">__ html5.url || '空' __</a></div>
+                        <div class="m-b">搜索:
+                            <a editable-search="html5.search">__ html5.search || '空' __</a></div>
+                        <div class="m-b">颜色:
+                            <a editable-color="html5.color">__ html5.color || '空' __</a></div>
+                        <div class="m-b">日期:
+                            <a editable-date="html5.date">__ html5.date || '空' __</a></div>
+                        <div class="m-b">时间:
+                            <a editable-time="html5.time">__ html5.time || '空' __</a></div>
+                        <div class="m-b">日期时间:
+                            <a editable-datetime="html5.datetime">__ html5.datetime || '空' __</a></div>
+                        <div class="m-b">月份:
+                            <a editable-month="html5.month">__ html5.month || '空' __</a></div>
+                        <div class="m-b">周:
+                            <a editable-week="html5.week">__ html5.week || '空' __</a></div>
+                    </div>
+                    <p>注：html5 编辑框，需要浏览器较好的支持 html5 才能正常工作。</p>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="col-sm-6">
-      <div class="panel panel-default">
-        <div class="panel-heading font-bold">Html5 编辑框</div>
-        <div class="panel-body">
-          <div>
-            <div class="m-b">邮箱: <a editable-email="html5.email">__ html5.email || '空' __</a></div>
-            <div class="m-b">手机: <a editable-tel="html5.tel" e-pattern="1\d{10}" e-title="1xxxxxxxxxx">__ html5.tel || '空' __</a></div>
-            <div class="m-b">数字: <a editable-number="html5.number" e-min="18">__ html5.number || '空' __</a></div>  
-            <div class="m-b">滑块: <a editable-range="html5.range" e-step="5">__ html5.range || '空' __</a></div>  
-            <div class="m-b">网址: <a editable-url="html5.url">__ html5.url || '空' __</a></div>  
-            <div class="m-b">搜索: <a editable-search="html5.search">__ html5.search || '空' __</a></div>  
-            <div class="m-b">颜色: <a editable-color="html5.color">__ html5.color || '空' __</a></div>  
-            <div class="m-b">日期: <a editable-date="html5.date">__ html5.date || '空' __</a></div>  
-            <div class="m-b">时间: <a editable-time="html5.time">__ html5.time || '空' __</a></div>  
-            <div class="m-b">日期时间: <a editable-datetime="html5.datetime">__ html5.datetime || '空' __</a></div>  
-            <div class="m-b">月份: <a editable-month="html5.month">__ html5.month || '空' __</a></div>  
-            <div class="m-b">周: <a editable-week="html5.week">__ html5.week || '空' __</a></div>  
-          </div>
-            <p>
-                注：html5 编辑框，需要浏览器较好的支持 html5 才能正常工作。
-            </p>
-        </div>
-      </div>
-    </div>
-  </div>
-	
 </div>
