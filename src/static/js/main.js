@@ -16,7 +16,7 @@ function ($scope, $translate, $localStorage, $window) {
     // config
     $scope.app = {
         name: 'Butterfly fe',
-        version: '2.2.8_20200706',
+        version: '2.2.9_20200718',
         // for chart colors
         color: {
             primary: '#7266ba',
