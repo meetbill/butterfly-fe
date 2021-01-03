@@ -87,5 +87,9 @@ function ($http, $scope, $location, $timeout, toaster) {
         $scope.processing = true;
         $http.put(url, data).success(successFuncBinder(callback, quiet)).error(errorFuncBinder(errcallback, quiet));
     };
+
+    Request.msg = function (type, text) {
+        $scope.pop(type, '', text);
+    };
     return Request;
 }])
